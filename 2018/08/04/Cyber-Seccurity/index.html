@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="security," />
+  <meta name="keywords" content="security,cyber security,security note," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="以下文章均单从攻防上考虑，安全问题与现实情况，如何把安全实际落地可能相对更复杂 Web安全 SQL注入 掌握知识      数据库操作基本语句     select drop  分类      联合查询         union select 1,2,3,4,5,6,7,8,9,10,11 from admin(表名称)     报错注入      盲注  漏洞成因  部分代码审计中体现">
-<meta name="keywords" content="security">
+<meta name="description" content="以下文章均单从攻防上考虑，安全问题与现实情况，如何把安全实际落地可能相对更复杂 Web安全SQL注入掌握知识数据库操作基本语句 select drop  分类  联合查询     union select 1,2,3,4,5,6,7,8,9,10,11 from admin(表名) 报错注入 盲注 漏洞成因部分代码审计中体现select *(全部列) from user(表名称) where id">
+<meta name="keywords" content="security,cyber security,security note">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Cyber Seccurity Summarize">
 <meta property="og:url" content="http://yoursite.com/2018/08/04/Cyber-Seccurity/index.html">
 <meta property="og:site_name" content="expbuf">
-<meta property="og:description" content="以下文章均单从攻防上考虑，安全问题与现实情况，如何把安全实际落地可能相对更复杂 Web安全 SQL注入 掌握知识      数据库操作基本语句     select drop  分类      联合查询         union select 1,2,3,4,5,6,7,8,9,10,11 from admin(表名称)     报错注入      盲注  漏洞成因  部分代码审计中体现">
+<meta property="og:description" content="以下文章均单从攻防上考虑，安全问题与现实情况，如何把安全实际落地可能相对更复杂 Web安全SQL注入掌握知识数据库操作基本语句 select drop  分类  联合查询     union select 1,2,3,4,5,6,7,8,9,10,11 from admin(表名) 报错注入 盲注 漏洞成因部分代码审计中体现select *(全部列) from user(表名称) where id">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-04T07:52:23.989Z">
+<meta property="og:updated_time" content="2018-08-05T16:18:12.503Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cyber Seccurity Summarize">
-<meta name="twitter:description" content="以下文章均单从攻防上考虑，安全问题与现实情况，如何把安全实际落地可能相对更复杂 Web安全 SQL注入 掌握知识      数据库操作基本语句     select drop  分类      联合查询         union select 1,2,3,4,5,6,7,8,9,10,11 from admin(表名称)     报错注入      盲注  漏洞成因  部分代码审计中体现">
+<meta name="twitter:description" content="以下文章均单从攻防上考虑，安全问题与现实情况，如何把安全实际落地可能相对更复杂 Web安全SQL注入掌握知识数据库操作基本语句 select drop  分类  联合查询     union select 1,2,3,4,5,6,7,8,9,10,11 from admin(表名) 报错注入 盲注 漏洞成因部分代码审计中体现select *(全部列) from user(表名称) where id">
 
 
 
@@ -353,100 +353,67 @@
 
       
         <h6 id="以下文章均单从攻防上考虑，安全问题与现实情况，如何把安全实际落地可能相对更复杂"><a href="#以下文章均单从攻防上考虑，安全问题与现实情况，如何把安全实际落地可能相对更复杂" class="headerlink" title="以下文章均单从攻防上考虑，安全问题与现实情况，如何把安全实际落地可能相对更复杂"></a>以下文章均单从攻防上考虑，安全问题与现实情况，如何把安全实际落地可能相对更复杂</h6><hr>
-<p>Web安全</p>
-<p>SQL注入</p>
-<pre><code>掌握知识
+<h2 id="Web安全"><a href="#Web安全" class="headerlink" title="Web安全"></a>Web安全</h2><h3 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h3><h4 id="掌握知识"><a href="#掌握知识" class="headerlink" title="掌握知识"></a>掌握知识</h4><pre><code>数据库操作基本语句
+select drop 
+</code></pre><h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><pre><code>  联合查询
+    union select 1,2,3,4,5,6,7,8,9,10,11 from admin(表名)
+报错注入
+盲注
+</code></pre><h4 id="漏洞成因"><a href="#漏洞成因" class="headerlink" title="漏洞成因"></a>漏洞成因</h4><h4 id="部分代码审计中体现"><a href="#部分代码审计中体现" class="headerlink" title="部分代码审计中体现"></a>部分代码审计中体现</h4><pre><code>select *(全部列) from user(表名称) where id(字段) = 1;
+</code></pre><h4 id="测试与防护手段"><a href="#测试与防护手段" class="headerlink" title="测试与防护手段"></a>测试与防护手段</h4><pre><code>黑白名单
+参数化处理
+</code></pre><h3 id="LDAP注入"><a href="#LDAP注入" class="headerlink" title="LDAP注入"></a>LDAP注入</h3><h3 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h3><h4 id="掌握知识-1"><a href="#掌握知识-1" class="headerlink" title="掌握知识"></a>掌握知识</h4><pre><code>html css js
+</code></pre><h4 id="分类-1"><a href="#分类-1" class="headerlink" title="分类"></a>分类</h4><pre><code>反射型
 
-    数据库操作基本语句
-    select drop 
-分类
+DOM型
 
-    联合查询
-        union select 1,2,3,4,5,6,7,8,9,10,11 from admin(表名称)
-    报错注入
-
-    盲注
-
-漏洞成因
-
-部分代码审计中体现
-
-    select *(全部列) from user(表名称) where id(字段) = 1;
-
-测试与防护手段
-
-    黑白名单
-</code></pre><p>LDAP注入</p>
-<p>XSS</p>
-<pre><code>掌握知识
-
-    html css js
-
-分类
-
-    反射型
-
-    DOM型
-
-    存储型
-</code></pre><p>AOSP</p>
-<pre><code>aaa
+存储型
+</code></pre><h3 id="AOSP"><a href="#AOSP" class="headerlink" title="AOSP"></a>AOSP</h3><pre><code>aaa
 
 bbb
 
 ccc
-</code></pre><p>CSP</p>
-<pre><code>aaa
+</code></pre><h3 id="CSP"><a href="#CSP" class="headerlink" title="CSP"></a>CSP</h3><pre><code>aaa
 
 bbb
 
 ccc
-</code></pre><p>OAuth</p>
-<pre><code>aaa
+</code></pre><h3 id="OAuth"><a href="#OAuth" class="headerlink" title="OAuth"></a>OAuth</h3><pre><code>aaa
 
 bbb
 
 ccc
-</code></pre><p>CSRF</p>
-<pre><code>refer
+</code></pre><h3 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h3><pre><code>refer
 
 token
 
 验证码
-</code></pre><p>SSRF</p>
-<pre><code>aaa
+</code></pre><h3 id="SSRF"><a href="#SSRF" class="headerlink" title="SSRF"></a>SSRF</h3><pre><code>aaa
 
 bbb
 
 ccc
-</code></pre><p>命令执行</p>
-<pre><code>aaa
+</code></pre><h3 id="命令执行"><a href="#命令执行" class="headerlink" title="命令执行"></a>命令执行</h3><pre><code>aaa
 
 bbb
 
 ccc
-</code></pre><p>反序列化</p>
-<pre><code>aaa
+</code></pre><h3 id="反序列化"><a href="#反序列化" class="headerlink" title="反序列化"></a>反序列化</h3><pre><code>aaa
 
 bbb
 
 ccc
-</code></pre><p>越权</p>
-<pre><code>aaa
+</code></pre><h3 id="越权"><a href="#越权" class="headerlink" title="越权"></a>越权</h3><pre><code>aaa
 
 bbb
 
 ccc
-</code></pre><p>上传</p>
-<pre><code>aaa
+</code></pre><h3 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h3><pre><code>aaa
 
 bbb
 
 ccc
-</code></pre><p>逻辑漏洞</p>
-<pre><code>支付漏洞
-
-订单
+</code></pre><h3 id="逻辑漏洞"><a href="#逻辑漏洞" class="headerlink" title="逻辑漏洞"></a>逻辑漏洞</h3><h4 id="支付漏洞"><a href="#支付漏洞" class="headerlink" title="支付漏洞"></a>支付漏洞</h4><pre><code>订单
     选择商品价格/商品数量/商品为1或0,竞争购买或能否成功/订单金额
 结算
     优惠打折/订单金额/支付方式/虚假订单
@@ -454,160 +421,68 @@ ccc
     伪造第三方确认/付款信息窃取
 退货款
     绕过客户确认
-
-密码重置
-
-重置方式
-    手机验证码
-    邮箱
-    密保
-    自动生成
-    找回链接
+</code></pre><h4 id="密码重置"><a href="#密码重置" class="headerlink" title="密码重置"></a>密码重置</h4><pre><code>重置方式
+手机验证码
+邮箱
+密保
+自动生成
+找回链接
 可能产生非预期逻辑
-    认证凭证暴力破解
-    认证凭证回显
-    认证凭证重复使用
-    重新绑定
-    用户身份特性认证
-    服务器认证
-    密码找回流程
-
-任意用户登陆
-
-    空密码
-    身份替换
-    认证凭证篡改
-
-认证缺陷（弱认证、认证凭据获取）
-
-    弱验证
-    空验证
-    认证凭证有效性&amp;唯一性
-
-接口枚举
-
-    业务接口没有做验证或机制缺陷,枚举
-    撞库
-    订单、优惠券等遍历
-
-越权（有条件越权：空值）
-
-    普通越权
-    未授权访问(登陆凭证验证)
-    绕过授权模式(参数构造)
-</code></pre><p>掌握知识</p>
-<pre><code>开发流程/业务逻辑
-</code></pre><p>渗透基础知识</p>
-<pre><code>信息收集
+认证凭证暴力破解
+认证凭证回显
+认证凭证重复使用
+重新绑定
+用户身份特性认证
+服务器认证
+密码找回流程
+</code></pre><h4 id="任意用户登陆"><a href="#任意用户登陆" class="headerlink" title="任意用户登陆"></a>任意用户登陆</h4><pre><code>空密码
+身份替换
+认证凭证篡改
+</code></pre><h4 id="认证缺陷（弱认证、认证凭据获取）"><a href="#认证缺陷（弱认证、认证凭据获取）" class="headerlink" title="认证缺陷（弱认证、认证凭据获取）"></a>认证缺陷（弱认证、认证凭据获取）</h4><pre><code>弱验证
+空验证
+认证凭证有效性&amp;唯一性
+</code></pre><h4 id="接口枚举"><a href="#接口枚举" class="headerlink" title="接口枚举"></a>接口枚举</h4><pre><code>业务接口没有做验证或机制缺陷,枚举
+撞库
+订单、优惠券等遍历
+</code></pre><h4 id="越权（有条件越权：空值）"><a href="#越权（有条件越权：空值）" class="headerlink" title="越权（有条件越权：空值）"></a>越权（有条件越权：空值）</h4><pre><code>普通越权
+未授权访问(登陆凭证验证)
+绕过授权模式(参数构造)
+</code></pre><h3 id="掌握知识-2"><a href="#掌握知识-2" class="headerlink" title="掌握知识"></a>掌握知识</h3><pre><code>开发流程/业务逻辑
+</code></pre><h3 id="渗透基础知识"><a href="#渗透基础知识" class="headerlink" title="渗透基础知识"></a>渗透基础知识</h3><pre><code>####信息收集
 
 ip 端口 服务 web应用 
-</code></pre><p>后渗透测试</p>
-<pre><code>内网渗透
-
-
-backdoor
-
-
-rootkit
-
-bootkit
-</code></pre><p>android/ios 移动安全</p>
-<p>burpsuite fildder Charles wireshark</p>
-<p>代码审计</p>
-<p>php</p>
-<p>思路</p>
-<p>关键函数<br>echo\print\printf\vprrint\&lt;%=test%&gt;<br>$_SERVER\$_GET\$POST\$_COOKIE\$REQUEST\$<em>FILE\$ENV\$HTTP</em>*<br>system\exec\passthru\shell_exec\ppen\proc_open\pcentl_exec<br>include\include_once\require\require_onec\show_source\highlight_file\readfile\file_get_contents\fopen\file_get_contents\fopen\file\<br>eval\preg_replace+/e\assert\call_user_func\call_user_func_array\create_function<br>insert\delete\update\select<br>copy\rmdir\unlink\delete\fwrite\chmod\fgetc\fgetcsv\fgets\getss\file\file_get_contens\fread\readfile\ftruncate\function_put_contents\fputcsv\fputs\<br>move_upload_file<br>parse_str\mb_parse_str\import_request_variables</p>
+</code></pre><h2 id="后渗透测试"><a href="#后渗透测试" class="headerlink" title="后渗透测试"></a>后渗透测试</h2><h3 id="内网渗透"><a href="#内网渗透" class="headerlink" title="内网渗透"></a>内网渗透</h3><h3 id="backdoor"><a href="#backdoor" class="headerlink" title="backdoor"></a>backdoor</h3><h3 id="rootkit"><a href="#rootkit" class="headerlink" title="rootkit"></a>rootkit</h3><h3 id="bootkit"><a href="#bootkit" class="headerlink" title="bootkit"></a>bootkit</h3><h2 id="android-ios-移动安全"><a href="#android-ios-移动安全" class="headerlink" title="android/ios 移动安全"></a>android/ios 移动安全</h2><h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>burpsuite fildder Charles wireshark</p>
+<h2 id="代码审计"><a href="#代码审计" class="headerlink" title="代码审计"></a>代码审计</h2><h3 id="php审计"><a href="#php审计" class="headerlink" title="php审计"></a>php审计</h3><h4 id="关键函数"><a href="#关键函数" class="headerlink" title="关键函数"></a>关键函数</h4><p>echo\print\printf\vprrint\&lt;%=test%&gt;<br>$_SERVER\$_GET\$POST\$_COOKIE\$REQUEST\$<em>FILE\$ENV\$HTTP</em>*<br>system\exec\passthru\shell_exec\ppen\proc_open\pcentl_exec<br>include\include_once\require\require_onec\show_source\highlight_file\readfile\file_get_contents\fopen\file_get_contents\fopen\file\<br>eval\preg_replace+/e\assert\call_user_func\call_user_func_array\create_function<br>insert\delete\update\select<br>copy\rmdir\unlink\delete\fwrite\chmod\fgetc\fgetcsv\fgets\getss\file\file_get_contens\fread\readfile\ftruncate\function_put_contents\fputcsv\fputs\<br>move_upload_file<br>parse_str\mb_parse_str\import_request_variables</p>
 <p>cookie\session\动态函数\编码\加解密\随机函数\confirm_phpdoc_compiled\mssql_pconnect/mssql_connect</p>
-<p>java</p>
-<p>思路</p>
-<p>关键函数</p>
-<p>python</p>
-<p>思路</p>
-<p>关键函数</p>
-<p>甲方安全</p>
-<pre><code>aaa
+<h3 id="java审计"><a href="#java审计" class="headerlink" title="java审计"></a>java审计</h3><h4 id="关键函数-1"><a href="#关键函数-1" class="headerlink" title="关键函数"></a>关键函数</h4><h3 id="python"><a href="#python" class="headerlink" title="python"></a>python</h3><h4 id="关键函数-2"><a href="#关键函数-2" class="headerlink" title="关键函数"></a>关键函数</h4><h2 id="甲方安全"><a href="#甲方安全" class="headerlink" title="甲方安全"></a>甲方安全</h2><pre><code>aaa
 
 bbb
 
 ccc
-</code></pre><p>二进制安全</p>
-<pre><code>掌握知识
-
-
-
-栈溢出
-
-rop
+</code></pre><h2 id="二进制安全"><a href="#二进制安全" class="headerlink" title="二进制安全"></a>二进制安全</h2><h3 id="掌握知识-3"><a href="#掌握知识-3" class="headerlink" title="掌握知识"></a>掌握知识</h3><pre><code>操作系统/计算机网络/计算机组成原理/数据结构与算法/
+cpu\编译器\内存\
+</code></pre><h3 id="常见分类"><a href="#常见分类" class="headerlink" title="常见分类"></a>常见分类</h3><h4 id="栈溢出"><a href="#栈溢出" class="headerlink" title="栈溢出"></a>栈溢出</h4><pre><code>rop
 return
-
-
-堆溢出
-
-
-
-未初始化
-
-
-
-UAF
-
-内存破坏漏洞,通常存在于浏览器.
-
-
-条件竞争
-
-
-
-
-exploit
-
-
-
-shellcode
-
-
-
-掌握知识
-</code></pre><p>cpu\编译器\内存\</p>
-<p>游戏安全</p>
-<pre><code>脚本
-
+</code></pre><h4 id="堆溢出"><a href="#堆溢出" class="headerlink" title="堆溢出"></a>堆溢出</h4><h4 id="未初始化"><a href="#未初始化" class="headerlink" title="未初始化"></a>未初始化</h4><h4 id="UAF"><a href="#UAF" class="headerlink" title="UAF"></a>UAF</h4><pre><code>内存破坏漏洞,通常存在于浏览器.
+</code></pre><h4 id="条件竞争"><a href="#条件竞争" class="headerlink" title="条件竞争"></a>条件竞争</h4><h3 id="exploit"><a href="#exploit" class="headerlink" title="exploit"></a>exploit</h3><h3 id="shellcode"><a href="#shellcode" class="headerlink" title="shellcode"></a>shellcode</h3><h2 id="游戏安全"><a href="#游戏安全" class="headerlink" title="游戏安全"></a>游戏安全</h2><pre><code>脚本
 
 内存
 
-
 封包
 </code></pre><p>黑灰色产业</p>
-<pre><code>aaa
-
-bbb
-
-ccc
-
-aaa
-
-bbb
-
-ccc
-</code></pre><p>DOOS</p>
+<p>黑帽seo</p>
+<p>薅羊毛</p>
+<p>卡</p>
+<p>流量</p>
+<p>个人信息</p>
+<p>DDOS</p>
+<p>流量作弊</p>
 <pre><code>aaa
 
 bbb
 
 ccc
 </code></pre><p>社工</p>
-<pre><code>aaa
-
-bbb
-
-ccc
-</code></pre><p>薅羊毛</p>
-<pre><code>aaa
-
-bbb
-
-ccc
-</code></pre><p>seo</p>
 <pre><code>aaa
 
 bbb
@@ -631,6 +506,10 @@ ccc
         <div class="post-tags">
           
             <a href="/tags/security/" rel="tag"># security</a>
+          
+            <a href="/tags/cyber-security/" rel="tag"># cyber security</a>
+          
+            <a href="/tags/security-note/" rel="tag"># security note</a>
           
         </div>
       
@@ -754,7 +633,7 @@ ccc
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -809,7 +688,7 @@ ccc
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#以下文章均单从攻防上考虑，安全问题与现实情况，如何把安全实际落地可能相对更复杂"><span class="nav-number">1.</span> <span class="nav-text">以下文章均单从攻防上考虑，安全问题与现实情况，如何把安全实际落地可能相对更复杂</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#以下文章均单从攻防上考虑，安全问题与现实情况，如何把安全实际落地可能相对更复杂"><span class="nav-number">1.</span> <span class="nav-text">以下文章均单从攻防上考虑，安全问题与现实情况，如何把安全实际落地可能相对更复杂</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web安全"><span class="nav-number"></span> <span class="nav-text">Web安全</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL注入"><span class="nav-number"></span> <span class="nav-text">SQL注入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#掌握知识"><span class="nav-number"></span> <span class="nav-text">掌握知识</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分类"><span class="nav-number"></span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#漏洞成因"><span class="nav-number"></span> <span class="nav-text">漏洞成因</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部分代码审计中体现"><span class="nav-number"></span> <span class="nav-text">部分代码审计中体现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试与防护手段"><span class="nav-number"></span> <span class="nav-text">测试与防护手段</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LDAP注入"><span class="nav-number"></span> <span class="nav-text">LDAP注入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XSS"><span class="nav-number"></span> <span class="nav-text">XSS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#掌握知识-1"><span class="nav-number"></span> <span class="nav-text">掌握知识</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分类-1"><span class="nav-number"></span> <span class="nav-text">分类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AOSP"><span class="nav-number"></span> <span class="nav-text">AOSP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSP"><span class="nav-number"></span> <span class="nav-text">CSP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OAuth"><span class="nav-number"></span> <span class="nav-text">OAuth</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSRF"><span class="nav-number"></span> <span class="nav-text">CSRF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SSRF"><span class="nav-number"></span> <span class="nav-text">SSRF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令执行"><span class="nav-number"></span> <span class="nav-text">命令执行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反序列化"><span class="nav-number"></span> <span class="nav-text">反序列化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#越权"><span class="nav-number"></span> <span class="nav-text">越权</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上传"><span class="nav-number"></span> <span class="nav-text">上传</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑漏洞"><span class="nav-number"></span> <span class="nav-text">逻辑漏洞</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#支付漏洞"><span class="nav-number"></span> <span class="nav-text">支付漏洞</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#密码重置"><span class="nav-number"></span> <span class="nav-text">密码重置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#任意用户登陆"><span class="nav-number"></span> <span class="nav-text">任意用户登陆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#认证缺陷（弱认证、认证凭据获取）"><span class="nav-number"></span> <span class="nav-text">认证缺陷（弱认证、认证凭据获取）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接口枚举"><span class="nav-number"></span> <span class="nav-text">接口枚举</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#越权（有条件越权：空值）"><span class="nav-number"></span> <span class="nav-text">越权（有条件越权：空值）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#掌握知识-2"><span class="nav-number"></span> <span class="nav-text">掌握知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#渗透基础知识"><span class="nav-number"></span> <span class="nav-text">渗透基础知识</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后渗透测试"><span class="nav-number"></span> <span class="nav-text">后渗透测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内网渗透"><span class="nav-number"></span> <span class="nav-text">内网渗透</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#backdoor"><span class="nav-number"></span> <span class="nav-text">backdoor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rootkit"><span class="nav-number"></span> <span class="nav-text">rootkit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bootkit"><span class="nav-number"></span> <span class="nav-text">bootkit</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#android-ios-移动安全"><span class="nav-number"></span> <span class="nav-text">android/ios 移动安全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工具"><span class="nav-number"></span> <span class="nav-text">工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码审计"><span class="nav-number"></span> <span class="nav-text">代码审计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#php审计"><span class="nav-number"></span> <span class="nav-text">php审计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#关键函数"><span class="nav-number"></span> <span class="nav-text">关键函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java审计"><span class="nav-number"></span> <span class="nav-text">java审计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#关键函数-1"><span class="nav-number"></span> <span class="nav-text">关键函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python"><span class="nav-number"></span> <span class="nav-text">python</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#关键函数-2"><span class="nav-number"></span> <span class="nav-text">关键函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#甲方安全"><span class="nav-number"></span> <span class="nav-text">甲方安全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二进制安全"><span class="nav-number"></span> <span class="nav-text">二进制安全</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#掌握知识-3"><span class="nav-number"></span> <span class="nav-text">掌握知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见分类"><span class="nav-number"></span> <span class="nav-text">常见分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#栈溢出"><span class="nav-number"></span> <span class="nav-text">栈溢出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#堆溢出"><span class="nav-number"></span> <span class="nav-text">堆溢出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#未初始化"><span class="nav-number"></span> <span class="nav-text">未初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UAF"><span class="nav-number"></span> <span class="nav-text">UAF</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#条件竞争"><span class="nav-number"></span> <span class="nav-text">条件竞争</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exploit"><span class="nav-number"></span> <span class="nav-text">exploit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shellcode"><span class="nav-number"></span> <span class="nav-text">shellcode</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#游戏安全"><span class="nav-number"></span> <span class="nav-text">游戏安全</span></a></div>
             
 
           </div>
