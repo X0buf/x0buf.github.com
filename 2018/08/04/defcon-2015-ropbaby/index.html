@@ -93,7 +93,7 @@
 <meta property="og:image" content="http://yoursite.com/images/defcon2015_4.png">
 <meta property="og:image" content="http://yoursite.com/images/defcon2015_5.png">
 <meta property="og:image" content="http://yoursite.com/images/defcon2015_6.png">
-<meta property="og:image" content="http://yoursite.com/images/efcon2015_7.png">
+<meta property="og:image" content="http://yoursite.com/images/defcon2015_7.png">
 <meta property="og:image" content="http://yoursite.com/images/defcon2015_8.png">
 <meta property="og:image" content="http://yoursite.com/images/defcon2015_9.png">
 <meta property="og:image" content="http://yoursite.com/images/defcon2015_10.png">
@@ -104,7 +104,7 @@
 <meta property="og:image" content="http://yoursite.com/images/defcon2015_15.png">
 <meta property="og:image" content="http://yoursite.com/images/defcon2015_16.png">
 <meta property="og:image" content="http://yoursite.com/images/defcon2015_20.png">
-<meta property="og:updated_time" content="2018-08-06T06:27:00.061Z">
+<meta property="og:updated_time" content="2018-08-06T06:34:04.237Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="defcon 2015 ropbaby detailed Analysis">
 <meta name="twitter:description" content="缓冲区溢出">
@@ -382,7 +382,7 @@
 <p><img src="/images/defcon2015_3.png" alt="image"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">功能点3发现崩溃点，buf大于8以上可能造成缓冲区溢出，并生成字符串测试崩溃</span><br></pre></td></tr></table></figure></p>
 <p><img src="/images/defcon2015_4.png" alt="image"><br><img src="/images/defcon2015_5.png" alt="image"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">崩溃在 [#0] 0x555555554eb3 → ret ，如果不在调试器中运行程序会提示段错误．</span><br><span class="line">查看rsp用户空间堆栈指针，要返回的是 bbbbbbbb 非法地址，x64程序前两位需为00</span><br></pre></td></tr></table></figure></p>
 <p><img src="/images/defcon2015_6.png" alt="image"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">尝试改变rip被覆盖的地址</span><br><span class="line">ulimit -c unlimited 核心转储 调试</span><br><span class="line">echo -ne &apos;3\n32\nAAAAAAAABBBBBB\0\0CCCCCCCCDDDDDDDD\n&apos; | ./ropbaby</span><br></pre></td></tr></table></figure></p>
-<p><img src="/images/efcon2015_7.png" alt="image"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">成功改变了rip地址</span><br><span class="line">system地址	0x00007FFFF7E315D0</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/defcon2015_7.png" alt="image"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">成功改变了rip地址</span><br><span class="line">system地址	0x00007FFFF7E315D0</span><br></pre></td></tr></table></figure></p>
 <h2 id="利用分析"><a href="#利用分析" class="headerlink" title="利用分析"></a>利用分析</h2><p>linux_64与linux_86的区别主要有两点：首先是内存地址的范围由32位变成了64位。但是可以使用的内存地址不能大于0x00007fffffffffff，否则会抛出异常。其次是函数参数的传递方式发生了改变，x86中参数都是保存在栈上,但在x64中的前六个参数依次保存在RDI, RSI, RDX, RCX, R8和 R9中，如果还有更多的参数的话才会保存在栈上。<br>x86-64的GCC调用约定将第一个参数放在寄存器rdi中．<br>控制rip地址 echo -ne ‘3\n32\nAAAAAAAABBBBBB\x00\x00CCCCCCCCDDDDDDDD\n’ | ./ropbaby</p>
 <h3 id="获得rop地址"><a href="#获得rop地址" class="headerlink" title="获得rop地址:"></a>获得rop地址:</h3><p>ldd ropbaby 获得程序都调用哪些so文件,其中是否有存在 pop rdi ; ret指令<br>方式1： python ROPgadget.py –binary /lib/x86_64-linux-gnu/libc-2.27.so –only “pop rdi | ret”<br>方式２：./rp-osx-x64 –unique -f /lib/x86_64-linux-gnu/libc-2.27.so -r 1 | grep “pop rdi” </p>
 <h4 id="找到rop链偏移地址-0x00000000000224df-pop-rdi-ret"><a href="#找到rop链偏移地址-0x00000000000224df-pop-rdi-ret" class="headerlink" title="找到rop链偏移地址 0x00000000000224df : pop rdi ; ret"></a>找到rop链偏移地址 0x00000000000224df : pop rdi ; ret</h4><p>gadget_address 0x7ffff7e53aaf = 功能2 给出system_address 0x00007FFFF7E315D0 + 找到的 pop rdi ; ret 偏移地址 = 0x00000000000224df</p>
