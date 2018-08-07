@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="expbuf">
 <meta property="og:description" content="安全笔记">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-06T07:24:47.434Z">
+<meta property="og:updated_time" content="2018-08-07T04:01:49.693Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cyber Seccurity Summarize">
 <meta name="twitter:description" content="安全笔记">
@@ -359,9 +359,8 @@
         <p>以下文章均单从攻防上考虑，安全问题与现实情况，如何把安全实际落地可能相对更复杂</p>
 <hr>
 <h2 id="Web安全"><a href="#Web安全" class="headerlink" title="Web安全"></a>Web安全</h2><h3 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h3><h4 id="掌握知识"><a href="#掌握知识" class="headerlink" title="掌握知识"></a>掌握知识</h4><pre><code>数据库操作基本语句
-select drop update insert
-</code></pre><h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><pre><code>  联合查询
-    union select 1,2,3,4,5,6,7,8,9,10,11 from admin(表名)
+INSERT，DELETE，UPDATE和SELECT
+</code></pre><h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><pre><code>联合查询union select 1,2,3,4,5,6,7,8,9,10,11 from admin(表名)
 报错注入
 盲注
 </code></pre><h4 id="漏洞成因"><a href="#漏洞成因" class="headerlink" title="漏洞成因"></a>漏洞成因</h4><pre><code>在当不可信的数据作为命令或者查询语句的一部分，被发送给解释器。发送的恶意数据可以欺骗解释器，以执行计划外的命令或者在未被恰当授权时访问数据。
@@ -370,47 +369,29 @@ select drop update insert
 过滤
     黑白名单
 </code></pre><h3 id="LDAP注入"><a href="#LDAP注入" class="headerlink" title="LDAP注入"></a>LDAP注入</h3><h3 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h3><h4 id="掌握知识-1"><a href="#掌握知识-1" class="headerlink" title="掌握知识"></a>掌握知识</h4><pre><code>html css js
-</code></pre><h4 id="分类-1"><a href="#分类-1" class="headerlink" title="分类"></a>分类</h4><pre><code>    反射型 
-DOM型    
-    存储型
+</code></pre><h4 id="分类-1"><a href="#分类-1" class="headerlink" title="分类"></a>分类</h4><pre><code>反射型 
+DOM型
+存储型
 </code></pre><h3 id="AOSP"><a href="#AOSP" class="headerlink" title="AOSP"></a>AOSP</h3><pre><code>aaa
-aaa
-aaa
 </code></pre><h3 id="CSP"><a href="#CSP" class="headerlink" title="CSP"></a>CSP</h3><pre><code>aaa
-aaa
-aaa
 </code></pre><h3 id="OAuth"><a href="#OAuth" class="headerlink" title="OAuth"></a>OAuth</h3><pre><code>aaa
-aaa
-aaa
 </code></pre><h3 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h3><pre><code>refer
 token
 验证码
 </code></pre><h3 id="SSRF"><a href="#SSRF" class="headerlink" title="SSRF"></a>SSRF</h3><pre><code>aaa
-aaa
-aaa
 </code></pre><h3 id="命令执行"><a href="#命令执行" class="headerlink" title="命令执行"></a>命令执行</h3><pre><code>aaa
-aaa
-aaa
 </code></pre><h3 id="反序列化"><a href="#反序列化" class="headerlink" title="反序列化"></a>反序列化</h3><pre><code>aaa
-aaa
-aaa
 </code></pre><h3 id="越权"><a href="#越权" class="headerlink" title="越权"></a>越权</h3><pre><code>aaa
-aaa
-aaa
 </code></pre><h3 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h3><pre><code>aaa
-aaa
-aaa
 </code></pre><h3 id="逻辑漏洞"><a href="#逻辑漏洞" class="headerlink" title="逻辑漏洞"></a>逻辑漏洞</h3><pre><code>aaa
-aaa
-aaa
 </code></pre><h4 id="支付漏洞"><a href="#支付漏洞" class="headerlink" title="支付漏洞"></a>支付漏洞</h4><pre><code>订单
-    选择商品价格/商品数量/商品为1或0,竞争购买或能否成功/订单金额
+选择商品价格/商品数量/商品为1或0,竞争购买或能否成功/订单金额
 结算
-    优惠打折/订单金额/支付方式/虚假订单
+优惠打折/订单金额/支付方式/虚假订单
 支付
-    伪造第三方确认/付款信息窃取
+伪造第三方确认/付款信息窃取
 退货款
-    绕过客户确认
+绕过客户确认
 </code></pre><h4 id="密码重置"><a href="#密码重置" class="headerlink" title="密码重置"></a>密码重置</h4><pre><code>重置方式
 手机验证码
 邮箱
@@ -431,7 +412,7 @@ aaa
 </code></pre><h4 id="认证缺陷（弱认证、认证凭据获取）"><a href="#认证缺陷（弱认证、认证凭据获取）" class="headerlink" title="认证缺陷（弱认证、认证凭据获取）"></a>认证缺陷（弱认证、认证凭据获取）</h4><pre><code>弱验证
 空验证
 认证凭证有效性&amp;唯一性
-</code></pre><h4 id="接口枚举"><a href="#接口枚举" class="headerlink" title="接口枚举"></a>接口枚举</h4><pre><code>业务接口没有做验证或机制缺陷,枚举
+</code></pre><h4 id="接口枚举"><a href="#接口枚举" class="headerlink" title="接口枚举"></a>接口枚举</h4><pre><code> 业务接口没有做验证或机制缺陷,枚举
 撞库
 订单、优惠券等遍历
 </code></pre><h4 id="越权（有条件越权：空值）"><a href="#越权（有条件越权：空值）" class="headerlink" title="越权（有条件越权：空值）"></a>越权（有条件越权：空值）</h4><pre><code>普通越权
@@ -439,19 +420,22 @@ aaa
 绕过授权模式(参数构造)
 </code></pre><h3 id="掌握知识-2"><a href="#掌握知识-2" class="headerlink" title="掌握知识"></a>掌握知识</h3><pre><code>开发流程/业务逻辑
 </code></pre><h3 id="渗透基础知识"><a href="#渗透基础知识" class="headerlink" title="渗透基础知识"></a>渗透基础知识</h3><pre><code>####信息收集
-
 ip 端口 服务 web应用 
-</code></pre><h2 id="后渗透测试"><a href="#后渗透测试" class="headerlink" title="后渗透测试"></a>后渗透测试</h2><h3 id="内网渗透"><a href="#内网渗透" class="headerlink" title="内网渗透"></a>内网渗透</h3><h3 id="backdoor"><a href="#backdoor" class="headerlink" title="backdoor"></a>backdoor</h3><h3 id="rootkit"><a href="#rootkit" class="headerlink" title="rootkit"></a>rootkit</h3><h3 id="bootkit"><a href="#bootkit" class="headerlink" title="bootkit"></a>bootkit</h3><h2 id="android-ios-移动安全"><a href="#android-ios-移动安全" class="headerlink" title="android/ios 移动安全"></a>android/ios 移动安全</h2><h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><h3 id="漏洞扫描"><a href="#漏洞扫描" class="headerlink" title="漏洞扫描"></a>漏洞扫描</h3><p>Nusses<br>Acunetix Web Vulnerability Scanner(简称AWVS)</p>
-<h3 id="capature"><a href="#capature" class="headerlink" title="capature"></a>capature</h3><p>burpsuite<br>wireshark<br>fildder<br>Charles</p>
-<h3 id="browser-plug-in"><a href="#browser-plug-in" class="headerlink" title="browser plug-in"></a>browser plug-in</h3><p>no-script<br>proxy<br>user-agent</p>
-<h3 id="code-review"><a href="#code-review" class="headerlink" title="code review"></a>code review</h3><p>Fortify<br>layer<br>RIPS </p>
-<h2 id="代码审计"><a href="#代码审计" class="headerlink" title="代码审计"></a>代码审计</h2><h3 id="php审计"><a href="#php审计" class="headerlink" title="php审计"></a>php审计</h3><h4 id="关键函数"><a href="#关键函数" class="headerlink" title="关键函数"></a>关键函数</h4><p>echo\print\printf\vprrint\&lt;%=test%&gt;<br>$_SERVER\$_GET\$POST\$_COOKIE\$REQUEST\$<em>FILE\$ENV\$HTTP</em>*<br>system\exec\passthru\shell_exec\ppen\proc_open\pcentl_exec<br>include\include_once\require\require_onec\show_source\highlight_file\readfile\file_get_contents\fopen\file_get_contents\fopen\file\<br>eval\preg_replace+/e\assert\call_user_func\call_user_func_array\create_function<br>insert\delete\update\select<br>copy\rmdir\unlink\delete\fwrite\chmod\fgetc\fgetcsv\fgets\getss\file\file_get_contens\fread\readfile\ftruncate\function_put_contents\fputcsv\fputs\<br>move_upload_file<br>parse_str\mb_parse_str\import_request_variables</p>
+</code></pre><h2 id="后渗透测试"><a href="#后渗透测试" class="headerlink" title="后渗透测试"></a>后渗透测试</h2><h3 id="内网渗透"><a href="#内网渗透" class="headerlink" title="内网渗透"></a>内网渗透</h3><h3 id="backdoor"><a href="#backdoor" class="headerlink" title="backdoor"></a>backdoor</h3><h3 id="rootkit"><a href="#rootkit" class="headerlink" title="rootkit"></a>rootkit</h3><h3 id="bootkit"><a href="#bootkit" class="headerlink" title="bootkit"></a>bootkit</h3><h2 id="android-ios-移动安全"><a href="#android-ios-移动安全" class="headerlink" title="android/ios 移动安全"></a>android/ios 移动安全</h2><h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><h3 id="漏洞扫描"><a href="#漏洞扫描" class="headerlink" title="漏洞扫描"></a>漏洞扫描</h3><pre><code>Nusses
+Acunetix Web Vulnerability Scanner(简称AWVS)
+</code></pre><h3 id="capature"><a href="#capature" class="headerlink" title="capature"></a>capature</h3><pre><code>burpsuite
+</code></pre><p>wireshark<br>    fildder<br>    Charles</p>
+<h3 id="browser-plug-in"><a href="#browser-plug-in" class="headerlink" title="browser plug-in"></a>browser plug-in</h3><pre><code>no-script
+proxy
+user-agent
+</code></pre><h3 id="code-review"><a href="#code-review" class="headerlink" title="code review"></a>code review</h3><pre><code>Fortify 
+layer
+RIPS 
+</code></pre><h2 id="代码审计"><a href="#代码审计" class="headerlink" title="代码审计"></a>代码审计</h2><h3 id="php审计"><a href="#php审计" class="headerlink" title="php审计"></a>php审计</h3><h4 id="关键函数"><a href="#关键函数" class="headerlink" title="关键函数"></a>关键函数</h4><p>echo\print\printf\vprrint\&lt;%=test%&gt;<br>$_SERVER\$_GET\$POST\$_COOKIE\$REQUEST\$<em>FILE\$ENV\$HTTP</em>*<br>system\exec\passthru\shell_exec\ppen\proc_open\pcentl_exec<br>include\include_once\require\require_onec\show_source\highlight_file\readfile\file_get_contents\fopen\file_get_contents\fopen\file\<br>eval\preg_replace+/e\assert\call_user_func\call_user_func_array\create_function<br>insert\delete\update\select<br>copy\rmdir\unlink\delete\fwrite\chmod\fgetc\fgetcsv\fgets\getss\file\file_get_contens\fread\readfile\ftruncate\function_put_contents\fputcsv\fputs\<br>move_upload_file<br>parse_str\mb_parse_str\import_request_variables</p>
 <p>cookie\session\动态函数\编码\加解密\随机函数\confirm_phpdoc_compiled\mssql_pconnect/mssql_connect</p>
 <h3 id="java审计"><a href="#java审计" class="headerlink" title="java审计"></a>java审计</h3><h4 id="关键函数-1"><a href="#关键函数-1" class="headerlink" title="关键函数"></a>关键函数</h4><h3 id="python"><a href="#python" class="headerlink" title="python"></a>python</h3><h4 id="关键函数-2"><a href="#关键函数-2" class="headerlink" title="关键函数"></a>关键函数</h4><h2 id="甲方安全"><a href="#甲方安全" class="headerlink" title="甲方安全"></a>甲方安全</h2><pre><code>aaa
-aaa
-aaa
 </code></pre><h2 id="二进制安全"><a href="#二进制安全" class="headerlink" title="二进制安全"></a>二进制安全</h2><h3 id="掌握知识-3"><a href="#掌握知识-3" class="headerlink" title="掌握知识"></a>掌握知识</h3><pre><code>操作系统/计算机网络/计算机组成原理/数据结构与算法/
-cpu\编译器\内存\
+    cpu\编译器\内存\
 </code></pre><h3 id="常见分类"><a href="#常见分类" class="headerlink" title="常见分类"></a>常见分类</h3><h4 id="栈溢出"><a href="#栈溢出" class="headerlink" title="栈溢出"></a>栈溢出</h4><pre><code>rop
 return
 </code></pre><h4 id="堆溢出"><a href="#堆溢出" class="headerlink" title="堆溢出"></a>堆溢出</h4><h4 id="未初始化"><a href="#未初始化" class="headerlink" title="未初始化"></a>未初始化</h4><h4 id="UAF"><a href="#UAF" class="headerlink" title="UAF"></a>UAF</h4><pre><code>内存破坏漏洞,通常存在于浏览器.
