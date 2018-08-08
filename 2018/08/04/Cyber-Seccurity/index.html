@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="expbuf">
 <meta property="og:description" content="安全笔记">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-07T04:01:49.693Z">
+<meta property="og:updated_time" content="2018-08-07T08:26:05.646Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cyber Seccurity Summarize">
 <meta name="twitter:description" content="安全笔记">
@@ -369,9 +369,12 @@ INSERT，DELETE，UPDATE和SELECT
 过滤
     黑白名单
 </code></pre><h3 id="LDAP注入"><a href="#LDAP注入" class="headerlink" title="LDAP注入"></a>LDAP注入</h3><h3 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h3><h4 id="掌握知识-1"><a href="#掌握知识-1" class="headerlink" title="掌握知识"></a>掌握知识</h4><pre><code>html css js
-</code></pre><h4 id="分类-1"><a href="#分类-1" class="headerlink" title="分类"></a>分类</h4><pre><code>反射型 
+</code></pre><h4 id="分类-1"><a href="#分类-1" class="headerlink" title="分类"></a>分类</h4><pre><code>反射型
+发送包含xss请求，返回数据包中回显XSS代码
 DOM型
+发送包含xss请求，当前返回数据包中回显XSS代码
 存储型
+发送包含xss请求，返回数据包中持久存在XSS代码
 </code></pre><h3 id="AOSP"><a href="#AOSP" class="headerlink" title="AOSP"></a>AOSP</h3><pre><code>aaa
 </code></pre><h3 id="CSP"><a href="#CSP" class="headerlink" title="CSP"></a>CSP</h3><pre><code>aaa
 </code></pre><h3 id="OAuth"><a href="#OAuth" class="headerlink" title="OAuth"></a>OAuth</h3><pre><code>aaa
@@ -662,7 +665,8 @@ return
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1274368427'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1274368427' type='text/javascript'%3E%3C/script%3E"));</script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
@@ -674,7 +678,8 @@ return
 
 
   <div class="powered-by">
-  <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
     Visitor:-<span id="busuanzi_value_site_uv">  | </span>
   </span>
   </div> 
