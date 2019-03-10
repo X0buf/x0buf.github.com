@@ -443,7 +443,7 @@ body {
   min-height: 100%;
 }
 .header-inner {
-  margin: 0 auto;
+  margin: -60px auto;
   padding: 100px 0 70px;
   width: 700px;
 }
