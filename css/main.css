@@ -443,7 +443,7 @@ body {
   min-height: 100%;
 }
 .header-inner {
-  margin: -60px auto;
+  margin: 0 auto;
   padding: 100px 0 70px;
   width: 700px;
 }
@@ -1822,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #5cdb3e;
+  background: #83acff;
 }
 .links-of-blogroll {
   font-size: 13px;
