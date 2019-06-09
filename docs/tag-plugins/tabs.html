@@ -1,0 +1,362 @@
+<hr>
+<p>title: Tabs</p>
+<h2 id="description-NexT-User-Docs-–-NexT-Supported-Tags-–-Tabs"><a href="#description-NexT-User-Docs-–-NexT-Supported-Tags-–-Tabs" class="headerlink" title="description: NexT User Docs – NexT Supported Tags – Tabs"></a>description: NexT User Docs – NexT Supported Tags – Tabs</h2><h3 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h3><p>```yml next/_config.yml<br>tabs:<br>  enable: true<br>  transition:<br>    tabs: false<br>    labels: true<br>  border_radius: 0</p>
+<pre><code>
+### Usage
+
+```md tabs.js
+{% tabs Unique name, [index] %}
+&lt;!-- tab [Tab caption] [@icon] --&gt;
+Any content (support inline tags too).
+&lt;!-- endtab --&gt;
+{% endtabs %}
+
+Unique name   : Unique name of tabs block tag without comma.
+                Will be used in #id&apos;s as prefix for each tab with their index numbers.
+                If there are whitespaces in name, for generate #id all whitespaces will replaced by dashes.
+                Only for current url of post/page must be unique!
+[index]       : Index number of active tab.
+                If not specified, first tab (1) will be selected.
+                If index is -1, no tab will be selected. It&apos;s will be something like spoiler.
+                Optional parameter.
+[Tab caption] : Caption of current tab.
+                If not caption specified, unique name with tab index suffix will be used as caption of tab.
+                If not caption specified, but specified icon, caption will empty.
+                Optional parameter.
+[@icon]       : FontAwesome icon name (without &apos;fa-&apos; at the begining).
+                Can be specified with or without space; e.g. &apos;Tab caption @icon&apos; similar to &apos;Tab caption@icon&apos;.
+                Optional parameter.
+</code></pre><h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><pre><code class="md">{% tabs First unique name %}
+<span class="xml"><span class="comment">&lt;!-- tab --&gt;</span></span>
+<span class="strong">**This is Tab 1.**</span>
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+
+<span class="xml"><span class="comment">&lt;!-- tab --&gt;</span></span>
+<span class="strong">**This is Tab 2.**</span>
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+
+<span class="xml"><span class="comment">&lt;!-- tab --&gt;</span></span>
+<span class="strong">**This is Tab 3.**</span>
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+{% endtabs %}
+</code></pre>
+<p>{% tabs First unique name %}<br><!-- tab --><br><strong>This is Tab 1.</strong><br><!-- endtab --></p>
+<!-- tab -->
+<p><strong>This is Tab 2.</strong><br><!-- endtab --></p>
+<!-- tab -->
+<p><strong>This is Tab 3.</strong><br><!-- endtab --><br>{% endtabs %}</p>
+<h4 id="Tabs-with-3rd-tab-selected"><a href="#Tabs-with-3rd-tab-selected" class="headerlink" title="Tabs with 3rd tab selected"></a>Tabs with 3rd tab selected</h4><pre><code class="md">{% tabs Second unique name, 3 %}
+<span class="xml"><span class="comment">&lt;!-- tab --&gt;</span></span>
+<span class="strong">**This is Tab 1.**</span>
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+
+<span class="xml"><span class="comment">&lt;!-- tab --&gt;</span></span>
+<span class="strong">**This is Tab 2.**</span>
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+
+<span class="xml"><span class="comment">&lt;!-- tab --&gt;</span></span>
+<span class="strong">**This is Tab 3.**</span>
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+{% endtabs %}
+</code></pre>
+<p>{% tabs Second unique name, 3 %}<br><!-- tab --><br><strong>This is Tab 1.</strong><br><!-- endtab --></p>
+<!-- tab -->
+<p><strong>This is Tab 2.</strong><br><!-- endtab --></p>
+<!-- tab -->
+<p><strong>This is Tab 3.</strong><br><!-- endtab --><br>{% endtabs %}</p>
+<h4 id="Tabs-with-no-tab-selected"><a href="#Tabs-with-no-tab-selected" class="headerlink" title="Tabs with no tab selected"></a>Tabs with no tab selected</h4><pre><code class="md">{% tabs Third unique name, -1 %}
+<span class="xml"><span class="comment">&lt;!-- tab --&gt;</span></span>
+<span class="strong">**This is Tab 1.**</span>
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+
+<span class="xml"><span class="comment">&lt;!-- tab --&gt;</span></span>
+<span class="strong">**This is Tab 2.**</span>
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+
+<span class="xml"><span class="comment">&lt;!-- tab --&gt;</span></span>
+<span class="strong">**This is Tab 3.**</span>
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+{% endtabs %}
+</code></pre>
+<p>{% tabs Third unique name, -1 %}<br><!-- tab --><br><strong>This is Tab 1.</strong><br><!-- endtab --></p>
+<!-- tab -->
+<p><strong>This is Tab 2.</strong><br><!-- endtab --></p>
+<!-- tab -->
+<p><strong>This is Tab 3.</strong><br><!-- endtab --><br>{% endtabs %}</p>
+<h4 id="Tabs-with-custom-labels"><a href="#Tabs-with-custom-labels" class="headerlink" title="Tabs with custom labels"></a>Tabs with custom labels</h4><pre><code class="md">{% tabs Fourth unique name %}
+<span class="xml"><span class="comment">&lt;!-- tab Solution 1 --&gt;</span></span>
+<span class="strong">**This is Tab 1.**</span>
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+
+<span class="xml"><span class="comment">&lt;!-- tab Solution 2 --&gt;</span></span>
+<span class="strong">**This is Tab 2.**</span>
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+
+<span class="xml"><span class="comment">&lt;!-- tab Solution 3 --&gt;</span></span>
+<span class="strong">**This is Tab 3.**</span>
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+{% endtabs %}
+</code></pre>
+<p>{% tabs Fourth unique name %}<br><!-- tab Solution 1 --><br><strong>This is Tab 1.</strong><br><!-- endtab --></p>
+<!-- tab Solution 2 -->
+<p><strong>This is Tab 2.</strong><br><!-- endtab --></p>
+<!-- tab Solution 3 -->
+<p><strong>This is Tab 3.</strong><br><!-- endtab --><br>{% endtabs %}</p>
+<h4 id="Tabs-with-icons-only"><a href="#Tabs-with-icons-only" class="headerlink" title="Tabs with icons only"></a>Tabs with icons only</h4><pre><code class="md">{% tabs Fifth unique name %}
+<span class="xml"><span class="comment">&lt;!-- tab @text-width --&gt;</span></span>
+<span class="strong">**This is Tab 1.**</span>
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+
+<span class="xml"><span class="comment">&lt;!-- tab @amazon --&gt;</span></span>
+<span class="strong">**This is Tab 2.**</span>
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+
+<span class="xml"><span class="comment">&lt;!-- tab @bold --&gt;</span></span>
+<span class="strong">**This is Tab 3.**</span>
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+{% endtabs %}
+</code></pre>
+<p>{% tabs Fifth unique name %}<br><!-- tab @text-width --><br><strong>This is Tab 1.</strong><br><!-- endtab --></p>
+<!-- tab @amazon -->
+<p><strong>This is Tab 2.</strong><br><!-- endtab --></p>
+<!-- tab @bold -->
+<p><strong>This is Tab 3.</strong><br><!-- endtab --><br>{% endtabs %}</p>
+<h4 id="Tabs-with-icons-and-labels"><a href="#Tabs-with-icons-and-labels" class="headerlink" title="Tabs with icons and labels"></a>Tabs with icons and labels</h4><pre><code class="md">{% tabs Sixth unique name %}
+<span class="xml"><span class="comment">&lt;!-- tab Solution 1@text-width --&gt;</span></span>
+<span class="strong">**This is Tab 1.**</span>
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+
+<span class="xml"><span class="comment">&lt;!-- tab Solution 2 @amazon --&gt;</span></span>
+<span class="strong">**This is Tab 2.**</span>
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+
+<span class="xml"><span class="comment">&lt;!-- tab Solution 3@bold --&gt;</span></span>
+<span class="strong">**This is Tab 3.**</span>
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+{% endtabs %}
+</code></pre>
+<p>{% tabs Sixth unique name %}<br><!-- tab Solution 1@text-width --><br><strong>This is Tab 1.</strong><br><!-- endtab --></p>
+<!-- tab Solution 2 @amazon -->
+<p><strong>This is Tab 2.</strong><br><!-- endtab --></p>
+<!-- tab Solution 3@bold -->
+<p><strong>This is Tab 3.</strong><br><!-- endtab --><br>{% endtabs %}</p>
+<h4 id="Tabs-permalinks-test"><a href="#Tabs-permalinks-test" class="headerlink" title="Tabs permalinks test"></a>Tabs permalinks test</h4><pre><code class="md">Permalink for &gt; [<span class="string">Tab one</span>](<span class="link">#tab-one</span>).
+Permalink for &gt; [<span class="string">Tab one 1</span>](<span class="link">#tab-one-1</span>).
+Permalink for &gt; [<span class="string">Tab one 2</span>](<span class="link">#tab-one-2</span>).
+Permalink for &gt; [<span class="string">Tab one 3</span>](<span class="link">#tab-one-3</span>).
+
+Permalink for &gt; [<span class="string">Tab two</span>](<span class="link">#tab-two</span>).
+Permalink for &gt; [<span class="string">Tab two 1</span>](<span class="link">#tab-two-1</span>).
+Permalink for &gt; [<span class="string">Tab two 2</span>](<span class="link">#tab-two-2</span>).
+Permalink for &gt; [<span class="string">Tab two 3</span>](<span class="link">#tab-two-3</span>).
+
+{% tabs Tab one %}
+<span class="xml"><span class="comment">&lt;!-- tab --&gt;</span></span>
+<span class="strong">**This is Tab 1.**</span>
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+
+<span class="xml"><span class="comment">&lt;!-- tab --&gt;</span></span>
+<span class="strong">**This is Tab 2.**</span>
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+
+<span class="xml"><span class="comment">&lt;!-- tab --&gt;</span></span>
+<span class="strong">**This is Tab 3.**</span>
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+{% endtabs %}
+
+{% tabs Tab two %}
+<span class="xml"><span class="comment">&lt;!-- tab --&gt;</span></span>
+<span class="strong">**This is Tab 1.**</span>
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+
+<span class="xml"><span class="comment">&lt;!-- tab --&gt;</span></span>
+<span class="strong">**This is Tab 2.**</span>
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+
+<span class="xml"><span class="comment">&lt;!-- tab --&gt;</span></span>
+<span class="strong">**This is Tab 3.**</span>
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+{% endtabs %}
+</code></pre>
+<p>Permalink for &gt; <a href="#tab-one">Tab one</a>.<br>Permalink for &gt; <a href="#tab-one-1">Tab one 1</a>.<br>Permalink for &gt; <a href="#tab-one-2">Tab one 2</a>.<br>Permalink for &gt; <a href="#tab-one-3">Tab one 3</a>.</p>
+<p>Permalink for &gt; <a href="#tab-two">Tab two</a>.<br>Permalink for &gt; <a href="#tab-two-1">Tab two 1</a>.<br>Permalink for &gt; <a href="#tab-two-2">Tab two 2</a>.<br>Permalink for &gt; <a href="#tab-two-3">Tab two 3</a>.</p>
+<p>{% tabs Tab one %}<br><!-- tab --><br><strong>This is Tab 1.</strong><br><!-- endtab --></p>
+<!-- tab -->
+<p><strong>This is Tab 2.</strong><br><!-- endtab --></p>
+<!-- tab -->
+<p><strong>This is Tab 3.</strong><br><!-- endtab --><br>{% endtabs %}</p>
+<p>{% tabs Tab two %}<br><!-- tab --><br><strong>This is Tab 1.</strong><br><!-- endtab --></p>
+<!-- tab -->
+<p><strong>This is Tab 2.</strong><br><!-- endtab --></p>
+<!-- tab -->
+<p><strong>This is Tab 3.</strong><br><!-- endtab --><br>{% endtabs %}</p>
+<h4 id="Tabs-with-other-tags"><a href="#Tabs-with-other-tags" class="headerlink" title="Tabs with other tags"></a>Tabs with other tags</h4><pre><code class="md">{% tabs Tags %}
+<span class="xml"><span class="comment">&lt;!-- tab --&gt;</span></span>
+<span class="strong">**This is Tab 1.**</span>
+
+<span class="bullet">1. </span>One
+<span class="bullet">2. </span>Two
+<span class="bullet">3. </span>Three
+
+4-spaces code block:
+
+<span class="code">    nano /etc</span>
+
+Tagged code block:
+
+{% code %}
+code tag
+code tag
+code tag
+{% endcode %}
+
+{% note default %}
+Note default tag.
+{% endnote %}
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+
+<span class="xml"><span class="comment">&lt;!-- tab --&gt;</span></span>
+<span class="strong">**This is Tab 2.**</span>
+
+<span class="bullet">* </span>Five
+<span class="bullet">* </span>Six
+<span class="bullet">* </span>Seven
+
+{% note primary %}
+{% youtube Kt7u5kr_P5o %}
+{% endnote %}
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+
+<span class="xml"><span class="comment">&lt;!-- tab --&gt;</span></span>
+<span class="strong">**This is Tab 3.**</span>
+
+{% subtabs Sub Tabs %}
+<span class="xml"><span class="comment">&lt;!-- tab --&gt;</span></span>
+<span class="strong">**This is Sub Tab 1.**</span>
+{% note success %}
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti. Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.
+
+{% note warning %}
+Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.
+{% endnote %}
+
+Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.
+{% endnote %}
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+
+<span class="xml"><span class="comment">&lt;!-- tab --&gt;</span></span>
+<span class="strong">**This is Sub Tab 2.**</span>
+{% note success %}
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti. Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.
+
+Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.
+
+{% note danger %}
+Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.
+{% endnote %}
+{% endnote %}
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+
+<span class="xml"><span class="comment">&lt;!-- tab --&gt;</span></span>
+<span class="strong">**This is Sub Tab 3.**</span>
+
+{% subtabs Sub-Sub Tabs %}
+<span class="xml"><span class="comment">&lt;!-- tab --&gt;</span></span>
+<span class="strong">**This is Sub-Sub Tab 1 of Sub Tab 3.**</span>
+{% note success %}
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti. Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.
+
+Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.
+
+Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.
+{% endnote %}
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+
+<span class="xml"><span class="comment">&lt;!-- tab --&gt;</span></span>
+<span class="strong">**This is Sub-Sub Tab 2 of Sub Tab 3.**</span>
+{% note success %}
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti. Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.
+
+{% note warning %}
+Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.
+
+Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.
+{% endnote %}
+
+{% endnote %}
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+
+<span class="xml"><span class="comment">&lt;!-- tab --&gt;</span></span>
+<span class="strong">**This is Sub-Sub Tab 3 of Sub Tab 3.**</span>
+
+{% note success %}
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti. Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.
+
+{% note warning %}
+Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.
+
+{% note danger %}
+Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.
+{% endnote %}
+
+{% endnote %}
+
+{% endnote %}
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+{% endsubtabs %}
+
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+{% endsubtabs %}
+
+<span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span>
+{% endtabs %}
+</code></pre>
+<p>{% tabs Tags %}<br><!-- tab --><br><strong>This is Tab 1.</strong></p>
+<ol>
+<li>One</li>
+<li>Two</li>
+<li>Three</li>
+</ol>
+<p>4-spaces code block:</p>
+<pre><code>nano /etc
+</code></pre><p>Tagged code block:</p>
+<p>{% code %}<br>code tag<br>code tag<br>code tag<br>{% endcode %}</p>
+<p>{% note default %}<br>Note default tag.<br>{% endnote %}<br><!-- endtab --></p>
+<!-- tab -->
+<p><strong>This is Tab 2.</strong></p>
+<ul>
+<li>Five</li>
+<li>Six</li>
+<li>Seven</li>
+</ul>
+<p>{% note primary %}<br>{% youtube Kt7u5kr_P5o %}<br>{% endnote %}<br><!-- endtab --></p>
+<!-- tab -->
+<p><strong>This is Tab 3.</strong></p>
+<p>{% subtabs Sub Tabs %}<br><!-- tab --><br><strong>This is Sub Tab 1.</strong><br>{% note success %}<br>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti. Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</p>
+<p>{% note warning %}<br>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.<br>{% endnote %}</p>
+<p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.<br>{% endnote %}<br><!-- endtab --></p>
+<!-- tab -->
+<p><strong>This is Sub Tab 2.</strong><br>{% note success %}<br>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti. Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</p>
+<p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.</p>
+<p>{% note danger %}<br>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.<br>{% endnote %}<br>{% endnote %}<br><!-- endtab --></p>
+<!-- tab -->
+<p><strong>This is Sub Tab 3.</strong></p>
+<p>{% subtabs Sub-Sub Tabs %}<br><!-- tab --><br><strong>This is Sub-Sub Tab 1 of Sub Tab 3.</strong><br>{% note success %}<br>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti. Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</p>
+<p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.</p>
+<p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.<br>{% endnote %}<br><!-- endtab --></p>
+<!-- tab -->
+<p><strong>This is Sub-Sub Tab 2 of Sub Tab 3.</strong><br>{% note success %}<br>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti. Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</p>
+<p>{% note warning %}<br>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.</p>
+<p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.<br>{% endnote %}</p>
+<p>{% endnote %}<br><!-- endtab --></p>
+<!-- tab -->
+<p><strong>This is Sub-Sub Tab 3 of Sub Tab 3.</strong></p>
+<p>{% note success %}<br>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti. Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</p>
+<p>{% note warning %}<br>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.</p>
+<p>{% note danger %}<br>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.<br>{% endnote %}</p>
+<p>{% endnote %}</p>
+<p>{% endnote %}<br><!-- endtab --><br>{% endsubtabs %}</p>
+<!-- endtab -->
+<p>{% endsubtabs %}</p>
+<!-- endtab -->
+<p>{% endtabs %}</p>

@@ -1,0 +1,85 @@
+<hr>
+<p>title: Footer</p>
+<h2 id="description-NexT-User-Docs-–-Theme-Settings-–-Footer"><a href="#description-NexT-User-Docs-–-Theme-Settings-–-Footer" class="headerlink" title="description: NexT User Docs – Theme Settings – Footer"></a>description: NexT User Docs – Theme Settings – Footer</h2><h3 id="Site-Footer-Setting"><a href="#Site-Footer-Setting" class="headerlink" title="Site Footer Setting"></a>Site Footer Setting</h3><h4 id="Site-Start-Time"><a href="#Site-Start-Time" class="headerlink" title="Site Start Time"></a>Site Start Time</h4><p>By default NexT shows current year in the footer like <code>© 2018</code>. You can configure it to show the time gap like <code>© 2015 - 2018</code> by editing values in <code>since</code> section in {% label primary@theme config file %}.</p>
+<p>```yml next/_config.yml<br>footer:<br>  since: 2015</p>
+<pre><code>
+#### Site Footer Icon
+
+By default NexT shows black `user` icon {% btn #,, user %} without animation between year and copyright information in the footer. You can configure it by editing values in `icon` section in {% label primary@theme config file %}.
+
+{% tabs icon %}
+&lt;!-- tab &lt;code&gt;name&lt;/code&gt; --&gt;
+The name of footer icon can be founded in [Font Awesome](https://fontawesome.com) site. `heart` is recommended.
+
+{% code lang:yml next/_config.yml %}
+footer:
+  icon:
+    name: user
+{% endcode %}
+
+&lt;!-- endtab --&gt;
+
+&lt;!-- tab &lt;code&gt;animated&lt;/code&gt; --&gt;
+Set up animated of footer icon by changing the value of `icon.animated`:
+
+* `true` → Icon will be animated.
+* **`false`** → Icon will not be animated.
+
+{% code lang:yml next/_config.yml %}
+footer:
+  icon:
+    animated: false
+{% endcode %}
+&lt;!-- endtab --&gt;
+
+&lt;!-- tab &lt;code&gt;color&lt;/code&gt; --&gt;
+Set up color of footer icon by changing the value of `icon.color`. Please use Hex Code, and red (#ff0000) is recommended for `heart` icon.
+
+{% code lang:yml next/_config.yml %}
+footer:
+  icon:
+    color: &quot;#808080&quot;
+{% endcode %}
+
+&lt;!-- endtab --&gt;
+{% endtabs %}
+
+#### Site Copyright Name
+
+By default NexT shows the name of `author` from {% label info@site config file %}. You can configure it by editing values in `copyright` section in {% label primary@theme config file %}.
+
+```yml next/_config.yml
+footer:
+  copyright:
+</code></pre><h4 id="Site-Platform-Information"><a href="#Site-Platform-Information" class="headerlink" title="Site Platform Information"></a>Site Platform Information</h4><p>By default NexT shows Hexo and Theme &amp; scheme information like <code>Powered by Hexo v3.7.1 | Theme — NexT.Muse v6.3.0</code>. You can configure it by editing values in <code>powered</code> and <code>theme</code> section in {% label primary@theme config file %}.</p>
+<p>{% tabs platform %}<br><!-- tab <code>powered</code> --></p>
+<p>{% subtabs platform1 %}<br><!-- tab <code>enable</code> --></p>
+<ul>
+<li><strong><code>true</code></strong> → Displaying <code>Powered by Hexo</code> Information.</li>
+<li><code>false</code> → Not Displaying <code>Powered by Hexo</code> Information.</li>
+</ul>
+<p>{% code lang:yml next/_config.yml %}<br>footer:<br>  powered:<br>    enable: true<br>{% endcode %}<br><!-- endtab --></p>
+<!-- tab <code>version</code> -->
+<ul>
+<li><strong><code>true</code></strong> → Displaying Hexo Version Information.</li>
+<li><code>false</code> → Not Displaying Hexo Version Information.</li>
+</ul>
+<p>{% code lang:yml next/_config.yml %}<br>footer:<br>  powered:<br>    version: true<br>{% endcode %}<br><!-- endtab --><br>{% endsubtabs %}<br><!-- endtab --></p>
+<!-- tab <code>theme</code> -->
+<p>{% subtabs platform2 %}<br><!-- tab <code>enable</code> --></p>
+<ul>
+<li><strong><code>true</code></strong> → Displaying Theme &amp; Scheme Information.</li>
+<li><code>false</code> → Not Displaying Theme &amp; Scheme Information.</li>
+</ul>
+<p>{% code lang:yml next/_config.yml %}<br>footer:<br>  theme:<br>    enable: true<br>{% endcode %}<br><!-- endtab --></p>
+<!-- tab <code>version</code> -->
+<ul>
+<li><strong><code>true</code></strong> → Displaying Theme NexT Version Information.</li>
+<li><code>false</code> → Not Displaying Theme NexT Version Information.</li>
+</ul>
+<p>{% code lang:yml next/_config.yml %}<br>footer:<br>  theme:<br>    version: true<br>{% endcode %}<br><!-- endtab --><br>{% endsubtabs %}<br><!-- endtab --></p>
+<p>{% endtabs %}</p>
+<h4 id="Adding-Custom-Information"><a href="#Adding-Custom-Information" class="headerlink" title="Adding Custom Information"></a>Adding Custom Information</h4><p>If you want, any custom text can be defined within footer in <code>custom_text</code> section in {% label primary@theme config file %} like:</p>
+<p><code>yml next/_config.yml
+footer:
+  custom_text: Hosted by &lt;a target=&quot;_blank&quot; rel=&quot;external nofollow&quot; href=&quot;https://pages.coding.me&quot;&gt;&lt;b&gt;Coding Pages&lt;/b&gt;&lt;/a&gt;</code></p>

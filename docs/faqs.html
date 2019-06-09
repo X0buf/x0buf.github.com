@@ -1,0 +1,116 @@
+<hr>
+<p>title: Frequently Asked Questions</p>
+<h2 id="description-NexT-User-Docs-–-Frequently-Asked-Questions"><a href="#description-NexT-User-Docs-–-Frequently-Asked-Questions" class="headerlink" title="description: NexT User Docs – Frequently Asked Questions"></a>description: NexT User Docs – Frequently Asked Questions</h2><p>Here is a collection of frequently asked questions in NexT Issues. If you can’t find your problem here, please go to <a href="https://github.com/theme-next/hexo-theme-next/issues">NexT Issues</a> to submit your question.</p>
+<h3 id="How-to-Set-«Read-More»"><a href="#How-to-Set-«Read-More»" class="headerlink" title="How to Set «Read More»"></a>How to Set «Read More»</h3><p>It’s a common need to show some part of article in home page and then give a link to full article. NexT gives 3 ways to control how article is shown in home page. In other words, you can use following ways to show summary of articles and a <strong>Read More</strong> button:</p>
+<ol>
+<li>Use <code>&lt;!-- more --&gt;</code> in your article to break your article manually, which is recommended by Hexo. {% label success@Recommended %}</li>
+<li>Add <code>description</code> and set its value to your article summary in <a href="https://hexo.io/docs/front-matter">Front-matter</a>.</li>
+<li>Generate summary automatically by adding following section in {% label primary@theme config file%}:<br><code>yml next/_config.yml
+auto_excerpt:
+  enable: true
+  length: 150</code><br>By default it cuts <code>150</code> characters from article header, you can set the number by yourself.</li>
+</ol>
+<p>{% note info %}<br>It is recommended to use <code>&lt;!-- more --&gt;</code> (the first way) which can not only control what you want to show better, but also let Hexo’s plugins use it easily.<br>{% endnote %}</p>
+<h3 id="How-to-Change-Fonts"><a href="#How-to-Change-Fonts" class="headerlink" title="How to Change Fonts"></a>How to Change Fonts</h3><p>NexT provided a <a href="/docs/theme-settings#Fonts-Customization">Fonts Customization</a> function. If you still need more customization, following change will cover Fonts Customization function. Edit <code>source/css/_variables/custom.styl</code> in NexT theme dir and add two varibles:</p>
+<p>```styl source/css/_custom/custom.styl<br>// Title Font, set it to font family you want.<br>$font-family-headings = Georgia, sans</p>
+<p>// Set it to font family you want.<br>$font-family-base = “Microsoft YaHei”, Verdana, sans-serif</p>
+<p>// Code Font.<br>$code-font-family = “Input Mono”, “PT Mono”, Consolas, Monaco, Menlo, monospace</p>
+<p>// Font size of articles.<br>$font-size-base = 16px</p>
+<p>// Font size of code.<br>$code-font-size = 13px</p>
+<pre><code>
+### How to Change Content Width
+
+By default NexT has following setting of content width:
+
+* 700px → when screen width &lt; 1200px.
+* 800px → when screen width &gt;= 1200px.
+* 900px → when screen width &gt;= 1600px.
+* In mobile / tablet devices it will use responsive width.
+
+You can change content width by editing CSS style file. Edit `source/css/_variables/custom.styl` in {% label primary@theme root directory %} and add varibles:
+
+{% tabs change-content-width %}
+&lt;!-- tab Muse / Mist schemes --&gt;
+Default variables for both Muse and Mist schemes are located in `source/css/_variables/base.styl` and defined as:
+
+{% code lang:styl next/source/css/_variables/base.styl %}
+$content-desktop         = 700px
+$content-desktop-large   = 800px
+$content-desktop-largest = 900px
+{% endcode %}
+
+For example, you want wider content width. You may redefine this variables with percentage width:
+
+{% code lang:styl next/source/css/_variables/custom.styl %}
+$content-desktop         = 90%
+$content-desktop-large   = 90%
+$content-desktop-largest = 90%
+{% endcode %}
+
+{% note warning %}
+If values will in percents, during opening sidebar will dynamically decrease content width to defined by you percent.
+But in standard behaviour, sidebar must displace content from yourself.
+To around it, you can to specify content width in `em`:
+
+{% code lang:styl next/source/css/_variables/custom.styl %}
+$content-desktop         = 50em
+$content-desktop-large   = 55em
+$content-desktop-largest = 60em
+{% endcode %}
+{% endnote %}
+&lt;!-- endtab --&gt;
+
+&lt;!-- tab Pisces / Gemini schemes --&gt;
+Default variables for Pisces (and Gemini) scheme are located in `source/css/_variables/Pisces.styl` and defined as:
+
+{% code lang:styl next/source/css/_variables/Pisces.styl %}
+$content-desktop         = &apos;calc(100% - %s)&apos; % unit($content-desktop-padding / 2, &apos;px&apos;)
+$content-desktop-large   = 1160px
+$content-desktop-largest = 73%
+{% endcode %}
+
+{% note warning %}
+`$content-desktop` value in this schemes is auto-responsive by default. It can be changed to any value too, but for better content visibility recommended to stay it as is.
+{% endnote %}
+
+In this schemes content width was defined on maximum and already balanced: if desktop width will be wider – content width will more narrowed for easier reading. But if you want to make more narrow content width in wider desktops, here is example:
+
+{% code lang:styl next/source/css/_variables/custom.styl %}
+$content-desktop-large   = 65em
+$content-desktop-largest = 65%
+{% endcode %}
+
+{% note info %}
+In fact, Gemini scheme is just fork of Pisces scheme with some style improvements.
+Therefore, almost all part of variables from Pisces scheme are imported to Gemini scheme too.
+So, if you want to add any variables or styles to both Pisces and Gemini schemes, need to edit values just in Pisces scheme.
+{% endnote %}
+&lt;!-- endtab --&gt;
+{% endtabs %}
+
+### Wrong Number of Tags/Categories
+
+Because Hexo has cache, sometimes the nubmer in Tags or Categories page is wrong. If you find this question you can re-generate site&apos;s content as following:
+
+1. Delete `db.json` in site dir.
+2. Run command `hexo clean` in site dir to clean cache.
+3. Run command `hexo generate` in site dir to re-generte.
+
+After doing those you can run local server to see if the problem was solved.
+
+### How to Disable Comments on Page
+
+When you enabled comment service like Disqus, all new page will have comment service automatically. If you want to disable it in one page, just add `comments` key to Front-matter and set it&apos;s value to `false`. Like following:
+
+```md your-post.md
+title: All tags
+type: &quot;tags&quot;
+comments: false
+---
+</code></pre><h3 id="How-to-Set-Number-of-Articles-in-Each-Page"><a href="#How-to-Set-Number-of-Articles-in-Each-Page" class="headerlink" title="How to Set Number of Articles in Each Page"></a>How to Set Number of Articles in Each Page</h3><p>Set following in {% label info@site config file %}:</p>
+<p>```yml next/_config.yml<br>index_generator:<br>  per_page: 5</p>
+<p>archive_generator:<br>  per_page: 20<br>  yearly: true<br>  monthly: true</p>
+<p>tag_generator:<br>  per_page: 10<br>```</p>
+<p>{% note info %}<br><code>per_page</code> is the number of articles per page.<br>{% endnote %}</p>
+<p>{% note warning %}<br>Please note that Hexo 3.2 doesn’t allow to have duplicated same options. You’d better check weither {% label info@site config file %} already has same config. If has, make them together.<br>{% endnote %}</p>
+<h3 id="How-to-Optimize-NexT-Theme"><a href="#How-to-Optimize-NexT-Theme" class="headerlink" title="How to Optimize NexT Theme"></a>How to Optimize NexT Theme</h3><p>NexT doesn’t compress HTML, JavaScript and CSS. If you need this, you can try to search 3rd-party libraries in <a href="https://hexo.io/plugins/">Hexo plugins section</a> or plugins/modules under the <a href="https://github.com/theme-next">NexT organization</a> link. For example, you can use <a href="https://github.com/theme-next/hexo-filter-optimize">hexo-filter-optimize</a> plugin.</p>

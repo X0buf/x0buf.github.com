@@ -1,0 +1,15 @@
+<hr>
+<p>title: Update from Version 5</p>
+<h2 id="description-NexT-User-Docs-–-Update-from-NexT-v5-1-x"><a href="#description-NexT-User-Docs-–-Update-from-NexT-v5-1-x" class="headerlink" title="description: NexT User Docs – Update from NexT v5.1.x"></a>description: NexT User Docs – Update from NexT v5.1.x</h2><p>There are no hard breaking changes between 5.1.x and 6.0.x versions. It’s change major version to 6 because:</p>
+<ol>
+<li>Main repositorie was rebased from <a href="https://github.com/iissnan/hexo-theme-next">iissnan’s</a> profile to <a href="https://github.com/theme-next">theme-next</a> organization.</li>
+<li>Most libraries under the <code>next/source/lib</code> directory was moved out to <a href="https://github.com/theme-next">external repositories under NexT organization</a>.</li>
+<li>3rd-party plugin <a href="https://github.com/willin/hexo-wordcount"><code>hexo-wordcount</code></a> was replaced by <a href="https://github.com/theme-next/hexo-symbols-count-time"><code>hexo-symbols-count-time</code></a> because <code>hexo-symbols-count-time</code> no have any external nodejs dependencies, no have <a href="https://github.com/willin/hexo-wordcount/issues/7">language filter</a> which causes better performance on speed at site generation.</li>
+</ol>
+<p>So, NexT suggest to update from version 5 to version 6 in this way:</p>
+<ol>
+<li>You don’t touch old <code>next</code> dir and just do some copies of NexT files:<br>1.1. <code>config.yml</code> or <code>next.yml</code> (if you used <a href="/docs/getting-started/data-files">data-files</a>).<br>1.2. Custom CSS styles what placed in <code>next/source/css/_custom/*</code> and <code>next/source/css/_variables/*</code> directories.<br>1.3. Custom layout styles what placed in <code>next/layout/_custom/*</code>.<br>1.4. Any another possible custom additions which can be finded by compare tools between repositories.</li>
+<li>Clone new v6.x repositorie to any another directory instead of <code>next</code>. For example, in <code>next-reloaded</code> directory: <code>git clone https://github.com/theme-next/hexo-theme-next themes/next-reloaded</code>. So, you don’t touch your old NexT 5.1.x directory and can work with new <code>next-reloaded</code> dir.</li>
+<li>Go to Hexo main config and set theme parameter: <code>theme: next-reloaded</code>. So, your <code>next-reloaded</code> directory must loading with your generation. If you may see any bugs or you simply not like this version, in anytime you can switch for 5.1.x version back.</li>
+</ol>
+<p>And how to enable 3rd-party libraries see <a href="/docs/getting-started/#Adding-Plugins">here</a>.</p>

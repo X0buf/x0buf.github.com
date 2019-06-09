@@ -1,0 +1,183 @@
+<hr>
+<p>title: Mermaid</p>
+<h2 id="description-NexT-User-Docs-–-NexT-Supported-Tags-–-Mermaid"><a href="#description-NexT-User-Docs-–-NexT-Supported-Tags-–-Mermaid" class="headerlink" title="description: NexT User Docs – NexT Supported Tags – Mermaid"></a>description: NexT User Docs – NexT Supported Tags – Mermaid</h2><h3 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h3><p>```yml next/_config.yml</p>
+<h1 id="Mermaid-tag"><a href="#Mermaid-tag" class="headerlink" title="Mermaid tag"></a>Mermaid tag</h1><p>mermaid:<br>  enable: true</p>
+<h1 id="Available-themes-default-dark-forest-neutral"><a href="#Available-themes-default-dark-forest-neutral" class="headerlink" title="Available themes: default | dark | forest | neutral"></a>Available themes: default | dark | forest | neutral</h1><p>  theme: forest</p>
+<h1 id="Use-8-0-0-as-default-jsdelivr-as-default-CDN-works-everywhere-even-in-China"><a href="#Use-8-0-0-as-default-jsdelivr-as-default-CDN-works-everywhere-even-in-China" class="headerlink" title="Use 8.0.0 as default, jsdelivr as default CDN, works everywhere even in China"></a>Use 8.0.0 as default, jsdelivr as default CDN, works everywhere even in China</h1><p>  cdn: //cdn.jsdelivr.net/npm/mermaid@8.0.0/dist/mermaid.min.js</p>
+<h1 id="CDNJS-provided-by-cloudflare-maybe-the-best-CDN-but-not-works-in-China"><a href="#CDNJS-provided-by-cloudflare-maybe-the-best-CDN-but-not-works-in-China" class="headerlink" title="CDNJS, provided by cloudflare, maybe the best CDN, but not works in China"></a>CDNJS, provided by cloudflare, maybe the best CDN, but not works in China</h1><p>  #cdn: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js</p>
+<pre><code>
+### Usage
+
+```md grouppicture.js
+{% mermaid type %}
+{% endmermaid %}
+
+type : type of the mermaid chart, visit https://github.com/knsv/mermaid for more information.
+</code></pre><h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><pre><code class="md">{% mermaid graph TD %}
+A[Christmas] --&gt;|Get money| B(Go shopping)
+B --&gt; C{Let me thinksssss<span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span>ssssssssssssssssssssss<span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span>sssssssssssssssssssssssssss}
+C --&gt;|One| D[Laptop]
+C --&gt;|Two| E[iPhone]
+C --&gt;|Three| F[Car]
+{% endmermaid %}
+</code></pre>
+<pre><code class="md">{% mermaid graph LR %}
+47(SAM.CommonFA.FMESummary)--&gt;48(SAM.CommonFA.CommonFAFinanceBudget)
+37(SAM.CommonFA.BudgetSubserviceLineVolume)--&gt;48(SAM.CommonFA.CommonFAFinanceBudget)
+35(SAM.CommonFA.PopulationFME)--&gt;47(SAM.CommonFA.FMESummary)
+41(SAM.CommonFA.MetricCost)--&gt;47(SAM.CommonFA.FMESummary)
+44(SAM.CommonFA.MetricOutliers)--&gt;47(SAM.CommonFA.FMESummary)
+46(SAM.CommonFA.MetricOpportunity)--&gt;47(SAM.CommonFA.FMESummary)
+40(SAM.CommonFA.OPVisits)--&gt;47(SAM.CommonFA.FMESummary)
+38(SAM.CommonFA.CommonFAFinanceRefund)--&gt;47(SAM.CommonFA.FMESummary)
+43(SAM.CommonFA.CommonFAFinancePicuDays)--&gt;47(SAM.CommonFA.FMESummary)
+42(SAM.CommonFA.CommonFAFinanceNurseryDays)--&gt;47(SAM.CommonFA.FMESummary)
+45(SAM.CommonFA.MetricPreOpportunity)--&gt;46(SAM.CommonFA.MetricOpportunity)
+35(SAM.CommonFA.PopulationFME)--&gt;45(SAM.CommonFA.MetricPreOpportunity)
+41(SAM.CommonFA.MetricCost)--&gt;45(SAM.CommonFA.MetricPreOpportunity)
+41(SAM.CommonFA.MetricCost)--&gt;44(SAM.CommonFA.MetricOutliers)
+39(SAM.CommonFA.ChargeDetails)--&gt;43(SAM.CommonFA.CommonFAFinancePicuDays)
+39(SAM.CommonFA.ChargeDetails)--&gt;42(SAM.CommonFA.CommonFAFinanceNurseryDays)
+39(SAM.CommonFA.ChargeDetails)--&gt;41(SAM.CommonFA.MetricCost)
+39(SAM.CommonFA.ChargeDetails)--&gt;40(SAM.CommonFA.OPVisits)
+35(SAM.CommonFA.PopulationFME)--&gt;39(SAM.CommonFA.ChargeDetails)
+36(SAM.CommonFA.PremetricCost)--&gt;39(SAM.CommonFA.ChargeDetails)
+{% endmermaid %}
+</code></pre>
+<pre><code class="md">{% mermaid graph TD %}
+9e122290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002("fa:fa-creative-commons My System | Test Environment")
+82072290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002("fa:fa-cogs Shared Business Logic Server:Service 1")
+db052290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002("fa:fa-cogs Shared Business Logic Server:Service 2")
+4e112290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002("fa:fa-cogs Shared Report Server:Service 1")
+30122290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002("fa:fa-cogs Shared Report Server:Service 2")
+5e112290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002("fa:fa-cogs Dedicated Test Business Logic Server:Service 1")
+c1112290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002("fa:fa-cogs Dedicated Test Business Logic Server:Service 2")
+b7042290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002("fa:fa-circle [DBServer\SharedDbInstance].[SupportDb]")
+8f102290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002("fa:fa-circle [DBServer\SharedDbInstance].[DevelopmentDb]")
+0e102290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002("fa:fa-circle [DBServer\SharedDbInstance].[TestDb]")
+07132290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002("fa:fa-circle [DBServer\SharedDbInstance].[SharedReportingDb]")
+c7072290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002("fa:fa-server Shared Business Logic Server")
+ca122290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002("fa:fa-server Shared Report Server")
+68102290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002("fa:fa-server Dedicated Test Business Logic Server")
+f4112290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002("fa:fa-database [DBServer\SharedDbInstance]")
+d6072290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002("fa:fa-server DBServer")
+71082290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002("fa:fa-cogs DBServer\:MSSQLSERVER")
+c0102290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002("fa:fa-cogs DBServer\:SQLAgent")
+9a072290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002("fa:fa-cogs DBServer\:SQLBrowser")
+1d0a2290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002("fa:fa-server VmHost1")
+200a2290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002("fa:fa-server VmHost2")
+1c0a2290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002("fa:fa-server VmHost3")
+9e122290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;82072290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+9e122290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;db052290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+9e122290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;4e112290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+9e122290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;30122290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+9e122290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;5e112290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+9e122290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;c1112290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+82072290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;b7042290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+82072290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;8f102290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+82072290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;0e102290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+82072290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;c7072290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+db052290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;c7072290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+db052290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;82072290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+4e112290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;b7042290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+4e112290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;8f102290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+4e112290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;0e102290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+4e112290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;07132290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+4e112290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;ca122290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+30122290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;ca122290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+30122290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;4e112290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+5e112290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;8f102290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+5e112290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;68102290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+c1112290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;68102290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+c1112290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;5e112290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+b7042290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;f4112290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+8f102290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;f4112290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+0e102290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;f4112290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+07132290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;f4112290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+c7072290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;1d0a2290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+ca122290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;200a2290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+68102290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;1c0a2290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+f4112290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;d6072290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+f4112290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;71082290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+f4112290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;c0102290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+f4112290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;9a072290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+d6072290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;1c0a2290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+71082290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;d6072290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+c0102290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;d6072290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+c0102290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;71082290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+9a072290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;d6072290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+9a072290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002--&gt;71082290<span class="emphasis">_1ec3_</span>e711<span class="emphasis">_8c5a_</span>005056ad0002
+{% endmermaid %}
+</code></pre>
+<pre><code class="md">{% mermaid sequenceDiagram %}
+participant Alice
+participant Bob
+participant John as John<span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span>Second Line
+Alice -&gt;&gt; Bob: Hello Bob, how are you?
+Bob--&gt;&gt;John: How about you John?
+Bob--x Alice: I am good thanks!
+Bob-x John: I am good thanks!
+Note right of John: Bob thinks a long<span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span>long time, so long<span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span>that the text does<span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span>not fit on a row.
+Bob--&gt;Alice: Checking with John...
+alt either this
+Alice-&gt;&gt;John: Yes
+else or this
+Alice-&gt;&gt;John: No
+else or this will happen
+Alice-&gt;John: Maybe
+end
+par this happens in parallel
+Alice --&gt;&gt; Bob: Parallel message 1
+and
+Alice --&gt;&gt; John: Parallel message 2
+end
+{% endmermaid %}
+</code></pre>
+<pre><code class="md">{% mermaid gantt %}
+dateFormat  YYYY-MM-DD
+axisFormat  %d/%m
+title Adding GANTT diagram to mermaid
+
+section A section
+Completed task            :done,    des1, 2014-01-06,2014-01-08
+Active task               :active,  des2, 2014-01-09, 3d
+Future task               :         des3, after des2, 5d
+Future task2               :         des4, after des3, 5d
+
+section Critical tasks
+Completed task in the critical line :crit, done, 2014-01-06,24h
+Implement parser and jison          :crit, done, after des1, 2d
+Create tests for parser             :crit, active, 3d
+Future task in critical line        :crit, 5d
+Create tests for renderer           :2d
+Add to mermaid                      :1d
+
+section Documentation
+Describe gantt syntax               :active, a1, after des1, 3d
+Add gantt diagram to demo page      :after a1  , 20h
+Add another diagram to demo page    :doc1, after a1  , 48h
+
+section Last section
+Describe gantt syntax               :after doc1, 3d
+Add gantt diagram to demo page      : 20h
+Add another diagram to demo page    : 48h
+{% endmermaid %}
+</code></pre>
+<pre><code class="md">{% mermaid gitGraph: %}
+options
+{
+<span class="code">    "nodeSpacing": 150,</span>
+<span class="code">    "nodeRadius": 10</span>
+}
+end
+commit
+branch newbranch
+checkout newbranch
+commit
+commit
+checkout master
+commit
+commit
+merge newbranch
+{% endmermaid %}
+</code></pre>

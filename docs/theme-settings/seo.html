@@ -1,0 +1,71 @@
+<hr>
+<p>title: SEO</p>
+<h2 id="description-NexT-User-Docs-–-Theme-Settings-–-SEO"><a href="#description-NexT-User-Docs-–-Theme-Settings-–-SEO" class="headerlink" title="description: NexT User Docs – Theme Settings – SEO"></a>description: NexT User Docs – Theme Settings – SEO</h2><h3 id="SEO-Setting"><a href="#SEO-Setting" class="headerlink" title="SEO Setting"></a>SEO Setting</h3><p>Next provides useful options for better Search Engine Optimization (SEO).</p>
+<p>{% tabs SEO %}<br><!-- tab <code>disable_baidu_transformation</code> --><br>By default China’s search engine Baidu will cache and rewrite your site to provide a webpage snapshot for mobile users. You can disable this by setting the value <code>disable_baidu_transformation</code> to <code>true</code> in {% label primary@theme config file %}.</p>
+<p>{% code lang:yml next/_config.yml %}<br>disable_baidu_transformation: true<br>{% endcode %}<br><!-- endtab --></p>
+<!-- tab <code>canonical</code> -->
+<p>By default a canonical link tag is created in Hexo by setting the value <code>canonical</code> to <code>true</code> in {% label primary@theme config file %} after you have set up your URL <code>url: http://yoursite.com</code> in {% label info@site config file %}. More detailed information can be found in <a href="https://support.google.com/webmasters/answer/139066">Consolidate duplicate URLs</a>.</p>
+<p>{% code lang:yml next/_config.yml %}<br>canonical: true<br>{% endcode %}<br><!-- endtab --></p>
+<!-- tab <code>seo</code> -->
+<p>Set the value <code>enable</code> to <code>true</code> in <code>seo</code> section to change headers hierarchy on <code>subtitle</code> in {% label info@site config file %} and on all post/pages titles for better SEO in {% label primary@theme config file %} as following:</p>
+<p>{% code lang:yml next/_config.yml %}<br>seo: true<br>{% endcode %}<br><!-- endtab --></p>
+<!-- tab <code>index_with_subtitle</code> -->
+<p>Set the value <code>enable</code> to <code>true</code> in <code>index_with_subtitle</code> section to add <code>subtitle</code> information in {% label info@site config file %} to index page.</p>
+<p>{% code lang:yml next/_config.yml %}<br>index_with_subtitle: true<br>{% endcode %}<br><!-- endtab --></p>
+<p>{% endtabs %}</p>
+<h3 id="ExtURL"><a href="#ExtURL" class="headerlink" title="ExtURL"></a>ExtURL</h3><p>External URL with BASE64 encrypt &amp; decrypt which provide nonsense for search engines to <code>&lt;a&gt;</code> tags.</p>
+<h4 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h4><p>Search engines scan <code>&lt;a&gt;</code> tag with hight priority. You may add <code>external</code> / <code>nofollow</code> / <code>noopener</code> / <code>noreferrer</code> or any similar tricks, in any case all external links from your site will be indexed on your site. But here exists another trick: crawlers doesn’t reproduce any javascript – this do clients on their local devices.<br>That tag give the way to set any external link without <code>&lt;a&gt;</code> tag. So, some crawlers like Yandex will not give away links weight from your site and this very useful for SEO. This tag perform:</p>
+<ul>
+<li>Replaces <code>a</code> HTML tag with <code>span</code> HTML tag.</li>
+<li>Crypt &amp; Decrypt URL with BASE64. User cannot see base64 format in browser src for this link, but he will see tooltip where this URL pointed to or will be shown custom title which can be specified in <code>title</code> tag parameter.</li>
+<li>Backlinks by this tag will not be scanned by any monitoring. It’s like you open new link with javascript at new tab.</li>
+<li>Works on mobile devices too, yep.</li>
+</ul>
+<p>{% note warning %}<br>This tag was created exceptionally for better SEO-optimization. Any attempts to confuse end-user by phishing links not allowed!<br>{% endnote %}</p>
+<h4 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h4><p>Just one setting must be turned on under the <code>Tags Settings</code> section in {% label primary@theme config file %}:</p>
+<p>```yml next/_config.yml<br>exturl: true</p>
+<pre><code>
+***
+
+**Below is the usage of `exturl` tag, which will no longer be supported.**
+
+#### Usage
+
+```md exturl.js
+{% exturl text url [title] %}
+&lt;!-- Tag Alias --&gt;
+{% extlink text url [title] %}
+
+text    : Main text of the link.
+url     : Full URL of external source.
+[title] : Tooltip at mouseover.
+          If &apos;title&apos; not specified, &apos;url&apos; will be used as title.
+          Optional parameter.
+</code></pre><h4 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h4><pre><code class="md">Welcome to [<span class="string">Theme NexT Organization</span>](<span class="link">https://github.com/theme-next</span>)!
+If you want new feature or want to report a bug, feel free to {% exturl open an issue https://github.com/theme-next/hexo-theme-next/issues/new Open new issue in NexT repository %}.
+And if you have coding skills, NexT will be glad for your {% exturl pull request https://github.com/theme-next/hexo-theme-next/pulls "See all current pulls" %}.
+</code></pre>
+<p>Welcome to <a href="https://github.com/theme-next">Theme NexT Organization!</a><br>If you want new feature or want to report a bug, feel free to {% exturl open an issue. <a href="https://github.com/theme-next/hexo-theme-next/issues/new">https://github.com/theme-next/hexo-theme-next/issues/new</a> Open new issue in NexT repository %}<br>And if you have coding skills, NexT will be glad for your {% exturl pull request. <a href="https://github.com/theme-next/hexo-theme-next/pulls">https://github.com/theme-next/hexo-theme-next/pulls</a> “See all current pulls” %}</p>
+<h3 id="Webmaster-Tools"><a href="#Webmaster-Tools" class="headerlink" title="Webmaster Tools"></a>Webmaster Tools</h3><h4 id="Google-Webmaster-Tools"><a href="#Google-Webmaster-Tools" class="headerlink" title="Google Webmaster Tools"></a>Google Webmaster Tools</h4><p>Set the verification string of <a href="https://www.google.com/webmasters/tools">Google Webmaster Tools</a> which is used in submitting sitemap.</p>
+<p>{% tabs google-webmaster-tools %}<br><!-- tab Get Verification Code → --><br>Login to Google Webmaster Tools and go to verification methods and choose <code>HTML Tag</code>, you will get some code:<br>{% code lang:html %}</p>
+<p><meta name="google-site-verification" content="XXXXXXXXXXXXXXXXXXXXXXX" /><br>{% endcode %}<br><!-- endtab --></p>
+<!-- tab NexT Config -->
+<p>Copy <code>XXXXXXXXXXXXXXXXXXXXXXX</code> value of <code>content</code> key.<br>Edit {% label primary@theme config file %} and add or change <code>google_site_verification</code> section:<br>{% code lang:yml next/_config.yml %}<br>google_site_verification: XXXXXXXXXXXXXXXXXXXXXXX<br>{% endcode %}<br><!-- endtab --><br>{% endtabs %}</p>
+<h4 id="Bing-Webmaster-Tools"><a href="#Bing-Webmaster-Tools" class="headerlink" title="Bing Webmaster Tools"></a>Bing Webmaster Tools</h4><p>Set the verification string of <a href="https://www.bing.com/webmaster/">Bing Webmaster Tools</a> which is used in submitting sitemap.</p>
+<p>{% tabs bing-webmaster-tools %}<br><!-- tab Get Verification Code → --><br>Login to Bing Webmaster Tools and go to verification methods and choose <code>HTML Tag</code>, you will get some code:<br>{% code lang:html %}</p>
+<p><meta name="msvalidate.01" content="XXXXXXXXXXXXXXXXXXXXXXX" /><br>{% endcode %}<br><!-- endtab --></p>
+<!-- tab NexT Config -->
+<p>Copy <code>XXXXXXXXXXXXXXXXXXXXXXX</code> value of <code>content</code> key.<br>Edit {% label primary@theme config file %} and add or change <code>bing_site_verification</code> section:<br>{% code lang:yml next/_config.yml %}<br>bing_site_verification: XXXXXXXXXXXXXXXXXXXXXXX<br>{% endcode %}<br><!-- endtab --><br>{% endtabs %}</p>
+<h4 id="Yandex-Webmaster-Tools"><a href="#Yandex-Webmaster-Tools" class="headerlink" title="Yandex Webmaster Tools"></a>Yandex Webmaster Tools</h4><p>Set the verification string of <a href="https://webmaster.yandex.ru/">Yandex Webmaster Tools</a> which is used in submitting sitemap.</p>
+<p>{% tabs yandex-webmaster-tools %}<br><!-- tab Get Verification Code → --><br>Login to Yandex Webmaster Tools and go to verification methods and choose <code>Meta Tag</code>, you will get some code:<br>{% code lang:html %}</p>
+<p><meta name="yandex-verification" content="XXXXXXXXXXXXXXXXXXXXXXX" /><br>{% endcode %}<br><!-- endtab --></p>
+<!-- tab NexT Config -->
+<p>Copy <code>XXXXXXXXXXXXXXXXXXXXXXX</code> value of <code>content</code> key.<br>Edit {% label primary@theme config file %} and add or change <code>yandex_site_verification</code> section:<br>{% code lang:yml next/_config.yml %}<br>yandex_site_verification: XXXXXXXXXXXXXXXXXXXXXXX<br>{% endcode %}<br><!-- endtab --><br>{% endtabs %}</p>
+<h4 id="Baidu-Webmaster-Tools"><a href="#Baidu-Webmaster-Tools" class="headerlink" title="Baidu Webmaster Tools"></a>Baidu Webmaster Tools</h4><p>Set the verification string of <a href="https://ziyuan.baidu.com/site/">Baidu Webmaster Tools</a> which is used in submitting sitemap.</p>
+<p>{% tabs Baidu-webmaster-tools %}<br><!-- tab Get Verification Code → --><br>Login to Baidu Webmaster Tools and go to verification methods and choose <code>HTML Tag</code>, you will get some code:<br>{% code lang:html %}</p>
+<p><meta name="baidu-site-verification" content="XXXXXXXXXXXXXXXXXXXXXXX" /><br>{% endcode %}<br><!-- endtab --></p>
+<!-- tab NexT Config -->
+<p>Copy <code>XXXXXXXXXXXXXXXXXXXXXXX</code> value of <code>content</code> key.<br>Edit {% label primary@theme config file %} and add or change <code>baidu_site_verification</code> section:<br>{% code lang:yml next/_config.yml %}<br>baidu_site_verification: XXXXXXXXXXXXXXXXXXXXXXX<br>{% endcode %}<br><!-- endtab --><br>{% endtabs %}</p>
+<p>NexT also supports the baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO. You can enable it by editing values <code>baidu_push</code> to <code>true</code> in {% label primary@theme config file %}.</p>
+<p><code>yml next/_config.yml
+baidu_push: true</code></p>

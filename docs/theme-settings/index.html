@@ -1,0 +1,128 @@
+<hr>
+<p>title: Theme Settings<br>date: 2018-02-08 18:50:03</p>
+<h2 id="description-NexT-User-Docs-–-Theme-Settings"><a href="#description-NexT-User-Docs-–-Theme-Settings" class="headerlink" title="description: NexT User Docs – Theme Settings"></a>description: NexT User Docs – Theme Settings</h2><p>NexT insists to hide complex details and gives you a simple but flexible config, so you can use it easily.</p>
+<h3 id="Cache-Support"><a href="#Cache-Support" class="headerlink" title="Cache Support"></a>Cache Support</h3><p>NexT v6+ allows to cache content generation. Set the value <code>enable</code> to <code>true</code> in <code>cache</code> section in {% label primary@theme config file %} as following:</p>
+<p>```yml next/_config.yml</p>
+<h1 id="Allow-to-cache-content-generation-Introduced-in-NexT-v6-0-0"><a href="#Allow-to-cache-content-generation-Introduced-in-NexT-v6-0-0" class="headerlink" title="Allow to cache content generation. Introduced in NexT v6.0.0."></a>Allow to cache content generation. Introduced in NexT v6.0.0.</h1><p>cache:<br>  enable: true</p>
+<pre><code>
+### Custom Style Support
+
+Like [Next Data files](/docs/getting-started/data-files), you can put all your custom styles into one place (`hexo/source/_data`).
+
+- `head`: It&apos;s custom swig styles placed in `layout/_custom/head.swig`.
+- `header`: It&apos;s custom swig styles placed in `layout/_custom/header.swig`.
+- `sidebar`: It&apos;s custom swig styles placed in `layout/_custom/sidebar.swig`.
+- `variables`: It&apos;s variables styles placed in `source/css/_variables/custom.styl`.
+- `mixins`: It&apos;s mixins styles placed in `source/css/_mixins/custom.styl`.
+- `styles`: It&apos;s custom styles placed in `source/css/_custom/custom.styl`.
+
+Add your custom files in `hexo/source/_data` and uncomment needed files under the `custom_file_path` section in {% label primary@theme config file %} as following:
+
+```yml next/_config.yml
+# For example, you want to put your custom styles file
+# outside theme directory in root `source/_data`, set
+# `styles: source/_data/styles.styl`
+#custom_file_path:
+  # Default paths: layout/_custom/*
+  #head: source/_data/head.swig
+  #header: source/_data/header.swig
+  #sidebar: source/_data/sidebar.swig
+
+  # Default path: source/css/_variables/custom.styl
+  #variables: source/_data/variables.styl
+  # Default path: source/css/_mixins/custom.styl
+  #mixins: source/_data/mixins.styl
+  # Default path: source/css/_custom/custom.styl
+  #styles: source/_data/styles.styl
+</code></pre><h3 id="RSS-Support"><a href="#RSS-Support" class="headerlink" title="RSS Support"></a>RSS Support</h3><p>There are three RSS options in NexT to fit different cases.<br>Edit {% label primary@theme config file %} and set the value of <code>rss</code>:</p>
+<ul>
+<li><code>false</code>: Disable RSS, which won’t show links on page.</li>
+<li>Leave Blank: Use Hexo to generate feed and insert links automatically. You may need to install <a href="https://github.com/hexojs/hexo-generator-feed">hexo-generator-feed</a> plugin with npm firstly.</li>
+<li>Concrete URL: This means you have generate Feed in advance.</li>
+</ul>
+<h3 id="Creative-Commons"><a href="#Creative-Commons" class="headerlink" title="Creative Commons"></a>Creative Commons</h3><p>NexT supports the display of <a href="http://creativecommons.org/">Creative Commons 4.0 International License</a> in sidebar and post including <code>by</code>, <code>by-nc</code>, <code>by-nc-nd</code>, <code>by-nc-sa</code>, <code>by-nd</code>, <code>by-sa</code>, <code>zero</code>. These licenses allow creators to communicate which rights they reserve, and which rights they waive for the benefit of recipients or other creators.</p>
+<p>You can configure it by editing values in <code>creative_commons</code> section in {% label primary@theme config file %}, for example:</p>
+<p>```yml next/_config.yml<br>creative_commons:<br>  license: by-nc-sa<br>  sidebar: true<br>  post: true<br>  language: deed.zh</p>
+<pre><code>
+### GitHub Banner
+
+NexT provides `Follow me on GitHub` banner in right-top corner.
+
+```yml next/_config.yml
+# Follow me on GitHub banner in right-top corner.
+github_banner:
+  enable: true
+  permalink: https://github.com/yourname
+  title: Follow me on GitHub
+</code></pre><p>{% tabs github-banner %}<br><!-- tab <code>permalink</code> --><br><code>permalink</code> → is the specified link must have full url path.<br><!-- endtab --></p>
+<!-- tab <code>title</code> -->
+<p><code>title</code> → is the title and aria-label name.<br><!-- endtab --><br>{% endtabs %}</p>
+<p>You can set <code>enable</code> to <code>true</code> and add your own GitHub link.</p>
+<h3 id="Mobile-Devices-Adaptation"><a href="#Mobile-Devices-Adaptation" class="headerlink" title="Mobile Devices Adaptation"></a>Mobile Devices Adaptation</h3><p>{% tabs Mobile-Adaptation %}<br><!-- tab <code>mobile_layout_economy</code> --><br>If you want to reduce padding/margin indents on devices with narrow width, you can enable it by editing values <code>mobile_layout_economy</code> to <code>true</code> in {% label primary@theme config file %}.</p>
+<p>{% code lang:yml next/_config.yml %}<br>mobile_layout_economy: true<br>{% endcode %}<br><!-- endtab --></p>
+<!-- tab <code>android_chrome_color</code> -->
+<p>By default NexT uses black-deep (<code>#222</code>) as the color of android Chrome header panel. You can configure it by editing values with Hex color in <code>android_chrome_color</code> section in {% label primary@theme config file %}.</p>
+<p>{% code lang:yml next/_config.yml %}<br>android_chrome_color: “#222”<br>{% endcode %}<br><!-- endtab --></p>
+<p>{% endtabs %}</p>
+<h3 id="Rainbow-Safari"><a href="#Rainbow-Safari" class="headerlink" title="Rainbow Safari"></a>Rainbow Safari</h3><p>If you want to hide sticky headers and color the menu bar on Safari (iOS / macOS), you can set <code>safari_rainbow</code> to <code>true</code>. More information here: <a href="https://github.com/koole/rainbowsafari">rainbowsafari</a>.</p>
+<p>{% code lang:yml next/_config.yml %}<br>safari_rainbow: true<br>{% endcode %}</p>
+<h3 id="Custom-Scrollbar-Support"><a href="#Custom-Scrollbar-Support" class="headerlink" title="Custom Scrollbar Support"></a>Custom Scrollbar Support</h3><p>NexT supports the scrollbar personalization.</p>
+<p>{% note danger %}<br>Only works on webkit based browsers.<br>{% endnote %}</p>
+<p>{% code lang:yml next/_config.yml %}<br>custom_scrollbar: true<br>{% endcode %}</p>
+<h3 id="Custom-Logo-Support"><a href="#Custom-Logo-Support" class="headerlink" title="Custom Logo Support"></a>Custom Logo Support</h3><p>NexT supports the site logo personalization.</p>
+<p>{% tabs custom_logo %}<br><!-- tab <code>enable</code> → --><br>You can enable it by editing values <code>custom_logo.enable</code> to <code>true</code> in {% label primary@theme config file %}.</p>
+<p>{% codeblock lang:yml next/_config.yml %}<br>custom_logo:<br>  enable: true<br>{% endcodeblock %}<br><!-- endtab --></p>
+<!-- tab <code>image</code> -->
+<p>Then you can add images’s url by editing values in <code>custom_logo.image</code> section in {% label primary@theme config file %}.</p>
+<p>{% codeblock lang:yml next/_config.yml %}<br>custom_logo:<br>  image:<br>{% endcodeblock %}<br><!-- endtab --></p>
+<p>{% endtabs %}</p>
+<p>{% note danger %}<br>Scheme Mist does not support custom logo setting under <strong>6.0.x</strong> version or highter.<br>{% endnote %}</p>
+<h3 id="Fonts-Customization"><a href="#Fonts-Customization" class="headerlink" title="Fonts Customization"></a>Fonts Customization</h3><p>To solve the unstable of <a href="https://www.google.com/fonts">Google Fonts API</a> in some countries, NexT supports setting fonts. By using this feature you can assign URL of fonts library. And NexT gives you 5 specific font settings, they are:</p>
+<ul>
+<li>Global Font: Font used in the whole site.</li>
+<li>Title Font: Font used by titles in articles (H1, H2, H3, H4, H5, H6).</li>
+<li>Article Font: Font used by articles.</li>
+<li>Logo Font: Font used by Logo.</li>
+<li>Code Font: Font used by code blocks in articles.</li>
+</ul>
+<p>Each fonts will be used as the first font of this class, NexT will fallback to internal font settings if they are unavalible.</p>
+<ul>
+<li>Non-code Font: Fallback to <code>&quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif</code></li>
+<li>Code Font: Fallback to <code>consolas, Menlo, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, monospace</code></li>
+</ul>
+<p>Plus each section has a <code>external</code> attribute, this controls whether to use the font library CDN.<br>Use this can help you to use fonts installed in system and reduce unnecessary requests.</p>
+<p>```yml next/_config.yml<br>font:<br>  enable: true</p>
+<h1 id="Font-library-CDN-e-g-fonts-googleapis-com-Default"><a href="#Font-library-CDN-e-g-fonts-googleapis-com-Default" class="headerlink" title="Font library CDN, e.g. //fonts.googleapis.com (Default)"></a>Font library CDN, e.g. //fonts.googleapis.com (Default)</h1><p>  host:</p>
+<h1 id="Global-font-settings-used-for-all-elements-in"><a href="#Global-font-settings-used-for-all-elements-in" class="headerlink" title="Global font settings used for all elements in ."></a>Global font settings used for all elements in <body>.</h1><p>  global:<br>    external: true<br>    family: Monda<br>    size:</p>
+<h1 id="Font-settings-for-Headlines-H1-H2-H3-H4-H5-H6"><a href="#Font-settings-for-Headlines-H1-H2-H3-H4-H5-H6" class="headerlink" title="Font settings for Headlines (H1, H2, H3, H4, H5, H6)."></a>Font settings for Headlines (H1, H2, H3, H4, H5, H6).</h1><h1 id="Fallback-to-global-font-settings"><a href="#Fallback-to-global-font-settings" class="headerlink" title="Fallback to global font settings."></a>Fallback to <code>global</code> font settings.</h1><p>  headings:<br>    external: true<br>    family: Roboto Slab<br>    size:</p>
+<h1 id="Font-settings-for-posts"><a href="#Font-settings-for-posts" class="headerlink" title="Font settings for posts."></a>Font settings for posts.</h1><h1 id="Fallback-to-global-font-settings-1"><a href="#Fallback-to-global-font-settings-1" class="headerlink" title="Fallback to global font settings."></a>Fallback to <code>global</code> font settings.</h1><p>  posts:<br>    external: true<br>    family:</p>
+<h1 id="Font-settings-for-Logo"><a href="#Font-settings-for-Logo" class="headerlink" title="Font settings for Logo."></a>Font settings for Logo.</h1><h1 id="Fallback-to-global-font-settings-2"><a href="#Fallback-to-global-font-settings-2" class="headerlink" title="Fallback to global font settings."></a>Fallback to <code>global</code> font settings.</h1><p>  logo:<br>    external: true<br>    family: Lobster Two<br>    size: 24</p>
+<h1 id="Font-settings-for-and-code-blocks"><a href="#Font-settings-for-and-code-blocks" class="headerlink" title="Font settings for  and code blocks."></a>Font settings for <code> and code blocks.</h1><p>  codes:<br>    external: true<br>    family: PT Mono<br>    size:</p>
+<pre><code>
+### Animation Effect
+
+NexT enables animation effect by default which is supported by JavaScript, so it will wait for JavaScript loaded to show content.
+If you need speed you can set this section to `false` to disable it.
+
+Edit {% label primary@theme config file %} and set the needed values under the `motion` to fit your demand.
+
+```yml next/_config.yml
+# Use velocity to animate everything.
+motion:
+  enable: true
+  async: false
+  transition:
+    # Transition variants:
+    # fadeIn | fadeOut | flipXIn | flipXOut | flipYIn | flipYOut | flipBounceXIn | flipBounceXOut | flipBounceYIn | flipBounceYOut
+    # swoopIn | swoopOut | whirlIn | whirlOut | shrinkIn | shrinkOut | expandIn | expandOut
+    # bounceIn | bounceOut | bounceUpIn | bounceUpOut | bounceDownIn | bounceDownOut | bounceLeftIn | bounceLeftOut | bounceRightIn | bounceRightOut
+    # slideUpIn | slideUpOut | slideDownIn | slideDownOut | slideLeftIn | slideLeftOut | slideRightIn | slideRightOut
+    # slideUpBigIn | slideUpBigOut | slideDownBigIn | slideDownBigOut | slideLeftBigIn | slideLeftBigOut | slideRightBigIn | slideRightBigOut
+    # perspectiveUpIn | perspectiveUpOut | perspectiveDownIn | perspectiveDownOut | perspectiveLeftIn | perspectiveLeftOut | perspectiveRightIn | perspectiveRightOut
+    post_block: fadeIn
+    post_header: slideDownIn
+    post_body: slideDownIn
+    coll_header: slideLeftIn
+    # Only for Pisces | Gemini.
+    sidebar: slideUpIn
+</code></pre>

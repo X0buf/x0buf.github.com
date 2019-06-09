@@ -1,0 +1,43 @@
+<hr>
+<p>title: Installation</p>
+<h2 id="description-NexT-User-Docs-–-Starting-to-Use-–-Detailed-Installation"><a href="#description-NexT-User-Docs-–-Starting-to-Use-–-Detailed-Installation" class="headerlink" title="description: NexT User Docs – Starting to Use – Detailed Installation"></a>description: NexT User Docs – Starting to Use – Detailed Installation</h2><h3 id="Go-to-Hexo-dir"><a href="#Go-to-Hexo-dir" class="headerlink" title="Go to Hexo dir"></a>Go to Hexo dir</h3><p>Change dir to {% label info@site root directory %}. There must be <code>node_modules</code>, <code>source</code>, <code>themes</code> and other directories:</p>
+<pre><code class="bash">$ <span class="built_in">cd</span> hexo
+$ ls
+_config.yml  node_modules  package.json  public  scaffolds  <span class="built_in">source</span>  themes
+</code></pre>
+<h3 id="Get-NexT"><a href="#Get-NexT" class="headerlink" title="Get NexT"></a>Get NexT</h3><p>Download theme from GitHub. There are <strong>3 options</strong> to do it, need to <strong>choose only one</strong> of them.</p>
+<p>{% tabs download-next %}<br><!-- tab {% label success@Latest Master Branch %} --><br><strong>Option 1: Download <a href="https://github.com/theme-next/hexo-theme-next/archive/master.zip">Latest Master Branch</a></strong></p>
+<p>May be <strong>unstable</strong>, but includes <strong>latest features</strong>. Recommended for advanced users and for developers.</p>
+<p>{% subtabs latest-master-branch %}<br><!-- tab {% label success@Git %} --><br>{% code lang:bash %}<br>$ git clone <a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a> themes/next<br>{% endcode %}</p>
+<p>This variant will give to you the <strong>whole repository</strong> (with <code>.git</code> directory inside).<br>And in any time you can update current version with git (instructions below) and switch to any tagged release or on latest master or any other branch.<br>At most cases useful as for users and for developers.</p>
+<p>Get tags list:</p>
+<p>{% code lang:bash %}<br>$ cd themes/next<br>$ git tag -l<br>…<br>v6.0.0<br>v6.0.1<br>v6.0.2<br>…<br>{% endcode %}</p>
+<p>For example, you want to switch on <code>v6.0.1</code> tagged release version. Input the following command:</p>
+<p>{% code lang:bash %}<br>$ git checkout tags/v6.0.1<br>Note: checking out ‘tags/v6.0.1’.<br>…<br>HEAD is now at da9cdd2… Release v6.0.1</p>
+<h1 id="If-you-want-to-switch-on-latest-release-version-without-defining-tag-optional"><a href="#If-you-want-to-switch-on-latest-release-version-without-defining-tag-optional" class="headerlink" title="If you want to switch on latest release version without defining tag (optional)"></a>If you want to switch on latest release version without defining tag (optional)</h1><p>$ git checkout $(git describe –tags $(git rev-list –tags –max-count=1))<br>{% endcode %}</p>
+<p>And if you want to switch back on master branch, input this command:</p>
+<p>{% code lang:bash %}<br>$ git checkout master<br>{% endcode %}</p>
+<p><strong>Update</strong><br>You can update to latest master branch by the following command:</p>
+<p>{% code lang:bash %}<br>$ cd themes/next<br>$ git pull<br>{% endcode %}</p>
+<p>And if you see any error message during update (something like <strong>«Commit your changes or stash them before you can merge»</strong>), recommended to learn <a href="/docs/getting-started/data-files">Data Files</a> feature. Howbeit, you can bypass update errors by <code>Commit</code>, <code>Stash</code> or <code>Discard</code> local changes. See <a href="https://stackoverflow.com/a/15745424/5861495">here</a> how to do it.<br><!-- endtab --></p>
+<!-- tab cURL & Tar -->
+<p>{% code lang:bash %}<br>$ mkdir themes/next<br>$ curl -L <a href="https://api.github.com/repos/theme-next/hexo-theme-next/tarball">https://api.github.com/repos/theme-next/hexo-theme-next/tarball</a> | tar -zxv -C themes/next –strip-components=1<br>{% endcode %}</p>
+<p>Same as before under <code>curl &amp; tar &amp; wget</code> variant, but will download <strong>only latest master branch version</strong>.<br>At some cases useful for developers.<br><!-- endtab --><br>{% endsubtabs %}</p>
+<!-- endtab -->
+<!-- tab Tagged Release Version -->
+<p><strong>Option 2: Download <a href="https://github.com/theme-next/hexo-theme-next/releases">Tagged Release Version</a></strong></p>
+<p>In rare cases useful, but not recommended.<br>You must define version. Replace <code>v6.0.0</code> with any version from <a href="https://github.com/theme-next/hexo-theme-next/tags">tags list</a>.</p>
+<p>{% subtabs tagged-release-version %}<br><!-- tab Git --><br>{% code lang:bash %}<br>$ git clone –branch v6.0.0 <a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a> themes/next<br>{% endcode %}</p>
+<p>This variant will give to you the <strong>defined release version</strong> (with <code>.git</code> directory inside).<br>And in any time you can switch to any tagged release, but with limit to defined version.<br><!-- endtab --></p>
+<!-- tab cURL & tar -->
+<p>{% code lang:bash %}<br>$ mkdir themes/next<br>$ curl -L <a href="https://api.github.com/repos/theme-next/hexo-theme-next/tarball/v6.0.0">https://api.github.com/repos/theme-next/hexo-theme-next/tarball/v6.0.0</a> | tar -zxv -C themes/next –strip-components=1<br>{% endcode %}</p>
+<p>Same as before under <code>curl &amp; tar &amp; wget</code> variant, but will download <strong>only concrete version</strong>.<br><!-- endtab --><br>{% endsubtabs %}</p>
+<!-- endtab -->
+<!-- tab Latest Release Version -->
+<p><strong>Option 3: Download <a href="https://github.com/theme-next/hexo-theme-next/releases/latest">Latest Release Version</a></strong></p>
+<p>At most cases <strong>stable</strong>. Recommended for beginners.</p>
+<p>{% subtabs latest-release-version %}<br><!-- tab cURL & tar & Wget --><br>{% code lang:bash %}<br>$ mkdir themes/next<br>$ curl -s <a href="https://api.github.com/repos/theme-next/hexo-theme-next/releases/latest">https://api.github.com/repos/theme-next/hexo-theme-next/releases/latest</a> | grep tarball_url | cut -d ‘“‘ -f 4 | wget -i - -O- | tar -zx -C themes/next –strip-components=1<br>{% endcode %}</p>
+<p>This variant will give to you <strong>only latest release version</strong> (without <code>.git</code> directory inside).<br>So, there is impossible to update this version with <code>git</code> later.<br>Instead you always can use separate configuration (e.g. <a href="/docs/getting-started/data-files">Data Files</a>) and download new version inside old directory (or create new directory and redefine <code>theme</code> in {% label info@site config file %}), without losing your old configuration.<br><!-- endtab --><br>{% endsubtabs %}</p>
+<!-- endtab -->
+<p>{% endtabs %}</p>
+<h3 id="Set-it-up"><a href="#Set-it-up" class="headerlink" title="Set it up"></a>Set it up</h3><p>When NexT download will complete, we must go back to previous guide and follow <a href="/docs/getting-started/#Enabling-NexT">Enabling NexT</a> instructions.</p>

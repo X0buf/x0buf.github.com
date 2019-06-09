@@ -1,0 +1,37 @@
+<hr>
+<p>title: Tag Plugins</p>
+<h2 id="description-NexT-User-Docs-–-NexT-Supported-Tags"><a href="#description-NexT-User-Docs-–-NexT-Supported-Tags" class="headerlink" title="description: NexT User Docs – NexT Supported Tags"></a>description: NexT User Docs – NexT Supported Tags</h2><p>Tag Plugin is a way to make special style contents supported by Hexo. For example, we cannot show a image with custom size in standard Markdown. And then we can use tag plugins to solve it. <a href="https://hexo.io/docs/tag-plugins">Hexo has a lot of tags</a> which can help user. And Hexo also have interfaces to themes which make themes able to create their own tags. Following tags is provided by NexT:</p>
+<ul>
+<li><a href="#Centered-Quote">Centered Quote</a></li>
+<li><a href="#Include-Raw">Include Raw</a></li>
+<li><a href="/docs/tag-plugins/button">Button</a></li>
+<li><a href="/docs/tag-plugins/full-image">Full Image</a></li>
+<li><a href="/docs/tag-plugins/group-pictures">Group Pictures</a></li>
+<li><a href="/docs/tag-plugins/label">Label</a></li>
+<li><a href="/docs/tag-plugins/mermaid">Mermaid</a></li>
+<li><a href="/docs/tag-plugins/note">Note</a></li>
+<li><a href="/docs/tag-plugins/pdf">PDF</a></li>
+<li><a href="/docs/tag-plugins/tabs">Tabs</a></li>
+<li><a href="/docs/tag-plugins/video">Video</a></li>
+</ul>
+<h3 id="Centered-Quote"><a href="#Centered-Quote" class="headerlink" title="Centered Quote"></a>Centered Quote</h3><p>This tag will make a quote with two lines before and after it, and text quoted will be centered. When using centered quote, if we have multi-line text, and each line has a different length, the quote won’t be symmetrical, so it’s recommended to use when only have single line text. For example before article all after article to make a summary.</p>
+<h4 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h4><p>```html center-quote.js<br>{% centerquote %}Something{% endcenterquote %}<br><!-- Tag Alias --><br>{% cq %}Something{% endcq %}</p>
+<pre><code>
+#### Example
+
+```md
+{% cq %}Elegant in code, simple in core{% endcq %}
+</code></pre><p>{% cq %}Elegant in code, simple in core{% endcq %}</p>
+<h3 id="Include-Raw"><a href="#Include-Raw" class="headerlink" title="Include Raw"></a>Include Raw</h3><p>This tag include any raw content into your posts. Path is relative to your site source directory.</p>
+<h4 id="Usage-1"><a href="#Usage-1" class="headerlink" title="Usage"></a>Usage</h4><p>```html include-raw.js<br>{% include_raw ‘_data/path/to/file.html’ %}</p>
+<pre><code>
+#### Example
+
+Let&apos;s create `include-raw.html` file in `_data` directory under {% label info@site root directory %} with following content:
+
+```html
+Any &lt;strong&gt;raw content&lt;/strong&gt; may be included with this tag.
+</code></pre><p>Then in any post we can use this content with <code>include_raw</code> tag:</p>
+<pre><code class="md">{% include<span class="emphasis">_raw '_</span>data/path/to/include-raw.html' %}
+</code></pre>
+<p>{% include_raw ‘_data/include-raw.html’ %}</p>

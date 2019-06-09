@@ -1,0 +1,180 @@
+<hr>
+<p>title: External Libraries</p>
+<h2 id="description-NexT-User-Docs-–-Third-party-Service-Integration-–-External-Libraries"><a href="#description-NexT-User-Docs-–-Third-party-Service-Integration-–-External-Libraries" class="headerlink" title="description: NexT User Docs – Third-party Service Integration – External Libraries"></a>description: NexT User Docs – Third-party Service Integration – External Libraries</h2><h3 id="Fancybox"><a href="#Fancybox" class="headerlink" title="Fancybox"></a>Fancybox</h3><p>NexT supports the fancybox plugin, which is a jQuery lightbox script for displaying images, videos and more. Touch enabled, responsive and fully customizable.</p>
+<p>There is support for old version 2 and new version 3. Please, choose only any one variant, do not need to install both.</p>
+<p>{% tabs fancybox %}<br><!-- tab Version 2.x --></p>
+<p>{% subtabs fancybox1 %}<br><!-- tab Installation → --><br>Change dir to NexT directory, and install module to <code>source/lib</code> directory.</p>
+<p>{% code lang:bash %}<br>$ cd themes/next<br>$ git clone <a href="https://github.com/theme-next/theme-next-fancybox">https://github.com/theme-next/theme-next-fancybox</a> source/lib/fancybox<br>{% endcode %}</p>
+<p>{% note info %}<br>If you want to use the CDN instead of clone this repo, then need to <strong>set vendors</strong> in {% label primary@theme config file %}:<br>{% code lang:yml next/_config.yml %}<br>vendors:<br>  …</p>
+<h1 id="See-http-fancyapps-com-fancybox"><a href="#See-http-fancyapps-com-fancybox" class="headerlink" title="See: http://fancyapps.com/fancybox/"></a>See: <a href="http://fancyapps.com/fancybox/">http://fancyapps.com/fancybox/</a></h1><p>  fancybox: //cdn.jsdelivr.net/npm/fancybox@2.1.5/dist/js/jquery.fancybox.pack.js<br>  fancybox_css: //cdn.jsdelivr.net/npm/fancybox@2.1.5/dist/css/jquery.fancybox.min.css<br>  …<br>{% endcode %}<br>{% endnote %}</p>
+<!-- endtab -->
+<!-- tab NexT Config -->
+<p>After the plugin installed, you can enable it by editing values <code>fancybox</code> to <code>true</code> in {% label primary@theme config file %}.</p>
+<p>{% code lang:yml hexo/_config.yml %}<br>fancybox: true<br>{% endcode %}<br><!-- endtab --><br>{% endsubtabs %}</p>
+<!-- endtab -->
+<!-- tab Version 3.x -->
+<p>{% subtabs fancybox2 %}<br><!-- tab Installation → --><br>Change dir to NexT directory, and install module to <code>source/lib</code> directory.</p>
+<p>{% code lang:bash %}<br>$ cd themes/next<br>$ git clone <a href="https://github.com/theme-next/theme-next-fancybox3">https://github.com/theme-next/theme-next-fancybox3</a> source/lib/fancybox<br>{% endcode %}</p>
+<p>{% note info %}<br>If you want to use the CDN instead of clone this repo, then need to <strong>set vendors</strong> in {% label primary@theme config file %}:<br>{% code lang:yml next/_config.yml %}<br>vendors:<br>  …</p>
+<h1 id="See-http-fancyapps-com-fancybox-1"><a href="#See-http-fancyapps-com-fancybox-1" class="headerlink" title="See: http://fancyapps.com/fancybox/"></a>See: <a href="http://fancyapps.com/fancybox/">http://fancyapps.com/fancybox/</a></h1><p>  fancybox: //cdn.jsdelivr.net/npm/fancybox@3.0.0/dist/js/jquery.fancybox.pack.js<br>  fancybox_css: //cdn.jsdelivr.net/npm/fancybox@3.0.0/dist/css/jquery.fancybox.min.css<br>  …<br>{% endcode %}<br>{% endnote %}</p>
+<!-- endtab -->
+<!-- tab NexT Config -->
+<p>After the plugin installed, you can enable it by editing values <code>fancybox</code> to <code>true</code> in {% label primary@theme config file %}.</p>
+<p>{% code lang:yml hexo/_config.yml %}<br>fancybox: true<br>{% endcode %}<br><!-- endtab --><br>{% endsubtabs %}</p>
+<!-- endtab -->
+<p>{% endtabs %}</p>
+<h3 id="Bookmark"><a href="#Bookmark" class="headerlink" title="Bookmark"></a>Bookmark</h3><p>Bookmark is a plugin that allow the users save their reading position. The users could just click the bookmark icon (like 🔖) in left-top of the page to save the position. And when they visit your blog in the next time, they can continue the last reading position by clicking the bookmark icon from the home page.</p>
+<p>{% tabs bookmark %}<br><!-- tab Installation → --><br>Change dir to NexT directory, and install module to <code>source/lib</code> directory.</p>
+<p>{% code lang:bash %}<br>$ cd themes/next<br>$ git clone <a href="https://github.com/theme-next/theme-next-bookmark.git">https://github.com/theme-next/theme-next-bookmark.git</a> source/lib/bookmark<br>{% endcode %}</p>
+<p>{% note info %}<br>If you want to use the CDN instead of clone this repo, then need to <strong>set vendors</strong> in {% label primary@theme config file %}:<br>{% code lang:yml next/_config.yml %}<br>vendors:<br>  …</p>
+<h1 id="bookmark"><a href="#bookmark" class="headerlink" title="bookmark"></a>bookmark</h1><h1 id="https-github-com-theme-next-theme-next-bookmark"><a href="#https-github-com-theme-next-theme-next-bookmark" class="headerlink" title="https://github.com/theme-next/theme-next-bookmark"></a><a href="https://github.com/theme-next/theme-next-bookmark">https://github.com/theme-next/theme-next-bookmark</a></h1><p>  bookmark: //cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@1.0.0/bookmark.min.js<br>  …<br>{% endcode %}<br>{% endnote %}</p>
+<!-- endtab -->
+<!-- tab NexT Config -->
+<p>After the plugin installed, you can enable it by editing values <code>bookmark.enable</code> to <code>true</code> in {% label primary@theme config file %}.</p>
+<p>{% code lang:yml hexo/_config.yml %}</p>
+<h1 id="Dependencies-https-github-com-theme-next-theme-next-bookmark"><a href="#Dependencies-https-github-com-theme-next-theme-next-bookmark" class="headerlink" title="Dependencies: https://github.com/theme-next/theme-next-bookmark"></a>Dependencies: <a href="https://github.com/theme-next/theme-next-bookmark">https://github.com/theme-next/theme-next-bookmark</a></h1><p>bookmark:<br>  enable: true</p>
+<h1 id="if-auto"><a href="#if-auto" class="headerlink" title="if auto"></a>if auto</h1><h1 id="save-the-reading-position-when-closing-the-page"><a href="#save-the-reading-position-when-closing-the-page" class="headerlink" title="- save the reading position when closing the page"></a>- save the reading position when closing the page</h1><h1 id="or-clicking-the-bookmark-icon"><a href="#or-clicking-the-bookmark-icon" class="headerlink" title="- or clicking the bookmark-icon"></a>- or clicking the bookmark-icon</h1><h1 id="if-manual-only-save-it-by-clicking-the-bookmark-icon"><a href="#if-manual-only-save-it-by-clicking-the-bookmark-icon" class="headerlink" title="if manual, only save it by clicking the bookmark-icon"></a>if manual, only save it by clicking the bookmark-icon</h1><p>  save: auto<br>{% endcode %}<br><!-- endtab --><br>{% endtabs %}</p>
+<h3 id="Reading-Progress"><a href="#Reading-Progress" class="headerlink" title="Reading Progress"></a>Reading Progress</h3><p>NexT supports the page scroll reading progress indicator.</p>
+<p>{% tabs reading_progress %}<br><!-- tab Installation → --><br>Change dir to NexT directory, and install module to <code>source/lib</code> directory.</p>
+<p>{% code lang:bash %}<br>$ cd themes/next<br>$ git clone <a href="https://github.com/theme-next/theme-next-reading-progress">https://github.com/theme-next/theme-next-reading-progress</a> source/lib/reading_progress<br>{% endcode %}</p>
+<p>{% note info %}<br>If you want to use the CDN instead of clone this repo, then need to <strong>set vendors</strong> in {% label primary@theme config file %}:<br>{% code lang:yml next/_config.yml %}<br>vendors:<br>  …</p>
+<h1 id="reading-progress"><a href="#reading-progress" class="headerlink" title="reading_progress"></a>reading_progress</h1><h1 id="https-github-com-theme-next-theme-next-reading-progress"><a href="#https-github-com-theme-next-theme-next-reading-progress" class="headerlink" title="https://github.com/theme-next/theme-next-reading-progress"></a><a href="https://github.com/theme-next/theme-next-reading-progress">https://github.com/theme-next/theme-next-reading-progress</a></h1><p>  reading_progress: //cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1.1/reading_progress.min.js<br>  …<br>{% endcode %}<br>{% endnote %}</p>
+<!-- endtab -->
+<!-- tab NexT Config -->
+<p>After the plugin installed, you can enable it by editing values <code>reading_progress.enable</code> to <code>true</code> in {% label primary@theme config file %}.</p>
+<p>{% code lang:yml hexo/_config.yml %}<br>reading_progress:<br>  enable: true<br>  color: “#37c6c0”<br>  height: 2px<br>{% endcode %}<br><!-- endtab --><br>{% endtabs %}</p>
+<h3 id="Progress-bar"><a href="#Progress-bar" class="headerlink" title="Progress bar"></a>Progress bar</h3><p>Pace will automatically monitor your Ajax requests, event loop lag, document ready state and elements on your page to decide on the progress.</p>
+<p>{% tabs pace %}<br><!-- tab Installation → --><br>Change dir to NexT directory, and install module to <code>source/lib</code> directory.</p>
+<p>{% code lang:bash %}<br>$ cd themes/next<br>$ git clone <a href="https://github.com/theme-next/theme-next-pace">https://github.com/theme-next/theme-next-pace</a> source/lib/pace<br>{% endcode %}</p>
+<p>{% note info %}<br>If you want to use the CDN instead of clone this repo, then need to <strong>set vendors</strong> in {% label primary@theme config file %}:<br>{% code lang:yml next/_config.yml %}<br>vendors:<br>  …</p>
+<h1 id="See-https-github-com-HubSpot-pace"><a href="#See-https-github-com-HubSpot-pace" class="headerlink" title="See: https://github.com/HubSpot/pace"></a>See: <a href="https://github.com/HubSpot/pace">https://github.com/HubSpot/pace</a></h1><p>  pace: //cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js<br>  pace_css: //cdn.jsdelivr.net/npm/pace-js@1.0.2/themes/blue/pace-theme-minimal.css<br>  …<br>{% endcode %}<br>{% endnote %}</p>
+<!-- endtab -->
+<!-- tab NexT Config -->
+<p>{% subtabs pace1 %}<br><!-- tab <code>pace</code> --><br>After the plugin installed, you can enable it by editing values <code>pace</code> to <code>true</code> in {% label primary@theme config file %}.</p>
+<p>{% code lang:yml hexo/_config.yml %}<br>pace: true<br>{% endcode %}<br><!-- endtab --><br><!-- tab <code>pace_theme</code> --><br>Pace includes a bunch of <a href="http://github.hubspot.com/pace/docs/welcome/">themes</a> to get you started. Just include the appropriate css file.</p>
+<ul>
+<li>pace-theme-big-counter</li>
+<li>pace-theme-bounce</li>
+<li>pace-theme-barber-shop</li>
+<li>pace-theme-center-atom</li>
+<li>pace-theme-center-circle</li>
+<li>pace-theme-center-radar</li>
+<li>pace-theme-center-simple</li>
+<li>pace-theme-corner-indicator</li>
+<li>pace-theme-fill-left</li>
+<li>pace-theme-flash</li>
+<li>pace-theme-loading-bar</li>
+<li>pace-theme-mac-osx</li>
+<li>pace-theme-minimal</li>
+</ul>
+<p>By default NexT uses <code>pace-theme-minimal</code> theme. You can configure it by editing values in <code>pace_theme</code> section in {% label primary@theme config file %}.</p>
+<p>{% code lang:yml hexo/_config.yml %}<br>pace_theme: pace-theme-minimal<br>{% endcode %}</p>
+<p>{% note info %}<br>If you want to use the CDN, then need to <strong>set vendors</strong> in {% label primary@theme config file %}:<br>{% code lang:yml next/_config.yml %}<br>vendors:<br>  …</p>
+<h1 id="See-https-github-com-HubSpot-pace-1"><a href="#See-https-github-com-HubSpot-pace-1" class="headerlink" title="See: https://github.com/HubSpot/pace"></a>See: <a href="https://github.com/HubSpot/pace">https://github.com/HubSpot/pace</a></h1><p>  pace_css: //cdn.jsdelivr.net/npm/pace-js@1.0.2/themes/blue/pace-theme-minimal.css<br>  …<br>{% endcode %}<br>{% endnote %}</p>
+<!-- endtab -->
+<p>{% endsubtabs %}</p>
+<!-- endtab -->
+<p>{% endtabs %}</p>
+<h3 id="FastClick"><a href="#FastClick" class="headerlink" title="FastClick"></a>FastClick</h3><p><a href="https://github.com/ftlabs/fastclick">FastClick</a> is a simple, easy-to-use library for eliminating the 300ms delay between a physical tap and the firing of a click event on mobile browsers. The aim is to make your application feel less laggy and more responsive while avoiding any interference with your current logic.</p>
+<p>{% tabs fastclick %}<br><!-- tab Installation → --><br>Change dir to NexT directory, and install module to <code>source/lib</code> directory.</p>
+<p>{% code lang:bash %}<br>$ cd themes/next<br>$ git clone <a href="https://github.com/theme-next/theme-next-fastclick">https://github.com/theme-next/theme-next-fastclick</a> source/lib/fastclick<br>{% endcode %}</p>
+<p>{% note info %}<br>If you want to use the CDN instead of clone this repo, then need to <strong>set vendors</strong> in {% label primary@theme config file %}:<br>{% code lang:yml next/_config.yml %}<br>vendors:<br>  …</p>
+<h1 id="See-https-github-com-ftlabs-fastclick"><a href="#See-https-github-com-ftlabs-fastclick" class="headerlink" title="See: https://github.com/ftlabs/fastclick"></a>See: <a href="https://github.com/ftlabs/fastclick">https://github.com/ftlabs/fastclick</a></h1><p>  fastclick: <a href="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js">https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js</a><br>  …<br>{% endcode %}<br>{% endnote %}</p>
+<!-- endtab -->
+<!-- tab NexT Config -->
+<p>After the plugin installed, you can enable it by editing values <code>fastclick</code> to <code>true</code> in {% label primary@theme config file %}.</p>
+<p>{% code lang:yml hexo/_config.yml %}</p>
+<h1 id="Added-switch-option-for-separated-repo-in-6-0-0"><a href="#Added-switch-option-for-separated-repo-in-6-0-0" class="headerlink" title="Added switch option for separated repo in 6.0.0."></a>Added switch option for separated repo in 6.0.0.</h1><h1 id="Dependencies-https-github-com-theme-next-theme-next-fastclick"><a href="#Dependencies-https-github-com-theme-next-theme-next-fastclick" class="headerlink" title="Dependencies: https://github.com/theme-next/theme-next-fastclick"></a>Dependencies: <a href="https://github.com/theme-next/theme-next-fastclick">https://github.com/theme-next/theme-next-fastclick</a></h1><p>fastclick: true<br>{% endcode %}</p>
+<!-- endtab -->
+<p>{% endtabs %}</p>
+<h3 id="Jquery-Lazyload"><a href="#Jquery-Lazyload" class="headerlink" title="Jquery Lazyload"></a>Jquery Lazyload</h3><p><a href="https://github.com/tuupola/jquery_lazyload">Jquery Lazyload</a> is a modern vanilla JavaScript version of the original Lazy Load plugin. Lazy Load delays loading of images in long web pages. Images outside of viewport will not be loaded before user scrolls to them. This is opposite of image preloading.</p>
+<p>{% tabs lazyload %}<br><!-- tab Installation → --><br>Change dir to NexT directory, and install module to <code>source/lib</code> directory.</p>
+<p>{% code lang:bash %}<br>$ cd themes/next<br>$ git clone <a href="https://github.com/theme-next/theme-next-jquery-lazyload">https://github.com/theme-next/theme-next-jquery-lazyload</a> source/lib/jquery_lazyload<br>{% endcode %}</p>
+<p>{% note info %}<br>If you want to use the CDN instead of clone this repo, then need to <strong>set vendors</strong> in {% label primary@theme config file %}:<br>{% code lang:yml next/_config.yml %}<br>vendors:<br>  …</p>
+<h1 id="See-https-github-com-tuupola-jquery-lazyload"><a href="#See-https-github-com-tuupola-jquery-lazyload" class="headerlink" title="See: https://github.com/tuupola/jquery_lazyload"></a>See: <a href="https://github.com/tuupola/jquery_lazyload">https://github.com/tuupola/jquery_lazyload</a></h1><p>  lazyload: //cdn.jsdelivr.net/npm/jquery_lazyload@1.9.3/jquery.lazyload.min.js<br>  …<br>{% endcode %}<br>{% endnote %}</p>
+<!-- endtab -->
+<!-- tab NexT Config -->
+<p>After the plugin installed, you can enable it by editing values <code>lazyload</code> to <code>true</code> in {% label primary@theme config file %}.</p>
+<p>{% code lang:yml hexo/_config.yml %}</p>
+<h1 id="Added-switch-option-for-separated-repo-in-6-0-0-1"><a href="#Added-switch-option-for-separated-repo-in-6-0-0-1" class="headerlink" title="Added switch option for separated repo in 6.0.0."></a>Added switch option for separated repo in 6.0.0.</h1><h1 id="Dependencies-https-github-com-theme-next-theme-next-fastclick-1"><a href="#Dependencies-https-github-com-theme-next-theme-next-fastclick-1" class="headerlink" title="Dependencies: https://github.com/theme-next/theme-next-fastclick"></a>Dependencies: <a href="https://github.com/theme-next/theme-next-fastclick">https://github.com/theme-next/theme-next-fastclick</a></h1><p>lazyload: true<br>{% endcode %}</p>
+<!-- endtab -->
+<p>{% endtabs %}</p>
+<h3 id="Quicklink"><a href="#Quicklink" class="headerlink" title="Quicklink"></a>Quicklink</h3><p><a href="https://github.com/GoogleChromeLabs/quicklink">Quicklink</a> is a JavaScript plugin that faster subsequent page-loads by prefetching in-viewport links during idle time. Chrome, Firefox, Edge are supported without polyfills.</p>
+<p>{% tabs quicklink %}<br><!-- tab Installation → --><br>Change dir to NexT directory, and install module to <code>source/lib</code> directory.</p>
+<p>{% code lang:bash %}<br>$ cd themes/next<br>$ git clone <a href="https://github.com/theme-next/theme-next-quicklink">https://github.com/theme-next/theme-next-quicklink</a> source/lib/quicklink<br>{% endcode %}</p>
+<p>{% note info %}<br>If you want to use the CDN instead of clone this repo, then need to <strong>set vendors</strong> in {% label primary@theme config file %}:<br>{% code lang:yml next/_config.yml %}<br>vendors:<br>  …</p>
+<h1 id="See-https-github-com-GoogleChromeLabs-quicklink"><a href="#See-https-github-com-GoogleChromeLabs-quicklink" class="headerlink" title="See: https://github.com/GoogleChromeLabs/quicklink"></a>See: <a href="https://github.com/GoogleChromeLabs/quicklink">https://github.com/GoogleChromeLabs/quicklink</a></h1><p>  quicklink: //cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js<br>  …<br>{% endcode %}<br>{% endnote %}</p>
+<!-- endtab -->
+<!-- tab NexT Config -->
+<p>After the plugin installed, you can enable it by editing values <code>quicklink.enable</code> to <code>true</code> in {% label primary@theme config file %}.</p>
+<p>{% code lang:yml hexo/_config.yml %}<br>…<br>quicklink:<br>  enable: true<br>  home: true<br>  archive: true<br>  delay: true<br>  timeout: 3000<br>  priority: true<br>  ignores:<br>…<br>{% endcode %}</p>
+<!-- endtab -->
+<p>{% endtabs %}</p>
+<h3 id="Backgroud-JS"><a href="#Backgroud-JS" class="headerlink" title="Backgroud JS"></a>Backgroud JS</h3><h4 id="Canvas-Nest"><a href="#Canvas-Nest" class="headerlink" title="Canvas Nest"></a>Canvas Nest</h4><p><a href="https://github.com/hustcc/canvas-nest.js">canvas-nest.js</a> is a nest backgroud of website draw on canvas.</p>
+<p>{% tabs canvas_nest %}<br><!-- tab Installation → --><br>Change dir to NexT directory, and install module to <code>source/lib</code> directory.</p>
+<p>{% code lang:bash %}<br>$ cd themes/next<br>$ git clone <a href="https://github.com/theme-next/theme-next-canvas-nest">https://github.com/theme-next/theme-next-canvas-nest</a> source/lib/canvas-nest<br>{% endcode %}</p>
+<p>{% note info %}<br>If you want to use the CDN instead of clone this repo, then need to <strong>set vendors</strong> in {% label primary@theme config file %}:<br>{% code lang:yml next/_config.yml %}<br>vendors:<br>  …</p>
+<h1 id="https-github-com-hustcc-canvas-nest-js"><a href="#https-github-com-hustcc-canvas-nest-js" class="headerlink" title="https://github.com/hustcc/canvas-nest.js"></a><a href="https://github.com/hustcc/canvas-nest.js">https://github.com/hustcc/canvas-nest.js</a></h1><p>  canvas_nest: //cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js<br>  …<br>{% endcode %}<br>{% endnote %}</p>
+<!-- endtab -->
+<!-- tab NexT Config -->
+<p>After the plugin installed, you can enable it by editing values <code>canvas_nest</code> to <code>true</code> in {% label primary@theme config file %}.</p>
+<p>{% code lang:yml hexo/_config.yml %}</p>
+<h1 id="Dependencies-https-github-com-theme-next-theme-next-fastclick-2"><a href="#Dependencies-https-github-com-theme-next-theme-next-fastclick-2" class="headerlink" title="Dependencies: https://github.com/theme-next/theme-next-fastclick"></a>Dependencies: <a href="https://github.com/theme-next/theme-next-fastclick">https://github.com/theme-next/theme-next-fastclick</a></h1><p>canvas_nest: true<br>{% endcode %}</p>
+<!-- endtab -->
+<p>{% endtabs %}</p>
+<p>{% note warning %}<br>For now, it will be loaded both in webs and mobile devices.<br>{% endnote %}</p>
+<h4 id="Canvas-Ribbon"><a href="#Canvas-Ribbon" class="headerlink" title="Canvas Ribbon"></a>Canvas Ribbon</h4><p><a href="https://github.com/zproo/canvas-ribbon">canvas-ribbon.js</a> is a ribbon backgroud of website draw on canvas.</p>
+<p>{% tabs canvas_ribbon %}<br><!-- tab Installation → --><br>Change dir to NexT directory, and install module to <code>source/lib</code> directory.</p>
+<p>{% code lang:bash %}<br>$ cd themes/next<br>$ git clone <a href="https://github.com/theme-next/theme-next-canvas-ribbon">https://github.com/theme-next/theme-next-canvas-ribbon</a> source/lib/canvas-ribbon<br>{% endcode %}</p>
+<p>{% note info %}<br>If you want to use the CDN instead of clone this repo, then need to <strong>set vendors</strong> in {% label primary@theme config file %}:<br>{% code lang:yml next/_config.yml %}<br>vendors:<br>  …</p>
+<h1 id="https-github-com-zproo-canvas-ribbon"><a href="#https-github-com-zproo-canvas-ribbon" class="headerlink" title="https://github.com/zproo/canvas-ribbon"></a><a href="https://github.com/zproo/canvas-ribbon">https://github.com/zproo/canvas-ribbon</a></h1><p>  canvas_ribbon: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1.0.0/canvas-ribbon.js<br>  …<br>{% endcode %}<br>{% endnote %}</p>
+<!-- endtab -->
+<!-- tab NexT Config -->
+<p>After the plugin installed, you can enable it by editing values <code>canvas_ribbon</code> to <code>true</code> in {% label primary@theme config file %}. You can also configure the ribbon setting by editing values in <code>canvas_ribbon</code> section:</p>
+<ul>
+<li>size: The width of the ribbon.</li>
+<li>alpha: The transparency of the ribbon.</li>
+<li>zIndex: The display level of the ribbon.</li>
+</ul>
+<p>{% code lang:yml hexo/_config.yml %}<br>canvas_ribbon:<br>  enable: true<br>  size: 300<br>  alpha: 0.6<br>  zIndex: -1<br>{% endcode %}</p>
+<!-- endtab -->
+<p>{% endtabs %}</p>
+<p>{% note danger %}<br>For now only Pisces Scheme supports canvas ribbon setting under <strong>6.0.x</strong> version or highter.<br>{% endnote %}</p>
+<h4 id="JavaScript-3D-library"><a href="#JavaScript-3D-library" class="headerlink" title="JavaScript 3D library"></a>JavaScript 3D library</h4><p>The aim of <a href="https://github.com/mrdoob/three.js">JavaScript 3D library</a> is to create an easy to use, lightweight, 3D library. The library provides <code>&lt;canvas&gt;</code>, <code>&lt;svg&gt;</code>, <code>CSS3D</code> and <code>WebGL</code> renderers.</p>
+<p>{% tabs JavaScript-3D %}<br><!-- tab Installation → --><br>Change dir to NexT directory, and install module to <code>source/lib</code> directory.</p>
+<p>{% code lang:bash %}<br>$ cd themes/next<br>$ git clone <a href="https://github.com/theme-next/theme-next-three">https://github.com/theme-next/theme-next-three</a> source/lib/three<br>{% endcode %}</p>
+<p>{% note info %}<br>If you want to use the CDN instead of clone this repo, then need to <strong>set vendors</strong> in {% label primary@theme config file %}:<br>{% code lang:yml next/_config.yml %}<br>vendors:<br>  …</p>
+<h1 id="three"><a href="#three" class="headerlink" title="three"></a>three</h1><p>  three: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/three.min.js</p>
+<h1 id="three-waves"><a href="#three-waves" class="headerlink" title="three_waves"></a>three_waves</h1><h1 id="https-github-com-jjandxa-three-waves"><a href="#https-github-com-jjandxa-three-waves" class="headerlink" title="https://github.com/jjandxa/three_waves"></a><a href="https://github.com/jjandxa/three_waves">https://github.com/jjandxa/three_waves</a></h1><p>  three_waves: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/three-waves.min.js</p>
+<h1 id="three-waves-1"><a href="#three-waves-1" class="headerlink" title="three_waves"></a>three_waves</h1><h1 id="https-github-com-jjandxa-canvas-lines"><a href="#https-github-com-jjandxa-canvas-lines" class="headerlink" title="https://github.com/jjandxa/canvas_lines"></a><a href="https://github.com/jjandxa/canvas_lines">https://github.com/jjandxa/canvas_lines</a></h1><p>  canvas_lines: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/canvas_lines.min.js</p>
+<h1 id="three-waves-2"><a href="#three-waves-2" class="headerlink" title="three_waves"></a>three_waves</h1><h1 id="https-github-com-jjandxa-canvas-sphere"><a href="#https-github-com-jjandxa-canvas-sphere" class="headerlink" title="https://github.com/jjandxa/canvas_sphere"></a><a href="https://github.com/jjandxa/canvas_sphere">https://github.com/jjandxa/canvas_sphere</a></h1><p>  canvas_sphere: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/canvas_sphere.min.js</p>
+<p>  …<br>{% endcode %}<br>{% endnote %}</p>
+<!-- endtab -->
+<!-- tab NexT Config -->
+<p>After the plugin installed, you can enable it by editing values <code>three_waves</code> or <code>canvas_lines</code> or <code>canvas_sphere</code> to <code>true</code> in {% label primary@theme config file %}.</p>
+<p>{% code lang:yml hexo/_config.yml %}</p>
+<h1 id="three-waves-3"><a href="#three-waves-3" class="headerlink" title="three_waves"></a>three_waves</h1><p>three_waves: false</p>
+<h1 id="canvas-lines"><a href="#canvas-lines" class="headerlink" title="canvas_lines"></a>canvas_lines</h1><p>canvas_lines: false</p>
+<h1 id="canvas-sphere"><a href="#canvas-sphere" class="headerlink" title="canvas_sphere"></a>canvas_sphere</h1><p>canvas_sphere: false<br>{% endcode %}</p>
+<!-- endtab -->
+<p>{% endtabs %}</p>
+<h3 id="Chinese-Typesetting"><a href="#Chinese-Typesetting" class="headerlink" title="Chinese Typesetting"></a>Chinese Typesetting</h3><h4 id="Han-Support"><a href="#Han-Support" class="headerlink" title="Han Support"></a>Han Support</h4><p><a href="https://github.com/ethantw/Han">Han.css</a> provides a CSS typography framework optimised for Hanzi.</p>
+<p>{% tabs han %}<br><!-- tab Installation → --><br>Change dir to NexT directory, and install module to <code>source/lib</code> directory.</p>
+<p>{% code lang:bash %}<br>$ cd themes/next<br>$ git clone <a href="https://github.com/theme-next/theme-next-han">https://github.com/theme-next/theme-next-han</a> source/lib/Han<br>{% endcode %}</p>
+<p>{% note info %}<br>If you want to use the CDN instead of clone this repo, then need to <strong>set vendors</strong> in {% label primary@theme config file %}:<br>{% code lang:yml next/_config.yml %}<br>vendors:<br>  …</p>
+<h1 id="https-github-com-ethantw-Han"><a href="#https-github-com-ethantw-Han" class="headerlink" title="https://github.com/ethantw/Han"></a><a href="https://github.com/ethantw/Han">https://github.com/ethantw/Han</a></h1><p>  han: //cdnjs.cloudflare.com/ajax/libs/Han/3.3.0/han.min.css<br>  …<br>{% endcode %}<br>{% endnote %}</p>
+<!-- endtab -->
+<!-- tab NexT Config -->
+<p>After the plugin installed, you can enable it by editing values <code>han</code> to <code>true</code> in {% label primary@theme config file %}.</p>
+<p>{% code lang:yml hexo/_config.yml %}</p>
+<h1 id="Dependencies-https-github-com-theme-next-theme-next-han"><a href="#Dependencies-https-github-com-theme-next-theme-next-han" class="headerlink" title="Dependencies: https://github.com/theme-next/theme-next-han"></a>Dependencies: <a href="https://github.com/theme-next/theme-next-han">https://github.com/theme-next/theme-next-han</a></h1><p>han: true<br>{% endcode %}<br><!-- endtab --><br>{% endtabs %}</p>
+<h4 id="Pangu-Autospace-Support"><a href="#Pangu-Autospace-Support" class="headerlink" title="Pangu Autospace Support"></a>Pangu Autospace Support</h4><p><a href="https://github.com/vinta/pangu.js">pangu.js</a> will automatically insert a blank space between all the Chinese characters and the hexagonal English numeric symbols on the page.</p>
+<p>{% tabs pangu %}<br><!-- tab Installation → --><br>Change dir to NexT directory, and install module to <code>source/lib</code> directory.</p>
+<p>{% code lang:bash %}<br>$ cd themes/next<br>$ git clone <a href="https://github.com/theme-next/theme-next-pangu.git">https://github.com/theme-next/theme-next-pangu.git</a> source/lib/pangu<br>{% endcode %}</p>
+<p>{% note info %}<br>If you want to use the CDN instead of clone this repo, then need to <strong>set vendors</strong> in {% label primary@theme config file %}:<br>{% code lang:yml next/_config.yml %}<br>vendors:<br>  …</p>
+<h1 id="https-github-com-vinta-pangu-js"><a href="#https-github-com-vinta-pangu-js" class="headerlink" title="https://github.com/vinta/pangu.js"></a><a href="https://github.com/vinta/pangu.js">https://github.com/vinta/pangu.js</a></h1><p>  pangu: //cdn.jsdelivr.net/npm/pangu@3.3.0/dist/browser/pangu.min.js<br>  …<br>{% endcode %}<br>{% endnote %}</p>
+<!-- endtab -->
+<!-- tab NexT Config -->
+<p>After the plugin installed, you can enable it by editing values <code>han</code> to <code>true</code> in {% label primary@theme config file %}.</p>
+<p>{% code lang:yml hexo/_config.yml %}</p>
+<h1 id="Dependencies-https-github-com-theme-next-theme-next-pangu"><a href="#Dependencies-https-github-com-theme-next-theme-next-pangu" class="headerlink" title="Dependencies: https://github.com/theme-next/theme-next-pangu"></a>Dependencies: <a href="https://github.com/theme-next/theme-next-pangu">https://github.com/theme-next/theme-next-pangu</a></h1><p>pangu: true<br>{% endcode %}<br><!-- endtab --><br>{% endtabs %}</p>

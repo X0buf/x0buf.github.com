@@ -1,0 +1,173 @@
+<hr>
+<p>title: Note (Bootstrap Callout)</p>
+<h2 id="description-NexT-User-Docs-–-NexT-Supported-Tags-–-Note"><a href="#description-NexT-User-Docs-–-NexT-Supported-Tags-–-Note" class="headerlink" title="description: NexT User Docs – NexT Supported Tags – Note"></a>description: NexT User Docs – NexT Supported Tags – Note</h2><h3 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h3><p>```yml next/_config.yml<br>note:</p>
+<h1 id="Note-tag-style-values"><a href="#Note-tag-style-values" class="headerlink" title="Note tag style values:"></a>Note tag style values:</h1><h1 id="simple-bs-callout-old-alert-style-Default"><a href="#simple-bs-callout-old-alert-style-Default" class="headerlink" title="- simple    bs-callout old alert style. Default."></a>- simple    bs-callout old alert style. Default.</h1><h1 id="modern-bs-callout-new-v2-v3-alert-style"><a href="#modern-bs-callout-new-v2-v3-alert-style" class="headerlink" title="- modern    bs-callout new (v2-v3) alert style."></a>- modern    bs-callout new (v2-v3) alert style.</h1><h1 id="flat-flat-callout-style-with-background-like-on-Mozilla-or-StackOverflow"><a href="#flat-flat-callout-style-with-background-like-on-Mozilla-or-StackOverflow" class="headerlink" title="- flat      flat callout style with background, like on Mozilla or StackOverflow."></a>- flat      flat callout style with background, like on Mozilla or StackOverflow.</h1><h1 id="disabled-disable-all-CSS-styles-import-of-note-tag"><a href="#disabled-disable-all-CSS-styles-import-of-note-tag" class="headerlink" title="- disabled  disable all CSS styles import of note tag."></a>- disabled  disable all CSS styles import of note tag.</h1><p>  style: simple<br>  icons: false<br>  border_radius: 3</p>
+<h1 id="Offset-lighter-of-background-in-for-modern-and-flat-styles-modern-12-12-flat-18-6"><a href="#Offset-lighter-of-background-in-for-modern-and-flat-styles-modern-12-12-flat-18-6" class="headerlink" title="Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6)."></a>Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).</h1><h1 id="Offset-also-applied-to-label-tag-variables-This-option-can-work-with-disabled-note-tag"><a href="#Offset-also-applied-to-label-tag-variables-This-option-can-work-with-disabled-note-tag" class="headerlink" title="Offset also applied to label tag variables. This option can work with disabled note tag."></a>Offset also applied to label tag variables. This option can work with disabled note tag.</h1><p>  light_bg_offset: 0</p>
+<pre><code>
+### Usage
+
+```md note.js
+{% note [class] [no-icon] %}
+Any content (support inline tags too.io).
+{% endnote %}
+
+[class]   : default | primary | success | info | warning | danger.
+[no-icon] : Disable icon in note.
+
+All parameters are optional.
+</code></pre><h3 id="Known-Issues"><a href="#Known-Issues" class="headerlink" title="Known Issues"></a>Known Issues</h3><p>{% tabs known-issues %}<br><!-- tab Error at single line @check --><br>{% note danger %}<br>It’s wrong to write this tag with 1 line if you don’t want to see possible bugs.<br>{% endnote %}</p>
+<p>For example, here is wrong syntax to write content like that:</p>
+<pre><code>{% note danger %}note text, note text, note text{% endnote %}
+</code></pre>
+
+<p>Or like that:</p>
+<pre><code>{% note danger %}note text
+note text
+note text
+{% endnote %}
+</code></pre>
+
+<p>Need to write content at new line, like this:</p>
+<p><pre><code>{% note danger %}<br>note text, note text, note text<br>note text, note text, note text<br>note text, note text, note text<br>{% endnote %}<br></code></pre><br><!-- endtab --></p>
+<!-- tab Code Block «undefined» @bug -->
+<p>See <a href="/docs/troubleshooting/#Backtick-Code-Block-in-Tags">Backtick Code Block in Tags</a> section.<br><!-- endtab --><br>{% endtabs %}</p>
+<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><pre><code class="md">{% note %}
+<span class="section">#### Header</span>
+(without define class style)
+{% endnote %}
+</code></pre>
+<p>{% note %}</p>
+<h4 id="Header"><a href="#Header" class="headerlink" title="Header"></a>Header</h4><p>(without define class style)<br>{% endnote %}</p>
+<pre><code class="md">{% note default %}
+<span class="section">#### Default Header</span>
+Welcome to [<span class="string">Hexo!</span>](<span class="link">https://hexo.io</span>)
+{% endnote %}
+</code></pre>
+<p>{% note default %}</p>
+<h4 id="Default-Header"><a href="#Default-Header" class="headerlink" title="Default Header"></a>Default Header</h4><p>Welcome to <a href="https://hexo.io">Hexo!</a><br>{% endnote %}</p>
+<pre><code class="md">{% note primary %}
+<span class="section">#### Primary Header</span>
+<span class="strong">**Welcome**</span> to [<span class="string">Hexo!</span>](<span class="link">https://hexo.io</span>)
+{% endnote %}
+</code></pre>
+<p>{% note primary %}</p>
+<h4 id="Primary-Header"><a href="#Primary-Header" class="headerlink" title="Primary Header"></a>Primary Header</h4><p><strong>Welcome</strong> to <a href="https://hexo.io">Hexo!</a><br>{% endnote %}</p>
+<pre><code class="md">{% note info %}
+<span class="section">### Info Header</span>
+<span class="strong">**Welcome**</span> to [<span class="string">Hexo!</span>](<span class="link">https://hexo.io</span>)
+{% endnote %}
+</code></pre>
+<p>{% note info %}</p>
+<h4 id="Info-Header"><a href="#Info-Header" class="headerlink" title="Info Header"></a>Info Header</h4><p><strong>Welcome</strong> to <a href="https://hexo.io">Hexo!</a><br>{% endnote %}</p>
+<pre><code class="md">{% note success %}
+<span class="section">#### Success Header</span>
+<span class="strong">**Welcome**</span> to [<span class="string">Hexo!</span>](<span class="link">https://hexo.io</span>)
+{% endnote %}
+</code></pre>
+<p>{% note success %}</p>
+<h4 id="Success-Header"><a href="#Success-Header" class="headerlink" title="Success Header"></a>Success Header</h4><p><strong>Welcome</strong> to <a href="https://hexo.io">Hexo!</a><br>{% endnote %}</p>
+<pre><code class="md">{% note warning %}
+<span class="section">#### Warning Header</span>
+<span class="strong">**Welcome**</span> to [<span class="string">Hexo!</span>](<span class="link">https://hexo.io</span>)
+{% endnote %}
+</code></pre>
+<p>{% note warning %}</p>
+<h4 id="Warning-Header"><a href="#Warning-Header" class="headerlink" title="Warning Header"></a>Warning Header</h4><p><strong>Welcome</strong> to <a href="https://hexo.io">Hexo!</a><br>{% endnote %}</p>
+<pre><code class="md">{% note danger %}
+<span class="section">#### Danger Header</span>
+<span class="strong">**Welcome**</span> to [<span class="string">Hexo!</span>](<span class="link">https://hexo.io</span>)
+{% endnote %}
+</code></pre>
+<p>{% note danger %}</p>
+<h4 id="Danger-Header"><a href="#Danger-Header" class="headerlink" title="Danger Header"></a>Danger Header</h4><p><strong>Welcome</strong> to <a href="https://hexo.io">Hexo!</a><br>{% endnote %}</p>
+<pre><code class="md">{% note info no-icon %}
+<span class="section">#### No icon note</span>
+Note <span class="strong">**without**</span> icon: <span class="code">`note info no-icon`</span>
+{% code %}
+code block in note tag
+code block in note tag
+code block in note tag
+{% endcode %}
+{% endnote %}
+</code></pre>
+<p>{% note info no-icon %}</p>
+<h4 id="No-icon-note"><a href="#No-icon-note" class="headerlink" title="No icon note"></a>No icon note</h4><p>Note <strong>without</strong> icon: <code>note info no-icon</code></p>
+<p>note info, note info, note info<br>note info, note info, note info<br>note info, note info, note info<br>{% endnote %}</p>
+<pre><code class="md">{% note success %}
+<span class="section">#### Codeblock in note</span>
+{% code %}
+code block in note tag
+code block in note tag
+code block in note tag
+{% endcode %}
+{% endnote %}
+</code></pre>
+<p>{% note success %}</p>
+<h4 id="Codeblock-in-note"><a href="#Codeblock-in-note" class="headerlink" title="Codeblock in note"></a>Codeblock in note</h4><p>{% code %}<br>code block in note tag<br>code block in note tag<br>code block in note tag<br>{% endcode %}<br>{% endnote %}</p>
+<pre><code class="md">{% note default %}
+<span class="section">#### Lists in note</span>
+<span class="bullet">* </span>ul
+<span class="bullet">* </span>ul
+  * ul
+  * ul
+<span class="bullet">* </span>ul
+
+<span class="bullet">1. </span>ol
+<span class="bullet">2. </span>ol
+  1. ol
+  2. ol
+<span class="bullet">3. </span>ol
+{% endnote %}
+</code></pre>
+<p>{% note default %}</p>
+<h4 id="Lists-in-note"><a href="#Lists-in-note" class="headerlink" title="Lists in note"></a>Lists in note</h4><ul>
+<li>ul</li>
+<li>ul<ul>
+<li>ul</li>
+<li>ul</li>
+</ul>
+</li>
+<li>ul</li>
+</ul>
+<ol>
+<li>ol</li>
+<li>ol<ol>
+<li>ol</li>
+<li>ol</li>
+</ol>
+</li>
+<li>ol<br>{% endnote %}</li>
+</ol>
+<pre><code class="md"><span class="section">#### Table in Note</span>
+{% note default %}
+| 1 | 2 |
+| - | - |
+| 3 | 4 |
+| 5 | 6 |
+| 7 | 8 |
+{% endnote %}
+</code></pre>
+<p>{% note default %}</p>
+<h4 id="Table-in-note"><a href="#Table-in-note" class="headerlink" title="Table in note"></a>Table in note</h4><table>
+<thead>
+<tr>
+<th>1</th>
+<th>2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<p>{% endnote %}</p>

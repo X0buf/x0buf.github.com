@@ -1,0 +1,35 @@
+<hr>
+<p>title: Full Image (Featured Image)</p>
+<h2 id="description-NexT-User-Docs-–-NexT-Supported-Tags-–-Full-Image"><a href="#description-NexT-User-Docs-–-NexT-Supported-Tags-–-Full-Image" class="headerlink" title="description: NexT User Docs – NexT Supported Tags – Full Image"></a>description: NexT User Docs – NexT Supported Tags – Full Image</h2><p>Using this tag will add meta data <code>ImageObject</code> to make your image featured. It’s mean search engines/social services will display your article in their services with this image as thumbnail by default.</p>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><p>{% note warning %}<br>From version {% label primary@6.4.0 %} this tag supported 2 additional parameters:</p>
+<ul>
+<li>Lazy load → <code>lazy</code></li>
+<li>Image size → <code>size</code></li>
+</ul>
+<p>If you are using a lower version, this parameters will be ignored.<br>{% endnote %}</p>
+<p>```md full-image.js<br>{% fullimage /url [@lazy], [alt], [title], [size] %}<br><!-- Tag Alias --><br>{% fi /url [@lazy], [alt], [title], [size] %}</p>
+<p>/url    : Relative path to image URL.<br>[@lazy] : Load image only when user scroll to it.<br>          Dependencies: <a href="https://github.com/theme-next/theme-next-jquery-lazyload">https://github.com/theme-next/theme-next-jquery-lazyload</a><br>[alt]   : Alternate text (for search engines).<br>[title] : Tooltip at mouseover.<br>[size]  : Size of image in any ratio (%, px, em).</p>
+<p>All parameters except /url are optional.</p>
+<pre><code>
+### Examples
+
+```md
+{% fi /images/docs/github.png %}
+</code></pre><p>{% fi /images/docs/github.png %}</p>
+<h4 id="Full-Image-with-alt-amp-title"><a href="#Full-Image-with-alt-amp-title" class="headerlink" title="Full Image with alt &amp; title"></a>Full Image with alt &amp; title</h4><pre><code class="md">{% fi /images/docs/github.png, Alt text, Title text %}
+</code></pre>
+<p>{% fi /images/docs/github.png, Alt text, Title text %}</p>
+<h4 id="Full-Image-with-100-size"><a href="#Full-Image-with-100-size" class="headerlink" title="Full Image with 100% size"></a>Full Image with 100% size</h4><pre><code class="md">{% fi /images/docs/github.png, Alt text, Title text, 100% %}
+</code></pre>
+<p>{% fi /images/docs/github.png, Alt text, Title text, 100% %}</p>
+<h4 id="Full-Image-with-200px-amp-without-alt-amp-title"><a href="#Full-Image-with-200px-amp-without-alt-amp-title" class="headerlink" title="Full Image with 200px &amp; without alt &amp; title"></a>Full Image with 200px &amp; without alt &amp; title</h4><pre><code class="md">{% fi /images/docs/github.png,,, 200px %}
+</code></pre>
+<p>{% fi /images/docs/github.png,,, 200px %}</p>
+<p>{% note info %}<br>Recommended to use this tag once per article.<br>{% endnote %}</p>
+<h4 id="Lazy-loading-Full-Image"><a href="#Lazy-loading-Full-Image" class="headerlink" title="Lazy loading Full Image"></a>Lazy loading Full Image</h4><pre><code class="md">{% fi /images/docs/next-schemes-3.png@lazy, Alt text, Title text, 75% %}
+
+<span class="xml"><span class="comment">&lt;!-- Or with space before '@lazy' --&gt;</span></span>
+
+{% fi /images/docs/next-schemes-3.png @lazy, Alt text, Title text, 75% %}
+</code></pre>
+<p>{% fi /images/docs/next-schemes-3.png @lazy, Alt text, Title text, 75% %}</p>

@@ -1,0 +1,66 @@
+<hr>
+<p>title: Button</p>
+<h2 id="description-NexT-User-Docs-–-NexT-Supported-Tags-–-Button"><a href="#description-NexT-User-Docs-–-NexT-Supported-Tags-–-Button" class="headerlink" title="description: NexT User Docs – NexT Supported Tags – Button"></a>description: NexT User Docs – NexT Supported Tags – Button</h2><h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><p>```md button.js<br>{% button url, text, icon [class], [title] %}<br><!-- Tag Alias --><br>{% btn url, text, icon [class], [title] %}</p>
+<p>url     : Absolute or relative path to URL.<br>text    : Button text. Required if no icon specified.<br>icon    : FontAwesome icon name (without ‘fa-‘ at the begining). Required if no text specified.<br>[class] : FontAwesome class(es): fa-fw | fa-lg | fa-2x | fa-3x | fa-4x | fa-5x<br>          Optional parameter.<br>[title] : Tooltip at mouseover.<br>          Optional parameter.</p>
+<pre><code>
+### Examples
+
+```md
+{% button #, Text %}
+</code></pre><p>{% button #, Text %}</p>
+<h4 id="Button-with-text-amp-title"><a href="#Button-with-text-amp-title" class="headerlink" title="Button with text &amp; title"></a>Button with text &amp; title</h4><pre><code class="md">{% btn #, Text %}{% btn #, Text &amp; Title,, Title %}
+</code></pre>
+<p>{% btn #, Text %}{% btn #, Text &amp; Title,, Title %}</p>
+<pre><code class="md">{% btn #, Text %} {% btn #, Text &amp; Title,, Title %}
+</code></pre>
+<p>{% btn #, Text %} {% btn #, Text &amp; Title,, Title %}</p>
+<pre><code class="md">{% btn #, Text %}
+{% btn #, Text &amp; Title,, Title %}
+</code></pre>
+<p>{% btn #, Text %}<br>{% btn #, Text &amp; Title,, Title %}</p>
+<h4 id="Button-with-icon"><a href="#Button-with-icon" class="headerlink" title="Button with icon"></a>Button with icon</h4><pre><code class="md"><span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span>{% btn #,, home fa-5x %}{% btn #,, home fa-5x %}{% btn #,, home fa-5x %}<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>
+<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span>{% btn #,, home fa-4x %}{% btn #,, home fa-4x %}{% btn #,, home fa-4x %}<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>
+<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span>{% btn #,, home fa-3x %}{% btn #,, home fa-3x %}{% btn #,, home fa-3x %}<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>
+<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span>{% btn #,, home fa-2x %}{% btn #,, home fa-2x %}{% btn #,, home fa-2x %}<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>
+<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span>{% btn #,, home fa-lg %}{% btn #,, home fa-lg %}{% btn #,, home fa-lg %}<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>
+<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span>{% btn #,, home %}{% btn #,, home %}{% btn #,, home %}<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>
+</code></pre>
+<div>{% btn #,, home fa-5x %}{% btn #,, home fa-5x %}{% btn #,, home fa-5x %}</div><br><div>{% btn #,, home fa-4x %}{% btn #,, home fa-4x %}{% btn #,, home fa-4x %}</div><br><div>{% btn #,, home fa-3x %}{% btn #,, home fa-3x %}{% btn #,, home fa-3x %}</div><br><div>{% btn #,, home fa-2x %}{% btn #,, home fa-2x %}{% btn #,, home fa-2x %}</div><br><div>{% btn #,, home fa-lg %}{% btn #,, home fa-lg %}{% btn #,, home fa-lg %}</div><br><div>{% btn #,, home %}{% btn #,, home %}{% btn #,, home %}</div>
+
+<h4 id="Button-with-text-amp-icon"><a href="#Button-with-text-amp-icon" class="headerlink" title="Button with text &amp; icon"></a>Button with text &amp; icon</h4><pre><code class="md"><span class="xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span>{% btn #, Text &amp; Icon (buggy), home %}
+{% btn #, Text &amp; Icon (fixed width), home fa-fw %}<span class="xml"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span>
+</code></pre>
+<p>{% btn #, Text &amp; Icon (buggy), home %}<br>{% btn #, Text &amp; Icon (fixed width), home fa-fw %}</p>
+
+<pre><code class="md"><span class="xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span>{% btn #, Text &amp; Large Icon, home fa-fw fa-lg %}
+{% btn #, Text &amp; Large Icon &amp; Title, home fa-fw fa-lg, Title %}<span class="xml"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span>
+</code></pre>
+<p>{% btn #, Text &amp; Large Icon, home fa-fw fa-lg %}<br>{% btn #, Text &amp; Large Icon &amp; Title, home fa-fw fa-lg, Title %}</p>
+
+<h4 id="Button-inside-text"><a href="#Button-inside-text" class="headerlink" title="Button inside text"></a>Button inside text</h4><pre><code class="md">Lorem {% btn #, Lorem, home fa-fw fa-lg %} ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident {% btn #, Ipsum, home fa-fw fa-lg %}, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</code></pre>
+<p>Lorem {% btn #, ipsum, home fa-fw fa-lg %} dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure {% btn #, dolor, home fa-fw fa-lg %} in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non {% btn #, proident, home fa-fw fa-lg %}, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<h4 id="Button-inside-other-tag"><a href="#Button-inside-other-tag" class="headerlink" title="Button inside other tag"></a>Button inside other tag</h4><pre><code class="md">{% note info %}
+{% btn #, Text &amp; Icon, home fa-fw %}
+
+{% btn #,, home, Title %}{% btn #, Text %}
+[<span class="string">Link</span>](<span class="link">#</span>)
+{% endnote %}
+</code></pre>
+<p>{% note info %}<br>{% btn #, Text &amp; Icon, home fa-fw fa-lg %}</p>
+<p>{% btn #,, home fa-lg, Title %}{% btn #, Text %}<br><a href="#">Link</a><br>{% endnote %}</p>
+<h4 id="Button-margin"><a href="#Button-margin" class="headerlink" title="Button margin"></a>Button margin</h4><pre><code class="md"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"text-center"</span>&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span>{% btn #,, header %}{% btn #,, edge %}{% btn #,, times %}{% btn #,, circle-o %}<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>
+<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span>{% btn #,, italic %}{% btn #,, scribd %}<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>
+<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span>{% btn #,, google %}{% btn #,, chrome %}{% btn #,, opera %}{% btn #,, diamond fa-rotate-270 %}<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>
+</code></pre>
+<div class="text-center"><div>{% btn #,, header %}{% btn #,, edge %}{% btn #,, times %}{% btn #,, circle-o %}</div><br><div>{% btn #,, italic %}{% btn #,, scribd %}</div><br><div>{% btn #,, google %}{% btn #,, chrome %}{% btn #,, opera %}{% btn #,, diamond fa-rotate-270 %}</div></div>
+
+<h4 id="Button-with-relative-URL"><a href="#Button-with-relative-URL" class="headerlink" title="Button with relative URL"></a>Button with relative URL</h4><pre><code class="md"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"text-center"</span>&gt;</span></span>{% btn #, Previous Chapter, arrow-left fa-fw fa-lg, Previous Chapter (Full Image) %} {% btn #, Next Chapter, arrow-right fa-fw fa-lg, Next Chapter (Label) %}<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>
+</code></pre>
+<div class="text-center">{% btn /docs/tag-plugins/full-image, Previous Chapter, arrow-left fa-fw fa-lg, Previous Chapter (Full Image) %} {% btn /docs/tag-plugins/label, Next Chapter, arrow-right fa-fw fa-lg, Next Chapter (Label) %}</div>
+
+<h4 id="Button-with-absolute-URL"><a href="#Button-with-absolute-URL" class="headerlink" title="Button with absolute URL"></a>Button with absolute URL</h4><pre><code class="md"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"text-center"</span>&gt;</span></span>{% btn https://github.com/theme-next/hexo-theme-next, NexT, github fa-fw fa-lg, NexT source code %}<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>
+</code></pre>
+<div class="text-center">{% btn <a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a>, NexT, github fa-fw fa-lg, NexT source code %}</div>

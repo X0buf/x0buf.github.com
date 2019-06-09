@@ -1,0 +1,131 @@
+<hr>
+<p>title: Custom Pages</p>
+<h2 id="description-NexT-User-Docs-–-Theme-Settings-Custom-Pages"><a href="#description-NexT-User-Docs-–-Theme-Settings-Custom-Pages" class="headerlink" title="description: NexT User Docs – Theme Settings - Custom Pages"></a>description: NexT User Docs – Theme Settings - Custom Pages</h2><h3 id="Custom-Page-Support"><a href="#Custom-Page-Support" class="headerlink" title="Custom Page Support"></a>Custom Page Support</h3><p>Next allows users to add custom pages in menu.</p>
+<p>{% tabs adding-custom-page %}<br><!-- tab Adding New Page → --><br>In your terminal emulator, change to Hexo site dir. Use <code>hexo new page custom_name</code> to create a new <code>custom_name</code> page:</p>
+<pre><code>$ cd your-hexo-site
+$ hexo new page custom_name
+</code></pre><!-- endtab -->
+<!-- tab Setting Front-matter Values → -->
+<p>Front-matter is a block of YAML or JSON at the beginning of the file that is used to configure settings for your writings. Settings Front-matter values and more detailed can be found in <a href="https://hexo.io/docs/front-matter">Front-matter</a>. You can also add contents in <code>custom_name/index.md</code> if you like.</p>
+<p>{% codeblock lang:md %}<br>title: custom_name</p>
+<h2 id="date-2014-12-22-12-39-04"><a href="#date-2014-12-22-12-39-04" class="headerlink" title="date: 2014-12-22 12:39:04"></a>date: 2014-12-22 12:39:04</h2><p>{% endcodeblock %}<br><!-- endtab --></p>
+<!-- tab Editting Menu -->
+<p>Add <code>custom_name</code> to <code>menu</code> by editing {% label primary@theme config file %}, like adding <code>about</code> page:<br>{% codeblock lang:yml next/_config.yml %}<br>menu:<br>  home: / || home<br>  archives: /archives/ || archive<br>  about: /about/ || user<br>{% endcodeblock %}<br><!-- endtab --><br>{% endtabs %}</p>
+<p>If you want to add Tags or Categories page, please continue reading.</p>
+<h4 id="Adding-«Tags»-Page"><a href="#Adding-«Tags»-Page" class="headerlink" title="Adding «Tags» Page"></a>Adding «Tags» Page</h4><p>Adding «Tags» page and show «Tags» link in menu. «Tags» page will show all tags of site. If no article has tags, this page will leave blank.<br>Following code shows you a example of article with tags:</p>
+<p>{% tabs tags-variants %}<br><!-- tab Variant 1 --><br>{% codeblock lang:md %}<br>title: Tags Testing Article</p>
+<h2 id="tags-Testing-Another-Tag"><a href="#tags-Testing-Another-Tag" class="headerlink" title="tags: [Testing, Another Tag]"></a>tags: [Testing, Another Tag]</h2><p>{% endcodeblock %}<br><!-- endtab --></p>
+<!-- tab Variant 2 -->
+<p>{% codeblock lang:md %}<br>title: Tags Testing Article<br>tags:</p>
+<ul>
+<li>Testing</li>
+<li>Another Tag</li>
+</ul>
+<hr>
+<p>{% endcodeblock %}<br><!-- endtab --><br>{% endtabs %}</p>
+<p>{% note info %}<br>Please read <a href="https://hexo.io/docs/front-matter#Categories-amp-Tags">Hexo’s Docs of Categories &amp; Tags</a> to know how to add tags or categories for articles.<br>{% endnote %}</p>
+<p>{% tabs adding-tags-page %}<br><!-- tab Adding New Page → --><br>In your terminal emulator, change to Hexo site dir. Use <code>hexo new page tags</code> to create a new <code>tags</code> page:</p>
+<pre><code>$ cd your-hexo-site
+$ hexo new page tags
+</code></pre><!-- endtab -->
+<!-- tab Setting Page Type → -->
+<p>Edit the new page and change the type to <code>&quot;tags&quot;</code>, theme will show tags cloud automatically in this page. Page content looks like following:</p>
+<p>{% codeblock lang:md %}<br>title: Tags<br>date: 2014-12-22 12:39:04</p>
+<h2 id="type-“tags”"><a href="#type-“tags”" class="headerlink" title="type: “tags”"></a>type: “tags”</h2><p>{% endcodeblock %}<br><!-- endtab --></p>
+<!-- tab Editting Menu -->
+<p>Add <code>tags</code> to <code>menu</code> by editing {% label primary@theme config file %}, like following:<br>{% codeblock lang:yml next/_config.yml %}<br>menu:<br>  home: / || home<br>  archives: /archives/ || archive<br>  tags: /tags/ || tags<br>{% endcodeblock %}<br><!-- endtab --><br>{% endtabs %}</p>
+<p>{% note warning %}<br>If you enable any comment system for your site, comments will be shown for all posts and pages.<br>See <a href="/docs/faqs/#How-to-Disable-Comments-on-Page">«How to Disable Comments on Page»</a> if you want to do it for pages like <code>tags</code> or <code>categories</code>.<br>{% endnote %}</p>
+<h4 id="Tagcloud"><a href="#Tagcloud" class="headerlink" title="Tagcloud"></a>Tagcloud</h4><p>By default, NexT has setted font color and size for tagcloud in tags page.<br>From NexT v7.0.2 you can customize them, just set related values in {% label primary@theme config file %}:</p>
+<p>```yml next/_config.yml<br>tagcloud:</p>
+<h1 id="If-true-font-size-font-color-and-amount-of-tags-can-be-customized"><a href="#If-true-font-size-font-color-and-amount-of-tags-can-be-customized" class="headerlink" title="If true, font size, font color and amount of tags can be customized"></a>If true, font size, font color and amount of tags can be customized</h1><p>  enable: true</p>
+<h1 id="All-values-below-are-same-as-default-change-them-by-yourself"><a href="#All-values-below-are-same-as-default-change-them-by-yourself" class="headerlink" title="All values below are same as default, change them by yourself"></a>All values below are same as default, change them by yourself</h1><p>  min: 12 # min font size in px<br>  max: 30 # max font size in px<br>  start: ‘#ccc’ # start color (hex, rgba, hsla or color keywords)<br>  end: ‘#111’ # end color (hex, rgba, hsla or color keywords)<br>  amount: 200 # amount of tags, chage it if you have more than 200 tags</p>
+<pre><code>
+#### Adding «Categories» Page
+
+{% note default %}
+«Categories» page can be added in similar way as [«Tags» page](#Adding-%C2%ABTags%C2%BB-Page), only name there is difference: just need to replace `tags` with `categories`.
+{% endnote %}
+
+#### Adding Google Calendar Page
+
+{% tabs calendar %}
+&lt;!-- tab Adding Schedule Page → --&gt;
+In your terminal emulator, change to Hexo site dir. Use `hexo new page schedule` to create a new `schedule` page:
+
+    $ cd your-hexo-site
+    $ hexo new page schedule
+
+&lt;!-- endtab --&gt;
+
+&lt;!-- tab Setting Front-matter Values → --&gt;
+Front-matter is a block of YAML or JSON at the beginning of the file that is used to configure settings for your writings. Settings Front-matter values and more detailed can be found in [Front-matter](https://hexo.io/docs/front-matter). You can also add contents in `schedule/index.md` if you like.
+
+{% codeblock lang:md %}
+title: schedule
+date: 2014-12-22 12:39:04
+---
+{% endcodeblock %}
+&lt;!-- endtab --&gt;
+
+&lt;!-- tab Editting Menu → --&gt;
+Add `schedule` to `menu` by editing {% label primary@theme config file %}:
+{% codeblock lang:yml next/_config.yml %}
+menu:
+  home: / || home
+  archives: /archives/ || archive
+  schedule: /schedule/ || calendar
+{% endcodeblock %}
+&lt;!-- endtab --&gt;
+
+&lt;!-- tab Setting Google Calendar--&gt;
+
+{% subtabs calendar1 %}
+&lt;!-- tab Get calendar ID and API KEY→  --&gt;
+Login to [Google developers](https://console.developers.google.com/flows/enableapi?apiid=calendar) and add Google Calendar API, you will get your calendar ID and API KEY. [More detailed documentation](https://developers.google.com/calendar/quickstart/js)
+
+&lt;!-- endtab --&gt;
+&lt;!-- tab NexT Config  --&gt;
+You can enable it by editing values `calendar.enable` to `true`, and copy the value of calendar ID and API KEY in {% label primary@theme config file %}.
+
+{% codeblock lang:yml next/_config.yml %}
+calendar:
+  enable: true
+  calendar_id: &lt;required&gt;
+  api_key: &lt;required&gt;
+  orderBy: startTime
+  offsetMax: 24
+  offsetMin: 4
+  timeZone:
+  showDeleted: false
+  singleEvents: true
+  maxResults: 250
+{% endcodeblock %}
+&lt;!-- endtab --&gt;
+{% endsubtabs %}
+
+&lt;!-- endtab --&gt;
+{% endtabs %}
+
+#### Cheers Archive Page
+
+By default NexT shows the cheers characters from `ok` to `excellent` according to the numbers of your posts. You can disable it by editing values `cheers` to `false` in {% label primary@theme config file %}.
+
+```yml next/_config.yml
+cheers: false
+</code></pre><h4 id="Custom-404-Page"><a href="#Custom-404-Page" class="headerlink" title="Custom 404 Page"></a>Custom 404 Page</h4><p>{% tabs custom-404-page %}<br><!-- tab Adding New Page → --><br>In your terminal emulator, change to the <code>source</code> folder of Hexo site dir. Create a new folder called <code>404</code>, then create a new page in it:</p>
+<pre><code>$ cd your-hexo-site/source
+$ mkdir 404
+$ touch 404/index.md
+</code></pre><!-- endtab -->
+<!-- tab Editting Page → -->
+<p>If you would like to enable <code>commonweal 404</code>(A service provided by Tencent in China), Edit <code>404/index.md</code> like this:</p>
+<pre><code>---
+title: 404
+date: 1970-01-01 00:00:00
+---
+&lt;script src=&quot;//qzonestyle.gtimg.cn/qzone/hybrid/app/404/search_children.js&quot;
+        charset=&quot;utf-8&quot; homePageUrl=&quot;/&quot; homePageName=&quot;Back to home&quot;&gt;
+&lt;/script&gt;
+</code></pre><p>You can also add any content you want to it.<br><!-- endtab --></p>
+<!-- tab Editting Menu → -->
+<p>Add <code>404</code> to <code>menu</code> by editing {% label primary@theme config file %}:<br>{% codeblock lang:yml next/_config.yml %}<br>menu:<br>  home: / || home<br>  archives: /archives/ || archive<br>  schedule: /schedule/ || calendar<br>  commonweal: /404/ || heartbeat<br>{% endcodeblock %}<br><!-- endtab --><br>{% endtabs %}</p>

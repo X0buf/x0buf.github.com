@@ -1,0 +1,26 @@
+<hr>
+<p>title: Group Pictures</p>
+<h2 id="description-NexT-User-Docs-–-NexT-Supported-Tags-–-Group-Pictures"><a href="#description-NexT-User-Docs-–-NexT-Supported-Tags-–-Group-Pictures" class="headerlink" title="description: NexT User Docs – NexT Supported Tags – Group Pictures"></a>description: NexT User Docs – NexT Supported Tags – Group Pictures</h2><h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><p>```md group-pictures.js<br>{% grouppicture [group]-[layout] %}{% endgrouppicture %}<br>{% gp [group]-[layout] %}{% endgp %}</p>
+<p>[group]  : Total number of pictures to add in the group.<br>[layout] : Default picture under the group to show.</p>
+<pre><code>
+### Examples
+
+```md
+{% grouppicture 6-3 %}
+  ![](/images/docs/github.png)
+  ![](/images/docs/github.png)
+  ![](/images/docs/github.png)
+  ![](/images/docs/github.png)
+  ![](/images/docs/github.png)
+  ![](/images/docs/github.png)
+{% endgrouppicture %}
+</code></pre><p>{% grouppicture 6-3 %}<br>  <img src="/images/docs/github.png" alt=""><br>  <img src="/images/docs/github.png" alt=""><br>  <img src="/images/docs/github.png" alt=""><br>  <img src="/images/docs/github.png" alt=""><br>  <img src="/images/docs/github.png" alt=""><br>  <img src="/images/docs/github.png" alt=""><br>{% endgrouppicture %}</p>
+<pre><code class="md">{% gp 5-2 %}
+  ![](/images/docs/github.png)
+  ![](/images/docs/github.png)
+  ![](/images/docs/github.png)
+  ![](/images/docs/github.png)
+  ![](/images/docs/github.png)
+{% endgp %}
+</code></pre>
+<p>{% gp 5-2 %}<br>  <img src="/images/docs/github.png" alt=""><br>  <img src="/images/docs/github.png" alt=""><br>  <img src="/images/docs/github.png" alt=""><br>  <img src="/images/docs/github.png" alt=""><br>  <img src="/images/docs/github.png" alt=""><br>{% endgp %}</p>
