@@ -1,2 +1,9 @@
 User-agent: *
-Disallow: /
+Allow: /
+Allow: /archives/ 
+
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+
+Sitemap: https://x0buf.github.io/sitemap.xml
