@@ -1,6 +1,81 @@
-<？xml version = "1.0" encoding = "UTF-8"？>
-< urlset
-    xmlns = "http://www.sitemaps.org/schemas/sitemap/0.9”
-    xmlns ：xsi = "http://www.w3.org/2001/XMLSchema-instance”
-    xsi ：schemaLocation = "http://www.sitemaps.org/schemas/sitemap/0.9
-    http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" >
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://yoursite.com/2018/08/07/Mobile-Security/</loc>
+    
+    <lastmod>2019-07-31T15:06:36.530Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/08/04/experience-sharing/</loc>
+    
+    <lastmod>2019-07-31T15:06:14.670Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/06/21/Information%20Security/</loc>
+    
+    <lastmod>2019-07-21T06:21:23.146Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/08/07/intranet-pentest/</loc>
+    
+    <lastmod>2019-07-21T06:19:51.542Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/07/21/Penetration%20Testing/</loc>
+    
+    <lastmod>2019-07-21T06:19:39.626Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/08/04/defcon-2015-ropbaby/</loc>
+    
+    <lastmod>2019-06-22T02:11:02.350Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/08/04/Cyber-Security/</loc>
+    
+    <lastmod>2019-06-19T13:31:35.119Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/about/index.html</loc>
+    
+    <lastmod>2019-06-05T14:54:15.438Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/index.html</loc>
+    
+    <lastmod>2018-08-04T06:04:12.676Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/index.html</loc>
+    
+    <lastmod>2018-08-04T06:02:44.595Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/security/index.html</loc>
+    
+    <lastmod>2018-08-04T04:23:49.925Z</lastmod>
+    
+  </url>
+  
+</urlset>
