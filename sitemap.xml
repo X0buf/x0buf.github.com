@@ -4,14 +4,21 @@
   <url>
     <loc>http://yoursite.com/about/index.html</loc>
     
-    <lastmod>2019-07-31T15:11:22.790Z</lastmod>
+    <lastmod>2019-09-25T10:17:11.045Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/2018/08/07/Mobile-Security/</loc>
     
-    <lastmod>2019-07-31T15:06:36.530Z</lastmod>
+    <lastmod>2019-08-14T14:15:44.679Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/08/14/IoT%20Security/</loc>
+    
+    <lastmod>2019-08-14T13:23:33.467Z</lastmod>
     
   </url>
   
@@ -37,7 +44,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/07/21/Penetration%20Testing/</loc>
+    <loc>http://yoursite.com/2018/06/21/Penetration%20Testing/</loc>
     
     <lastmod>2019-07-21T06:19:39.626Z</lastmod>
     
